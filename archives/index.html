@@ -65,8 +65,8 @@
   
     <article id="post-Install-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/hexoblog/2015/05/07/Install-Hexo/" class="article-date">
-  <time datetime="2015-05-07T14:21:18.000Z" itemprop="datePublished">May 7 2015</time>
+    <a href="/hexoblog/2015/05/08/Install-Hexo/" class="article-date">
+  <time datetime="2015-05-07T17:02:31.000Z" itemprop="datePublished">May 8 2015</time>
 </a>
     
   </div>
@@ -77,7 +77,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hexoblog/2015/05/07/Install-Hexo/">Hexo install</a>
+      <a class="article-title" href="/hexoblog/2015/05/08/Install-Hexo/">Hexo install</a>
     </h1>
   
 
@@ -85,7 +85,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <table>
+        <h2 id="Why_Hexo_?">Why Hexo ?</h2>
+<p>使用 Hexo 建立 Blog 的好處有以下：</p>
+<ul>
+<li>文章裡面可以放上 Coge 並加上 highlight 高亮語法顯示。</li>
+<li>使用 markdown 語言快速編輯，筆記、Blog 一次搞定。</li>
+<li>可建立於 GitHub</li>
+<li>使用 Node.js 建立</li>
+</ul>
+<p>根據以上多種好處．因此建立 <strong>Hexo Blog</strong> 成為我敗下 MBPR 後第一個想要玩的技術，直接進入主題。</p>
+<h2 id="環境介紹">環境介紹</h2>
+<table>
 <thead>
 <tr>
 <th>系統</th>
@@ -112,24 +122,36 @@
 </tbody>
 </table>
 <h2 id="安裝hexo2-8-3版本">安裝hexo2.8.3版本</h2>
-<p>如果安裝過程出現權限錯誤，可在命令前加上<code>sudo</code></p>
-<p><code>npm install hexo@v2.8.3 -g</code>（安裝2.8.3版本）</p>
-<p><code>npm uninstall hexo</code>（解除安裝hexo）</p>
-<h2 id="建置hexo存放資料夾">建置hexo存放資料夾</h2>
-<p><code>mkdir [filename]</code></p>
-<p><code>cd [filename]</code></p>
-<h2 id="初始化">初始化</h2>
-<p><code>hexo init</code></p>
-<p><code>npm install</code></p>
-<p>如果無法安裝請嘗試以下命令<br><code>npm install -g -unsafe-perm hexo</code></p>
-<h2 id="hexo_server_啟動失敗_issue">hexo server 啟動失敗 issue</h2>
-<p><code>sudo npm install hexo-renderer-marked@0.1 --save</code><br><code>sudo npm install hexo-renderer-stylus@0.1 --save</code></p>
-<p><a href="https://github.com/hexojs/hexo/issues/1094" target="_blank" rel="external">issue 1094</a>、<br><a href="http://pagent.github.io/2015/03/14/hexo-283-install/" target="_blank" rel="external">jp blog</a></p>
+<p>如果安裝過程出現<strong>權限錯誤</strong>，須在命令前加上<code>sudo</code></p>
+<h3 id="解除安裝hexo">解除安裝hexo</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm uninstall hexo</div></pre></td></tr></table></figure>
+
+<h3 id="安裝2-8-3版本">安裝2.8.3版本</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo@v2.<span class="number">8.3</span> -g`</div></pre></td></tr></table></figure>
+
+<h3 id="建置hexo存放資料夾">建置hexo存放資料夾</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir [filename]</div><div class="line"><span class="built_in">cd</span> [filename]</div></pre></td></tr></table></figure>
+
+<h3 id="初始化">初始化</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo init</div><div class="line">npm install</div></pre></td></tr></table></figure>
+
+<h3 id="如果無法安裝請嘗試以下命令">如果無法安裝請嘗試以下命令</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g -unsafe-perm hexo</div></pre></td></tr></table></figure>
+
+<h3 id="hexo_server_啟動失敗_issue">hexo server 啟動失敗 issue</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> npm install hexo-renderer-marked@<span class="number">0.1</span> --save</div><div class="line"><span class="built_in">sudo</span> npm install hexo-renderer-stylus@<span class="number">0.1</span> --save</div></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="Reference:">Reference:</h4>
+<ul>
+<li><a href="https://github.com/hexojs/hexo/issues/1094" target="_blank" rel="external">https://github.com/hexojs/hexo/issues/1094</a></li>
+<li><a href="http://pagent.github.io/2015/03/14/hexo-283-install/" target="_blank" rel="external">http://pagent.github.io/2015/03/14/hexo-283-install/</a></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/07/Install-Hexo/" data-id="5ctpt0q4o1wz60km" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/08/Install-Hexo/" data-id="5ctpt0q4o1wz60km" class="article-share-link">Share</a>
       
       
     </footer>
@@ -220,7 +242,7 @@
       <ul>
         
           <li>
-            <a href="/hexoblog/2015/05/07/Install-Hexo/">Hexo install</a>
+            <a href="/hexoblog/2015/05/08/Install-Hexo/">Hexo install</a>
           </li>
         
           <li>

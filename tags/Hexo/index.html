@@ -102,31 +102,16 @@ ga('send', 'pageview');
 <p>減少網頁開發中常按 command + R 的情況，監聽文件更動既幫你 Reload 的開發好幫手。</p>
 <p><a href="https://github.com/hexojs/hexo-livereload" target="_blank" rel="external">hexo-livereload Github</a></p>
 <p><a href="http://livereload.com/" target="_blank" rel="external">livereload 官網</a></p>
-<h2 id="install_node-js_livereload">install node.js livereload</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> npm install -g node-livereload</div></pre></td></tr></table></figure>
 
-<h2 id="install_hexo-livereload">install hexo-livereload</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> npm install hexo-livereload --save</div></pre></td></tr></table></figure>
-
-<h2 id="install_browser_extensions">install browser extensions</h2>
-<p><a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei" target="_blank" rel="external">Chrome 商店下載 LiveReload</a></p>
-<p><a href="http://download.livereload.com/2.1.0/LiveReload-2.1.0.xpi" target="_blank" rel="external">Firefox extension 2.1.0</a></p>
-<p><a href="http://livereload.com/extensions/" target="_blank" rel="external">官方連結</a></p>
-<h3 id="_config-yml">_config.yml</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">livereload:</div><div class="line">	port: <span class="number">35729</span></div></pre></td></tr></table></figure>
-
-<p>安裝完成！！</p>
-<p>接下來只要啟動，就可以即時監看</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s</div></pre></td></tr></table></figure>
-
-<h2 id="小提醒！！">小提醒！！</h2>
-<p>hexo server 啟動後一樣到 <code>localhost:4000</code> 就可以看到即時 <code>reload</code> 的頁面了。</p>
-<p>千萬不要像我這麼笨，開開心心去 <code>localhost:35729</code> 傻傻的研究30幾分鐘，爬了很多文只有一篇特別提醒…Orz..。 </p>
-
+        
+          <p class="article-more-link">
+            <a href="/hexoblog/2015/05/14/Hexo-livereload/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/14/Hexo-livereload/" data-id="9ld88cagdm9xqs93" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/14/Hexo-livereload/" data-id="e6lptxnzt2pqxau4" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/05/14/Hexo-livereload/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -154,7 +139,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hexoblog/2015/05/12/Hexo-add-Comments/">Hexo add Comments 新增留言板</a>
+      <a class="article-title" href="/hexoblog/2015/05/12/Hexo-add-Comments/">Hexo add DISQUS Comments 新增留言板</a>
     </h1>
   
 
@@ -162,36 +147,22 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="目標">目標</h1>
-<h3 id="新增留言板：">新增留言板：</h3>
-<p><img src="https://googledrive.com/host/0B4fEFbbW93y5RFczVENiaS1oYlE" alt="新增DISQUS留言板"></p>
-<h1 id="Hexo_add_Comments">Hexo add Comments</h1>
-<p>Hexo 本身內建 <a href="https://disqus.com/" target="_blank" rel="external">Disqus</a> 是一款專門針對部落格、網站留言機制做統合的服務，使用者想要留言可以匿名、DISQUS會員、Facebook帳號、Twitter帳號、Google帳號進流網站留言，同時這套留言機制可以幫你統計訪客留言排行榜，另外在留言下方也可以最近被熱門討論的文章，此外也可以透過本身的分享機制把文章分享出去，並且留言機制中支援階層式(巢狀式)留言。<a href="http://sofree.cc/disqus/" target="_blank" rel="external">引用：香腸炒魷魚</a></p>
-<ol>
-<li>申請帳號</li>
-<li>新增頁面</li>
-<li>記下 <strong>shortname</strong></li>
-<li>選擇外掛可以不須理會</li>
-</ol>
-<p><img src="https://googledrive.com/host/0B4fEFbbW93y5LXNwYlZNLXpjb0k" alt="DISQUS shortname 簡單步驟"></p>
-<h1 id="Hexo__confid-yml">Hexo _confid.yml</h1>
-<figure class="highlight bush"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor"># Disqus</span></div><div class="line">	disqus_shortname: yourShortname</div></pre></td></tr></table></figure>
+        <p><img src="https://googledrive.com/host/0B4fEFbbW93y5RFczVENiaS1oYlE" alt="新增 DISQUS 留言板"></p>
 
-<hr>
-<h1 id="參考">參考</h1>
-<p><a href="http://sofree.cc/disqus/" target="_blank" rel="external">http://sofree.cc/disqus/</a></p>
-<p><a href="http://morris821028.github.io/2014/04/12/web/hexo-comment/" target="_blank" rel="external">http://morris821028.github.io/2014/04/12/web/hexo-comment/</a></p>
-<p><a href="http://code.kpman.cc/2013/04/28/%E5%AE%A2%E8%A3%BD%E5%8C%96hexo-light-theme/" target="_blank" rel="external">http://code.kpman.cc/2013/04/28/%E5%AE%A2%E8%A3%BD%E5%8C%96hexo-light-theme/</a></p>
-
+        
+          <p class="article-more-link">
+            <a href="/hexoblog/2015/05/12/Hexo-add-Comments/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/12/Hexo-add-Comments/" data-id="mty5dlewo4ledp6t" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/12/Hexo-add-Comments/" data-id="2856zxm5ydifxn4d" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/05/12/Hexo-add-Comments/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/DISQUS/">DISQUS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a></li></ul>
 
     </footer>
   </div>
@@ -222,9 +193,15 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="如果_deploy_出現下面視窗">如果 <code>deploy</code> 出現下面視窗</h1>
-<p><img src="https://googledrive.com/host/0B4fEFbbW93y5VXVpVHlfNUliMWM" alt=""></p>
-<h2 id="_config-yml_設定">_config.yml 設定</h2>
+        <p><img src="https://googledrive.com/host/0B4fEFbbW93y5eXJSektaSXd2QXc" alt="到 github.io 看到 deploy 後畫面"></p>
+<h2 id="情況：">情況：</h2>
+<ul>
+<li>成功 deploy</li>
+<li>沒有 Imgur</li>
+<li>沒有 Layout</li>
+</ul>
+<h2 id="解：">解：</h2>
+<h3 id="_config-yml_設定">_config.yml 設定</h3>
 <p><code>: 分號前面記得加空格</code></p>
 <figure class="highlight bush"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">url</span>: <span class="string">http://帳號.github.io/名稱</span></div><div class="line"><span class="attribute">root</span>: <span class="string">/名稱/</span></div></pre></td></tr></table></figure>
 
@@ -232,7 +209,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/09/Hexo-deploy-not-have-images-and-Layout/" data-id="uib3n6k8s1l89tp9" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/09/Hexo-deploy-not-have-images-and-Layout/" data-id="k2qfxz4omy9nowhq" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/05/09/Hexo-deploy-not-have-images-and-Layout/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -275,38 +252,16 @@ ga('send', 'pageview');
 </ol>
 <h1 id="實作：">實作：</h1>
 <h2 id="為你的_Blog_新增一篇文章">為你的 Blog 新增一篇文章</h2>
-<figure class="highlight bush"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"Name"</span></div></pre></td></tr></table></figure>
 
-<p>如果文章有空格需要用 <code>&quot; &quot;</code> 將名稱包起，</p>
-<p>編輯 <code>.md</code> 檔案可以使用 <code>MacDown</code> 軟體編輯，</p>
-<p>編輯期間可使用以下命令檢視呈現結果：</p>
-<figure class="highlight bush"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo server</div><div class="line"> <span class="built_in">or</span></div><div class="line">hexo <span class="keyword">s</span></div><div class="line"></div><div class="line">查看：localhos<span class="variable">t:4000</span></div></pre></td></tr></table></figure>
-
-<h2 id="push_in_GitHub">push in GitHub</h2>
-<ol>
-<li>申請一個GitHub帳號</li>
-<li>new repository  <code>ex: Blog</code></li>
-</ol>
-<h2 id="編輯__config-yml_file">編輯 _config.yml file</h2>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="class"><span class="keyword">type</span>: <span class="title">github</span></span></div><div class="line">  repository: https:<span class="comment">//github.com/帳號/名稱.git</span></div><div class="line">  branch: gh-pages</div></pre></td></tr></table></figure>
-
-<p>其實 repository: <code>HTTPS clone URL</code> !!</p>
-<h2 id="產生靜態檔">產生靜態檔</h2>
-<figure class="highlight bush"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">generate</span></div><div class="line"> <span class="keyword">or</span> </div><div class="line">hexo g</div></pre></td></tr></table></figure>
-
-<h2 id="提交至GitHub">提交至GitHub</h2>
-<figure class="highlight bush"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div><div class="line"> <span class="built_in">or</span> </div><div class="line">hexo <span class="keyword">d</span></div></pre></td></tr></table></figure>
-
-<h3 id="最後commend_line_要求">最後commend line 要求</h3>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="label">Username:</span></div><div class="line"><span class="label">Password:</span></div></pre></td></tr></table></figure>
-
-<h1 id="現在快到GitHub_Page_看看吧!!">現在快到GitHub Page 看看吧!!</h1>
-<p>帳號.github.io/名稱</p>
-
+        
+          <p class="article-more-link">
+            <a href="/hexoblog/2015/05/08/Hexo-deploy-Github/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/08/Hexo-deploy-Github/" data-id="ta3wvuzcqmamdrom" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/08/Hexo-deploy-Github/" data-id="5hc7ribdirvolbaa" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/05/08/Hexo-deploy-Github/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -350,79 +305,16 @@ ga('send', 'pageview');
 <li>可建立於 GitHub</li>
 <li>使用 Node.js 建立</li>
 </ul>
-<p>根據以上多種好處．因此建立 <strong>Hexo Blog</strong> 成為我敗下 MBPR 後第一個想要玩的技術，直接進入主題。</p>
-<h2 id="環境介紹">環境介紹</h2>
-<table>
-<thead>
-<tr>
-<th>系統</th>
-<th>版號</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MBPR</td>
-<td>2015</td>
-</tr>
-<tr>
-<td>OSX</td>
-<td>10.10.2</td>
-</tr>
-<tr>
-<td>Hexo</td>
-<td>2.8.3</td>
-</tr>
-<tr>
-<td>node.js</td>
-<td>v0.12.2</td>
-</tr>
-</tbody>
-</table>
-<h2 id="安裝hexo2-8-3版本">安裝hexo2.8.3版本</h2>
-<p>如果安裝過程出現<strong>權限錯誤</strong>，須在命令前加上<code>sudo</code></p>
-<h3 id="解除安裝hexo">解除安裝hexo</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm uninstall hexo</div></pre></td></tr></table></figure>
 
-<h3 id="安裝2-8-3版本">安裝2.8.3版本</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo@v2.<span class="number">8.3</span> -g`</div></pre></td></tr></table></figure>
-
-<h3 id="建置hexo存放資料夾">建置hexo存放資料夾</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir [filename]</div><div class="line"><span class="built_in">cd</span> [filename]</div></pre></td></tr></table></figure>
-
-<h3 id="初始化">初始化</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo init</div><div class="line">npm install</div></pre></td></tr></table></figure>
-
-<h3 id="如果無法安裝請嘗試以下命令">如果無法安裝請嘗試以下命令</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g -unsafe-perm hexo</div></pre></td></tr></table></figure>
-
-<h2 id="hexo_2-8-3_plugin">hexo 2.8.3 plugin</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> npm install hexo-renderer-marked@<span class="number">0.1</span> --save</div><div class="line"><span class="built_in">sudo</span> npm install hexo-renderer-stylus@<span class="number">0.1</span> --save</div></pre></td></tr></table></figure>
-
-<h2 id="檢查是否完成安裝">檢查是否完成安裝</h2>
-<ol>
-<li>在 <code>node_modules</code> 資料夾下面有與 plugin 同名資料夾。</li>
-<li><code>package.json</code> 中有以下資料 :</li>
-</ol>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">    "<span class="attribute">hexo-renderer-marked</span>": <span class="value"><span class="string">"0.1"</span></span>,</div><div class="line">    "<span class="attribute">hexo-renderer-stylus</span>": <span class="value"><span class="string">"0.1"</span></span></div><div class="line">}</div></pre></td></tr></table></figure>
-
-<h3 id="在主機上啟動_Server">在主機上啟動 Server</h3>
-<figure class="highlight bush"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">server</span></div></pre></td></tr></table></figure>
-
-<h3 id="現在開啟瀏覽器在網址列輸入以下就可以看到預設的_Hello_Page_囉！！">現在開啟瀏覽器在網址列輸入以下就可以看到預設的 Hello Page 囉！！</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">localhost:<span class="number">4000</span></div></pre></td></tr></table></figure>
-
-<hr>
-<h4 id="Reference:">Reference:</h4>
-<ul>
-<li><a href="http://hexo.io/zh-tw/docs/" target="_blank" rel="external">http://hexo.io/zh-tw/docs/</a></li>
-<li><a href="https://github.com/hexojs/hexo/issues/1094" target="_blank" rel="external">https://github.com/hexojs/hexo/issues/1094</a></li>
-<li><a href="http://pagent.github.io/2015/03/14/hexo-283-install/" target="_blank" rel="external">http://pagent.github.io/2015/03/14/hexo-283-install/</a></li>
-</ul>
-
+        
+          <p class="article-more-link">
+            <a href="/hexoblog/2015/05/08/Hexo-Install/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/08/Hexo-Install/" data-id="i4t4bautgi8s3v6c" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/08/Hexo-Install/" data-id="i4p3fcvy08b5bgqw" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/05/08/Hexo-Install/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -447,7 +339,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Mac-OSX/">Mac OSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Scrum/">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/workshop/">workshop</a><span class="tag-list-count">3</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/DISQUS/">DISQUS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Mac-OSX/">Mac OSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Scrum/">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Sublime-Text-3/">Sublime Text 3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/workshop/">workshop</a><span class="tag-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -456,7 +348,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/hexoblog/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/hexoblog/tags/Mac-OSX/" style="font-size: 10.00px;">Mac OSX</a><a href="/hexoblog/tags/Scrum/" style="font-size: 10.00px;">Scrum</a><a href="/hexoblog/tags/workshop/" style="font-size: 15.00px;">workshop</a>
+      <a href="/hexoblog/tags/Bootstrap/" style="font-size: 10.00px;">Bootstrap</a><a href="/hexoblog/tags/DISQUS/" style="font-size: 10.00px;">DISQUS</a><a href="/hexoblog/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/hexoblog/tags/Mac-OSX/" style="font-size: 10.00px;">Mac OSX</a><a href="/hexoblog/tags/Scrum/" style="font-size: 10.00px;">Scrum</a><a href="/hexoblog/tags/Sublime-Text-3/" style="font-size: 10.00px;">Sublime Text 3</a><a href="/hexoblog/tags/workshop/" style="font-size: 15.00px;">workshop</a>
     </div>
   </div>
 
@@ -485,15 +377,15 @@ ga('send', 'pageview');
           </li>
         
           <li>
-            <a href="/hexoblog/2015/05/13/Bootstrap-美麗網頁開發術/">Bootstrap 美麗網頁開發術</a>
+            <a href="/hexoblog/2015/05/13/Bootstrap-美麗網頁開發術/">Bootstrap 美麗網頁開發術 中山大學 workshop</a>
           </li>
         
           <li>
-            <a href="/hexoblog/2015/05/12/Hexo-add-Comments/">Hexo add Comments 新增留言板</a>
+            <a href="/hexoblog/2015/05/12/Hexo-add-Comments/">Hexo add DISQUS Comments 新增留言板</a>
           </li>
         
           <li>
-            <a href="/hexoblog/2015/05/09/Scrum-workshop/">Scrum workshop</a>
+            <a href="/hexoblog/2015/05/09/Agile-Scrum-workshop-台南/">台南 Agile / Scrum workshop</a>
           </li>
         
       </ul>

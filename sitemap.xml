@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hungjie19.github.io/hexoblog/2015/05/16/Hexo-sitemap-error-TypeError-Cannot-read-property-sitemap-of-undefined/</loc>
+    <lastmod>2015-05-16T04:58:16.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://hungjie19.github.io/hexoblog/2015/05/09/Hexo-deploy-not-have-images-and-Layout/</loc>
     <lastmod>2015-05-15T17:13:14.000Z</lastmod>
   </url>

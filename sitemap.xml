@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hungjie19.github.io/hexoblog/2015/05/08/Hexo-deploy-Github/</loc>
+    <lastmod>2015-05-18T12:56:54.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://hungjie19.github.io/hexoblog/2015/05/18/modernweb-2015-%E5%9C%B0%E4%B8%8B%E5%85%B1%E7%AD%86%E7%AD%86%E8%A8%98/</loc>
-    <lastmod>2015-05-18T04:57:04.000Z</lastmod>
+    <lastmod>2015-05-18T12:54:13.000Z</lastmod>
   </url>
   
   <url>
@@ -29,11 +34,6 @@
   <url>
     <loc>http://hungjie19.github.io/hexoblog/2015/05/14/Hexo-livereload/</loc>
     <lastmod>2015-05-15T17:02:42.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://hungjie19.github.io/hexoblog/2015/05/08/Hexo-deploy-Github/</loc>
-    <lastmod>2015-05-15T16:59:25.000Z</lastmod>
   </url>
   
   <url>

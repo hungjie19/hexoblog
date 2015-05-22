@@ -6,55 +6,19 @@
   
   <title>coServ workshop #05 淺談Sass + RWD | hungjie&#39;s note</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、coServ JASS
-講者投影片 YyuchenY
-
-Just Awesome Style Sheet 
-與 Sass 類似，也可以寫 Sass
-變數、巢狀迴圈、Mixins(混用/函式)、擴充(繼承)
-不需另外學一套語法
-直接以 JavaScript 實作
-
-
-
-Mixins(混用/函式):
-123456789function borderRadius(radius)  {		//rad">
+  <meta name="description">
 <meta property="og:type" content="article">
 <meta property="og:title" content="coServ workshop #05 淺談Sass + RWD">
 <meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/2015/05/21/coServ-workshop-05-淺談Sass-RWD/">
 <meta property="og:site_name" content="hungjie's note">
-<meta property="og:description" content="1、coServ JASS
-講者投影片 YyuchenY
-
-Just Awesome Style Sheet 
-與 Sass 類似，也可以寫 Sass
-變數、巢狀迴圈、Mixins(混用/函式)、擴充(繼承)
-不需另外學一套語法
-直接以 JavaScript 實作
-
-
-
-Mixins(混用/函式):
-123456789function borderRadius(radius)  {		//rad">
+<meta property="og:description">
 <meta property="og:image" content="https://googledrive.com/host/0B4fEFbbW93y5XzJtbHZJX09qNGs">
 <meta property="og:image" content="https://googledrive.com/host/0B4fEFbbW93y5Y0tsMm1HV2JjSlU">
-<meta property="og:image" content="https://googledrive.com/host/0B4fEFbbW93y5cDVOY0pGRHN3YXM">
+<meta property="og:image" content="https://googledrive.com/host/0B4fEFbbW93y5QmJaenh1WXFiNms">
 <meta property="og:image" content="https://googledrive.com/host/0B4fEFbbW93y5dDNSYU1IWk9sQ1E">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="coServ workshop #05 淺談Sass + RWD">
-<meta name="twitter:description" content="1、coServ JASS
-講者投影片 YyuchenY
-
-Just Awesome Style Sheet 
-與 Sass 類似，也可以寫 Sass
-變數、巢狀迴圈、Mixins(混用/函式)、擴充(繼承)
-不需另外學一套語法
-直接以 JavaScript 實作
-
-
-
-Mixins(混用/函式):
-123456789function borderRadius(radius)  {		//rad">
+<meta name="twitter:description">
 
   
     <link rel="alternative" href="/atom.xml" title="hungjie&#39;s note" type="application/atom+xml">
@@ -138,6 +102,7 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="https://googledrive.com/host/0B4fEFbbW93y5XzJtbHZJX09qNGs" alt="coServ workshop #05"></p>
+<a id="more"></a>
 <h1 id="1、coServ_JASS">1、coServ JASS</h1>
 <p><a href="http://www.slideshare.net/YyuchenY/jass-in-coserv-48462059" target="_blank" rel="external">講者投影片 YyuchenY</a></p>
 <ul>
@@ -177,7 +142,7 @@ ga('send', 'pageview');
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ctrl.startup = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">	<span class="keyword">var</span> bi = <span class="string">'&lt;%=JSON.stringify(bi)%&gt;'</span></div><div class="line">	<span class="keyword">var</span> bi_json = <span class="built_in">JSON</span>.parse(bi);</div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(bi_json);</div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'bi.client.category = '</span> + bi_json.client.category);</div><div class="line">	</div><div class="line">}</div></pre></td></tr></table></figure>
 
 <p>結果：</p>
-<p><img src="https://googledrive.com/host/0B4fEFbbW93y5cDVOY0pGRHN3YXM" alt="Chrome Console"></p>
+<p><img src="https://googledrive.com/host/0B4fEFbbW93y5QmJaenh1WXFiNms" alt="Chrome Console"></p>
 <h3 id="3、在_HTML_頁面判斷">3、在 HTML 頁面判斷</h3>
 <p>使用 Node.js 語法判斷 <code>bi.client.category</code> 來顯示不同文字。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">h2</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></div><div class="line"></div><div class="line"><span class="vbscript">&lt;% <span class="keyword">if</span> (bi.client.category === <span class="comment">'mobile') { %&gt;</span></span></div><div class="line">	<span class="tag">&lt;<span class="title">h2</span> <span class="attribute">class</span>=<span class="value">"btn_Mobile"</span>&gt;</span>This is mobile<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;% } <span class="keyword">else</span> <span class="keyword">if</span> (bi.client.category === <span class="comment">'tablet') { %&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="title">h2</span> <span class="attribute">class</span>=<span class="value">"btn_Tablet"</span>&gt;</span>This is tablet<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;% } <span class="keyword">else</span> { %&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">h2</span> <span class="attribute">class</span>=<span class="value">"Botton"</span>&gt;</span>This is desktop<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;% } %&gt;</span></div></pre></td></tr></table></figure>

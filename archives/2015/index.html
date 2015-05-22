@@ -77,6 +77,93 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-coServ-workshop-05-淺談Sass-RWD" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/hexoblog/2015/05/21/coServ-workshop-05-淺談Sass-RWD/" class="article-date">
+  <time datetime="2015-05-21T11:06:46.000Z" itemprop="datePublished">5月 21 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hexoblog/2015/05/21/coServ-workshop-05-淺談Sass-RWD/">coServ workshop #05 淺談Sass + RWD</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://googledrive.com/host/0B4fEFbbW93y5XzJtbHZJX09qNGs" alt="coServ workshop #05"></p>
+<h1 id="1、coServ_JASS">1、coServ JASS</h1>
+<p><a href="http://www.slideshare.net/YyuchenY/jass-in-coserv-48462059" target="_blank" rel="external">講者投影片 YyuchenY</a></p>
+<ul>
+<li>Just Awesome Style Sheet <ul>
+<li>與 Sass 類似，也可以寫 Sass</li>
+<li>變數、巢狀迴圈、Mixins(混用/函式)、擴充(繼承)</li>
+<li>不需另外學一套語法</li>
+<li>直接以 JavaScript 實作</li>
+</ul>
+</li>
+</ul>
+<h4 id="Mixins(混用/函式):">Mixins(混用/函式):</h4>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function borderRadius(radius)  {</div><div class="line">		//radius = parseInt(radius)*0.2+'px'</div><div class="line">		return  {</div><div class="line">			'-webkit-border-radius': radius,</div><div class="line">			'-moz-border-radius': radius,</div><div class="line">			'-ms-border-radius': radius,</div><div class="line">			'border-radius': radius</div><div class="line">		};</div><div class="line">	};</div></pre></td></tr></table></figure>
+
+<p><img src="https://googledrive.com/host/0B4fEFbbW93y5Y0tsMm1HV2JjSlU" alt="coServ workshop #05"></p>
+<p>目前 css 程式碼 3000 多行，有連結顏色的部分多達近90個，今天客戶忽然說要將主要顏色改為某特定色.. 難道只 能 一 個 一 個 改?!</p>
+<p>如果是利用 JASS / SASS 只要修改<code>變數值</code>就可以了！</p>
+<ul>
+<li>WorkTime<ul>
+<li>利用 JASS 擴充特性做出兩顆按鈕載入不同樣式</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;!--函式--&gt;</div><div class="line">&lt;%</div><div class="line">	var btn = {</div><div class="line">		width: '300px',</div><div class="line">		padding: '5px 10px',</div><div class="line">		background: '#ff0000',</div><div class="line">		'text-align': 'center',</div><div class="line">		color:'#fff',</div><div class="line">		cursor: 'pointer',</div><div class="line">		margin: '5px 0px',</div><div class="line">		display: 'block'</div><div class="line">	},</div><div class="line">	mobile = {</div><div class="line">		background: '#00ff00'</div><div class="line">	};</div><div class="line">	tablet = {</div><div class="line">		background: '#0000ff'</div><div class="line">	};</div><div class="line">%&gt;</div><div class="line"></div><div class="line">.Botton{</div><div class="line">	&lt;%=jass.p(btn)%&gt;;</div><div class="line">}</div><div class="line"></div><div class="line">&lt;!--擴充--&gt;</div><div class="line">.btn_Mobile{</div><div class="line">	&lt;%=jass.p(btn)%&gt;;</div><div class="line">	&lt;%=jass.p(mobile)%&gt;;</div><div class="line">}</div><div class="line">.btn_Tablet{</div><div class="line">	&lt;%=jass.p(btn)%&gt;;</div><div class="line">	&lt;%=jass.p(tablet)%&gt;;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="2、coServ_RWD">2、coServ RWD</h1>
+<p><a href="http://www.slideshare.net/sh932111/co-serv-rwd" target="_blank" rel="external">講者投影片 Yoga</a></p>
+<h2 id="目前主流作法">目前主流作法</h2>
+<figure class="highlight css3"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="at_rule">@<span class="keyword">media</span> only screen <span class="function">and</span>(max-width:<span class="number">768px</span>)</span>{</div><div class="line">	<span class="comment">/* 螢幕寬度768載入 */</span></div><div class="line">}</div><div class="line"><span class="at_rule">@<span class="keyword">media</span> only screen <span class="function">and</span>(max-width:<span class="number">600px</span>)</span>{</div><div class="line">	<span class="comment">/* 螢幕寬度600載入 */</span></div><div class="line">}</div><div class="line"><span class="at_rule">@<span class="keyword">media</span> only screen <span class="function">and</span>(max-width:<span class="number">480px</span>)</span>{</div><div class="line">	<span class="comment">/* 螢幕寬度480載入 */</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h2 id="coServ_作法簡介3種：">coServ 作法簡介3種：</h2>
+<h3 id="1、在_www/sites-json_中設定樣板與相對應資料夾_server_將你幫你自動載入是性化的樣板。">1、在 <code>www/sites.json</code> 中設定樣板與相對應資料夾 server 將你幫你自動載入是性化的樣板。</h3>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">"theme": {</div><div class="line">            "desktop": "desktop_theme",</div><div class="line">            "tablet": "table_theme",</div><div class="line">            "mobile": "mobile_theme"</div><div class="line">         }</div></pre></td></tr></table></figure>
+
+<h3 id="2、在頁面資料夾加入_JavaScript_檔案內容如下：">2、在頁面資料夾加入 JavaScript 檔案內容如下：</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ctrl.startup = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">	<span class="keyword">var</span> bi = <span class="string">'&lt;%=JSON.stringify(bi)%&gt;'</span></div><div class="line">	<span class="keyword">var</span> bi_json = <span class="built_in">JSON</span>.parse(bi);</div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(bi_json);</div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'bi.client.category = '</span> + bi_json.client.category);</div><div class="line">	</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>結果：</p>
+<p><img src="https://googledrive.com/host/0B4fEFbbW93y5cDVOY0pGRHN3YXM" alt="Chrome Console"></p>
+<h3 id="3、在_HTML_頁面判斷">3、在 HTML 頁面判斷</h3>
+<p>使用 Node.js 語法判斷 <code>bi.client.category</code> 來顯示不同文字。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">h2</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></div><div class="line"></div><div class="line"><span class="vbscript">&lt;% <span class="keyword">if</span> (bi.client.category === <span class="comment">'mobile') { %&gt;</span></span></div><div class="line">	<span class="tag">&lt;<span class="title">h2</span> <span class="attribute">class</span>=<span class="value">"btn_Mobile"</span>&gt;</span>This is mobile<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;% } <span class="keyword">else</span> <span class="keyword">if</span> (bi.client.category === <span class="comment">'tablet') { %&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="title">h2</span> <span class="attribute">class</span>=<span class="value">"btn_Tablet"</span>&gt;</span>This is tablet<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;% } <span class="keyword">else</span> { %&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">h2</span> <span class="attribute">class</span>=<span class="value">"Botton"</span>&gt;</span>This is desktop<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;% } %&gt;</span></div></pre></td></tr></table></figure>
+
+<p>結果圖：</p>
+<p><img src="https://googledrive.com/host/0B4fEFbbW93y5dDNSYU1IWk9sQ1E" alt="Node.js 語法判斷 ＋ JASS"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/21/coServ-workshop-05-淺談Sass-RWD/" data-id="jtsn5kzwijfjdi5y" class="article-share-link">Share</a>
+      
+        <a href="http://hungjie19.github.io/hexoblog/2015/05/21/coServ-workshop-05-淺談Sass-RWD/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/coServ/">coServ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/nodeJS/">nodeJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/workshop/">workshop</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-快速上手-Parse-前端測試神器-Selenium-雙主題初體驗" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/hexoblog/2015/05/19/快速上手-Parse-前端測試神器-Selenium-雙主題初體驗/" class="article-date">
@@ -489,51 +576,6 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-Agile-Scrum-workshop-台南" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/hexoblog/2015/05/09/Agile-Scrum-workshop-台南/" class="article-date">
-  <time datetime="2015-05-09T04:49:25.000Z" itemprop="datePublished">5月 9 2015</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/hexoblog/2015/05/09/Agile-Scrum-workshop-台南/">台南 Agile / Scrum workshop</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://googledrive.com/host/0B4fEFbbW93y5YXVtSER0Z0lzMlE" alt="2015.05.09 台南 Agile / Scrum workshop"><br>
-        
-          <p class="article-more-link">
-            <a href="/hexoblog/2015/05/09/Agile-Scrum-workshop-台南/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/09/Agile-Scrum-workshop-台南/" data-id="o2rwzzpaxulsywjn" class="article-share-link">Share</a>
-      
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/09/Agile-Scrum-workshop-台南/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Scrum/">Scrum</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/workshop/">workshop</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/hexoblog/archives/2015/page/2/">2</a><a class="extend next" rel="next" href="/hexoblog/archives/2015/page/2/">Next &raquo;</a>
@@ -549,7 +591,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/DISQUS/">DISQUS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Mac-OSX/">Mac OSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Scrum/">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Sublime-Text-3/">Sublime Text 3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Testing/">Testing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/coServ/">coServ</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/nodeJS/">nodeJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/sitemap/">sitemap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/workshop/">workshop</a><span class="tag-list-count">6</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/DISQUS/">DISQUS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Mac-OSX/">Mac OSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Scrum/">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Sublime-Text-3/">Sublime Text 3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Testing/">Testing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/coServ/">coServ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/nodeJS/">nodeJS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/sitemap/">sitemap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/workshop/">workshop</a><span class="tag-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -558,7 +600,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/hexoblog/tags/Bootstrap/" style="font-size: 12.50px;">Bootstrap</a><a href="/hexoblog/tags/DISQUS/" style="font-size: 12.50px;">DISQUS</a><a href="/hexoblog/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/hexoblog/tags/Mac-OSX/" style="font-size: 12.50px;">Mac OSX</a><a href="/hexoblog/tags/Scrum/" style="font-size: 12.50px;">Scrum</a><a href="/hexoblog/tags/Sublime-Text-3/" style="font-size: 12.50px;">Sublime Text 3</a><a href="/hexoblog/tags/Testing/" style="font-size: 12.50px;">Testing</a><a href="/hexoblog/tags/coServ/" style="font-size: 12.50px;">coServ</a><a href="/hexoblog/tags/nodeJS/" style="font-size: 12.50px;">nodeJS</a><a href="/hexoblog/tags/sitemap/" style="font-size: 15.00px;">sitemap</a><a href="/hexoblog/tags/workshop/" style="font-size: 17.50px;">workshop</a><a href="/hexoblog/tags/測試/" style="font-size: 10.00px;">測試</a>
+      <a href="/hexoblog/tags/Bootstrap/" style="font-size: 13.33px;">Bootstrap</a><a href="/hexoblog/tags/DISQUS/" style="font-size: 13.33px;">DISQUS</a><a href="/hexoblog/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/hexoblog/tags/Mac-OSX/" style="font-size: 13.33px;">Mac OSX</a><a href="/hexoblog/tags/Scrum/" style="font-size: 13.33px;">Scrum</a><a href="/hexoblog/tags/Sublime-Text-3/" style="font-size: 13.33px;">Sublime Text 3</a><a href="/hexoblog/tags/Testing/" style="font-size: 13.33px;">Testing</a><a href="/hexoblog/tags/coServ/" style="font-size: 16.67px;">coServ</a><a href="/hexoblog/tags/nodeJS/" style="font-size: 16.67px;">nodeJS</a><a href="/hexoblog/tags/sitemap/" style="font-size: 16.67px;">sitemap</a><a href="/hexoblog/tags/workshop/" style="font-size: 20.00px;">workshop</a><a href="/hexoblog/tags/測試/" style="font-size: 10.00px;">測試</a>
     </div>
   </div>
 
@@ -567,7 +609,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/05/">May 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/05/">May 2015</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -577,6 +619,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/hexoblog/2015/05/21/coServ-workshop-05-淺談Sass-RWD/">coServ workshop #05 淺談Sass + RWD</a>
+          </li>
         
           <li>
             <a href="/hexoblog/2015/05/19/快速上手-Parse-前端測試神器-Selenium-雙主題初體驗/">快速上手 Parse &amp; 前端測試神器 Selenium 雙主題初體驗</a>
@@ -592,10 +638,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/hexoblog/2015/05/17/Hexo-sitemap-提交至-Google-網站管理員-Web-Masters/">Hexo sitemap 提交至 Google 網站管理員 (Web Masters)</a>
-          </li>
-        
-          <li>
-            <a href="/hexoblog/2015/05/16/Hexo-sitemap-error-TypeError-Cannot-read-property-sitemap-of-undefined/">Hexo sitemap [error] TypeError: Cannot read property &#39;sitemap&#39; of undefined</a>
           </li>
         
       </ul>

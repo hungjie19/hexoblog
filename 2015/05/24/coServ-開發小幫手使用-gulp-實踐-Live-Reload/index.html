@@ -4,16 +4,17 @@
   <meta charset="utf-8">
   <meta name="google-site-verification" content="Ukbf9UaOVCCReyEQF3fNFAGuEq64aBc7IuvLc-WL8qw" />
   
-  <title>Tag: DISQUS | hungjie&#39;s note</title>
+  <title>coServ 開發小幫手使用 gulp 實踐 Live Reload | hungjie&#39;s note</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="hungjie's note">
-<meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/tags/DISQUS/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="coServ 開發小幫手使用 gulp 實踐 Live Reload">
+<meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/">
 <meta property="og:site_name" content="hungjie's note">
 <meta property="og:description">
+<meta property="og:image" content="https://googledrive.com/host/0B4fEFbbW93y5RVh2cjFKa1R0eU0">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hungjie's note">
+<meta name="twitter:title" content="coServ 開發小幫手使用 gulp 實踐 Live Reload">
 <meta name="twitter:description">
 
   
@@ -75,12 +76,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Hexo-add-Comments" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-coServ-開發小幫手使用-gulp-實踐-Live-Reload" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/hexoblog/2015/05/12/Hexo-add-Comments/" class="article-date">
-  <time datetime="2015-05-12T01:30:24.000Z" itemprop="datePublished">5月 12 2015</time>
+    <a href="/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/" class="article-date">
+  <time datetime="2015-05-24T07:01:54.000Z" itemprop="datePublished">5月 24 2015</time>
 </a>
     
   </div>
@@ -90,8 +89,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/hexoblog/2015/05/12/Hexo-add-Comments/">Hexo add DISQUS Comments 新增留言板</a>
+    <h1 class="article-title" itemprop="name">
+      coServ 開發小幫手使用 gulp 實踐 Live Reload
     </h1>
   
 
@@ -99,31 +98,75 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://googledrive.com/host/0B4fEFbbW93y5RFczVENiaS1oYlE" alt="新增 DISQUS 留言板"></p>
+        <p><img src="https://googledrive.com/host/0B4fEFbbW93y5RVh2cjFKa1R0eU0" alt="coServ + gulp 實踐 Live Reload"></p>
+<a id="more"></a>
+<p>本篇參考 <a href="https://www.youtube.com/watch?v=swQ5pVxDHwo" target="_blank" rel="external">youTobe by Ben Lue</a></p>
+<h3 id="開始之前">開始之前</h3>
+<ul>
+<li><a href="http://www.coservjs.org/" target="_blank" rel="external">install coServ</a></li>
+<li><a href="http://hungjie19.github.io/hexoblog/2015/03/11/coServ-install/#more" target="_blank" rel="external">也可以參考之前的coServ安裝心得</a></li>
+</ul>
+<h2 id="install_Tools">install Tools</h2>
+<h3 id="gulp">gulp</h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> gulp</span></div></pre></td></tr></table></figure>
 
-        
-          <p class="article-more-link">
-            <a href="/hexoblog/2015/05/12/Hexo-add-Comments/#more">Read More</a>
-          </p>
-        
+<h3 id="browser-sync">browser-sync</h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> npm install browser-sync</div></pre></td></tr></table></figure>
+
+
+
+<p>以上完成後在 coServ 資料夾中產生 <code>gulpfile.js</code> 內容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span>  browserSync = <span class="built_in">require</span>(<span class="string">'browser-sync'</span>),</div><div class="line">     gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line">     config = <span class="built_in">require</span>(<span class="string">'./lib/server/config.js'</span>),</div><div class="line">     coServ = <span class="built_in">require</span>(<span class="string">'./coServ'</span>);</div><div class="line"></div><div class="line"><span class="comment">// deal with the www path</span></div><div class="line"><span class="keyword">var</span>  reload = browserSync.reload,</div><div class="line">     wwwPath = config.getWWW();</div><div class="line"></div><div class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    browserSync({</div><div class="line">        proxy: <span class="string">'127.0.0.1:8080'</span></div><div class="line">    });</div><div class="line"></div><div class="line">    gulp.watch([<span class="string">'./**/*.html'</span>, <span class="string">'./**/*.css'</span>, <span class="string">'./**/*.js'</span>, <span class="string">'./**/*.inc'</span>, <span class="string">'./**/*.lang'</span>],</div><div class="line">        {cwd: wwwPath}, reload);</div><div class="line"></div><div class="line">    gulp.watch([<span class="string">'./themes/*/blocks/modules/**/*.js'</span>], {cwd: wwwPath}, <span class="function"><span class="keyword">function</span><span class="params">(e)</span> </span>{</div><div class="line">        coServ.restart();</div><div class="line">    });</div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+<p>最後原本啟動 server 命令為：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">node</span> coserv</div></pre></td></tr></table></figure>
+
+<p>現在有了 <code>gulp</code> 的幫忙直接啟動它，就會幫我們開啟網頁與監聽檔案變動，即時的幫你更新網頁修改畫面！</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp</div></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="gulp_issue_參考">gulp issue <a href="https://laracasts.com/discuss/channels/elixir/bash-gulp-command-not-found" target="_blank" rel="external">參考</a></h3>
+<p>Command Line : <code>gulp</code> 發生以下回應：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="command"><span class="keyword">command</span> <span class="title">not</span> <span class="title">found</span>: <span class="title">gulp</span></span></div></pre></td></tr></table></figure>
+
+<h3 id="將_gulp_改全域安裝的方式，以下：">將 gulp 改全域安裝的方式，以下：</h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> <span class="comment">--global gulp</span></span></div><div class="line">npm <span class="keyword">install</span></div></pre></td></tr></table></figure>
+
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/12/Hexo-add-Comments/" data-id="nstk7olei2s8d99t" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/" data-id="04uy5fshsqyuynqn" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/12/Hexo-add-Comments/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://hungjie19.github.io/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/DISQUS/">DISQUS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Live-Reload/">Live Reload</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/coServ/">coServ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/gulp/">gulp</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/hexoblog/2015/05/24/hexo-new-文章後幫你開啟-MarkDown-編輯器/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hexo new 文章後幫你開啟 MarkDown 編輯器</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-  
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -212,11 +255,13 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'hungjiehexoblog';
   
+  var disqus_url = 'http://hungjie19.github.io/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

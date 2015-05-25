@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hungjie19.github.io/hexoblog/2015/05/25/git-%E4%BD%BF%E7%94%A8source-Tree-%E6%9C%AC%E5%9C%B0%E6%95%B8%E6%93%9A%E5%BA%AB%E6%AF%94%E9%81%A0%E7%AB%AF%E6%95%B8%E6%93%9A%E5%BA%AB%E6%96%B0/</loc>
+    <lastmod>2015-05-25T15:10:21.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://hungjie19.github.io/hexoblog/2015/05/24/coServ-%E9%96%8B%E7%99%BC%E5%B0%8F%E5%B9%AB%E6%89%8B%E4%BD%BF%E7%94%A8-gulp-%E5%AF%A6%E8%B8%90-Live-Reload/</loc>
     <lastmod>2015-05-24T08:18:30.000Z</lastmod>
   </url>

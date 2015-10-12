@@ -4,26 +4,17 @@
   <meta charset="utf-8">
   <meta name="google-site-verification" content="Ukbf9UaOVCCReyEQF3fNFAGuEq64aBc7IuvLc-WL8qw" />
   
-  <title>Hexo depoly to GitHub | hungjie&#39;s notes</title>
+  <title>Archives: 2015/7 | hungjie&#39;s notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目標：
-
-新增一篇文章
-上傳到Github">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hexo depoly to GitHub">
-<meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/2015/05/08/Hexo-depoly-to-GitHub/">
+  <meta name="description" content="Junlor front-end 學習筆記簿">
+<meta property="og:type" content="website">
+<meta property="og:title" content="hungjie's notes">
+<meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/archives/2015/07/">
 <meta property="og:site_name" content="hungjie's notes">
-<meta property="og:description" content="目標：
-
-新增一篇文章
-上傳到Github">
+<meta property="og:description" content="Junlor front-end 學習筆記簿">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo depoly to GitHub">
-<meta name="twitter:description" content="目標：
-
-新增一篇文章
-上傳到Github">
+<meta name="twitter:title" content="hungjie's notes">
+<meta name="twitter:description" content="Junlor front-end 學習筆記簿">
 
   
     <link rel="alternative" href="/atom.xml" title="hungjie&#39;s notes" type="application/atom+xml">
@@ -88,10 +79,12 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Hexo-depoly-to-GitHub" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-使用-gulp-加速前端開發流程" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/hexoblog/2015/05/08/Hexo-depoly-to-GitHub/" class="article-date">
-  <time datetime="2015-05-08T14:29:57.000Z" itemprop="datePublished">5月 8 2015</time>
+    <a href="/hexoblog/2015/07/16/使用-gulp-加速前端開發流程/" class="article-date">
+  <time datetime="2015-07-16T05:20:17.000Z" itemprop="datePublished">7月 16 2015</time>
 </a>
     
   </div>
@@ -101,8 +94,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Hexo depoly to GitHub
+    <h1 itemprop="name">
+      <a class="article-title" href="/hexoblog/2015/07/16/使用-gulp-加速前端開發流程/">使用 gulp 加速前端開發流程</a>
     </h1>
   
 
@@ -110,85 +103,32 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="目標：">目標：</h1>
-<ol>
-<li>新增一篇文章</li>
-<li>上傳到Github</li>
-</ol>
-<a id="more"></a>
-<hr>
-<h1 id="實作：">實作：</h1>
-<h2 id="為你的_Blog_新增一篇文章">為你的 Blog 新增一篇文章</h2>
-<figure class="highlight bush"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"Name"</span></div></pre></td></tr></table></figure>
-
-<p>如果文章有空格需要用 <code>&quot; &quot;</code> 將名稱包起，</p>
-<p>編輯 <code>.md</code> 檔案可以使用 <code>MacDown</code> 軟體編輯，</p>
-<p>編輯期間可使用以下命令檢視呈現結果：</p>
-<figure class="highlight bush"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo server</div><div class="line"> <span class="built_in">or</span></div><div class="line">hexo <span class="keyword">s</span></div><div class="line"></div><div class="line">查看：localhos<span class="variable">t:4000</span></div></pre></td></tr></table></figure>
-
-<h2 id="push_in_GitHub">push in GitHub</h2>
-<ol>
-<li>申請一個GitHub帳號</li>
-<li>new repository  <code>ex: Blog</code></li>
-</ol>
-<h2 id="編輯__config-yml_file">編輯 _config.yml file</h2>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="class"><span class="keyword">type</span>: <span class="title">github</span></span></div><div class="line">  repository: https:<span class="comment">//github.com/帳號/名稱.git</span></div><div class="line">  branch: gh-pages</div></pre></td></tr></table></figure>
-
-<p>其實 repository: <code>HTTPS clone URL</code> !!</p>
-<h2 id="產生靜態檔">產生靜態檔</h2>
-<figure class="highlight bush"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">generate</span></div><div class="line"> <span class="keyword">or</span> </div><div class="line">hexo g</div></pre></td></tr></table></figure>
-
-<h2 id="提交至GitHub">提交至GitHub</h2>
-<figure class="highlight bush"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div><div class="line"> <span class="built_in">or</span> </div><div class="line">hexo <span class="keyword">d</span></div></pre></td></tr></table></figure>
-
-<h3 id="最後commend_line_要求">最後commend line 要求</h3>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="label">Username:</span></div><div class="line"><span class="label">Password:</span></div></pre></td></tr></table></figure>
-
-<h1 id="現在快到GitHub_Page_看看吧!!">現在快到GitHub Page 看看吧!!</h1>
-<p>帳號.github.io/名稱</p>
+        <p><img src="https://googledrive.com/host/" alt=""></p>
+<h2 id="why_gulp?：">why gulp?：</h2>
+<h2 id="環境：">環境：</h2>
+<p>mac</p>
+<h2 id="開始之前：">開始之前：</h2>
+<p>因為 <code>gulp</code> 是運作在 <code>Node.js</code> 環境下所以必須先安裝</p>
+<h2 id="Reference:">Reference:</h2>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/08/Hexo-depoly-to-GitHub/" data-id="tatbhjny50hi4srn" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/07/16/使用-gulp-加速前端開發流程/" data-id="nhye77jo0sep1fdf" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/08/Hexo-depoly-to-GitHub/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://hungjie19.github.io/hexoblog/2015/07/16/使用-gulp-加速前端開發流程/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/frond-end/">frond-end</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/gulp/">gulp</a></li></ul>
 
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/hexoblog/2015/05/09/Hexo-deploy-not-have-images-and-Layout/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Hexo deploy not have images and Layout
-        
-      </div>
-    </a>
-  
-  
-    <a href="/hexoblog/2015/05/08/Node-js-上安裝-Hexo-並在-GitHub-建立-Blog-step-by-step-教學-安裝/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Node.js 上安裝 Hexo 並在 GitHub 建立 Blog step by step 教學-安裝</div>
-    </a>
-  
-</nav>
-
-  
 </article>
 
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+  
+  
 </section>
         
           <aside id="sidebar">
@@ -277,13 +217,11 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'hungjiehexoblog';
   
-  var disqus_url = 'http://hungjie19.github.io/hexoblog/2015/05/08/Hexo-depoly-to-GitHub/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

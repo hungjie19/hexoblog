@@ -81,6 +81,56 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/" class="article-date">
+  <time datetime="2015-11-11T13:15:33.000Z" itemprop="datePublished">11月 11 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/">AngualrJS directive use isolated scope binding issue in Firefox only</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用 angularJS 開心的寫一個 directive 使用獨立 scope (isolated scope) 的時候踩到一個<code>filefox only</code>的坑，因為只有 filefox 有，在 Chrome, Safari, ie 都沒發生過實在太特別了..所以紀錄一下..OTZ..感謝: <code>raphahsu</code>。</p>
+<h2 id="直接看範例檔:">直接看範例檔:</h2>
+<p>sample Code 功能是 input ＋ remove button, 點擊 button 將會把 input 內容清空<br>相當於 <code>&lt;input type=&#39;search&#39;/&gt;</code> 的功能。</p>
+<figure class="highlight"><figcaption><span>firefoxissue.html</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">ng-app</span>=<span class="value">"myapp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>firefox directive issue<span class="tag">&lt;/<span class="title">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> app = angular.module(<span class="string">'myapp'</span>, []);</div><div class="line"></div><div class="line">    app.controller(<span class="string">'myCtrl'</span>,  <span class="function"><span class="keyword">function</span><span class="params">($scope)</span> </span>{</div><div class="line">        $scope.hello = <span class="string">"firefox"</span>;</div><div class="line">    });</div><div class="line"></div><div class="line">    app.directive(<span class="string">'firefoxissue'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">        <span class="keyword">return</span> {</div><div class="line">            restrict: <span class="string">'E'</span>,</div><div class="line">            replace: <span class="literal">true</span>, <span class="comment">// key Point !!</span></div><div class="line">            scope: {</div><div class="line">                listen: <span class="string">'='</span></div><div class="line">            },</div><div class="line">            template: <span class="string">'&lt;input type="text" ng-model="listen" placeholder="bowers?"/&gt;'</span>+</div><div class="line">                        <span class="string">'&lt;button ng-show="listen" ng-click="remove()"&gt;X&lt;/button&gt;'</span>,</div><div class="line">            link: <span class="function"><span class="keyword">function</span><span class="params">( scope )</span> </span>{</div><div class="line">                scope.remove = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">                    scope.listen = <span class="string">''</span>;</div><div class="line">                }</div><div class="line">            }</div><div class="line">        };</div><div class="line">    });</div><div class="line">    <span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"myCtrl"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">h1</span>&gt;</span>firefox driective issue Test<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="title">firefoxissue</span> <span class="attribute">listen</span>=<span class="value">"hello"</span>&gt;</span><span class="tag">&lt;/<span class="title">firefoxissue</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>主要是16行： <code>replace: true</code> 這部分不要用或者設定為 <code>false</code> 既可。<br>因此範例檔直接執行會是錯誤的狀態。</p>
+<h2 id="Reference:">Reference:</h2>
+<ul>
+<li><a href="https://github.com/angular/angular.js/issues/11627" target="_blank" rel="external">https://github.com/angular/angular.js/issues/11627</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/" data-id="d9cdockb5omb1k4w" class="article-share-link">Share</a>
+      
+        <a href="http://hungjie19.github.io/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/AngualrJS/">AngualrJS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-mopcon-2015-工作人員參與心得-議程組-Jacky" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/hexoblog/2015/11/05/mopcon-2015-工作人員參與心得-議程組-Jacky/" class="article-date">
@@ -140,7 +190,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/DISQUS/">DISQUS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Interview/">Interview</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/JSON/">JSON</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Live-Reload/">Live Reload</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Mac-OSX/">Mac OSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Scrum/">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Sublime-Text-3/">Sublime Text 3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Testing/">Testing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/coServ/">coServ</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/frond-end/">frond-end</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/gulp/">gulp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/mopcom/">mopcom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/nodeJS/">nodeJS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/sitemap/">sitemap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/workshop/">workshop</a><span class="tag-list-count">9</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/AngualrJS/">AngualrJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/DISQUS/">DISQUS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Interview/">Interview</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/JSON/">JSON</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Live-Reload/">Live Reload</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Mac-OSX/">Mac OSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Scrum/">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Sublime-Text-3/">Sublime Text 3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Testing/">Testing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/coServ/">coServ</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/frond-end/">frond-end</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/gulp/">gulp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/mopcom/">mopcom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/nodeJS/">nodeJS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/sitemap/">sitemap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/workshop/">workshop</a><span class="tag-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -149,7 +199,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/hexoblog/tags/Bootstrap/" style="font-size: 10.00px;">Bootstrap</a><a href="/hexoblog/tags/DISQUS/" style="font-size: 10.00px;">DISQUS</a><a href="/hexoblog/tags/Hexo/" style="font-size: 18.00px;">Hexo</a><a href="/hexoblog/tags/Interview/" style="font-size: 10.00px;">Interview</a><a href="/hexoblog/tags/JSON/" style="font-size: 14.00px;">JSON</a><a href="/hexoblog/tags/Live-Reload/" style="font-size: 12.00px;">Live Reload</a><a href="/hexoblog/tags/Mac-OSX/" style="font-size: 10.00px;">Mac OSX</a><a href="/hexoblog/tags/Scrum/" style="font-size: 10.00px;">Scrum</a><a href="/hexoblog/tags/Sublime-Text-3/" style="font-size: 10.00px;">Sublime Text 3</a><a href="/hexoblog/tags/Testing/" style="font-size: 10.00px;">Testing</a><a href="/hexoblog/tags/coServ/" style="font-size: 14.00px;">coServ</a><a href="/hexoblog/tags/frond-end/" style="font-size: 10.00px;">frond-end</a><a href="/hexoblog/tags/gulp/" style="font-size: 10.00px;">gulp</a><a href="/hexoblog/tags/javascript/" style="font-size: 10.00px;">javascript</a><a href="/hexoblog/tags/mopcom/" style="font-size: 10.00px;">mopcom</a><a href="/hexoblog/tags/nodeJS/" style="font-size: 16.00px;">nodeJS</a><a href="/hexoblog/tags/sitemap/" style="font-size: 12.00px;">sitemap</a><a href="/hexoblog/tags/workshop/" style="font-size: 20.00px;">workshop</a>
+      <a href="/hexoblog/tags/AngualrJS/" style="font-size: 10.00px;">AngualrJS</a><a href="/hexoblog/tags/Bootstrap/" style="font-size: 10.00px;">Bootstrap</a><a href="/hexoblog/tags/DISQUS/" style="font-size: 10.00px;">DISQUS</a><a href="/hexoblog/tags/Hexo/" style="font-size: 18.00px;">Hexo</a><a href="/hexoblog/tags/Interview/" style="font-size: 10.00px;">Interview</a><a href="/hexoblog/tags/JSON/" style="font-size: 14.00px;">JSON</a><a href="/hexoblog/tags/Live-Reload/" style="font-size: 12.00px;">Live Reload</a><a href="/hexoblog/tags/Mac-OSX/" style="font-size: 10.00px;">Mac OSX</a><a href="/hexoblog/tags/Scrum/" style="font-size: 10.00px;">Scrum</a><a href="/hexoblog/tags/Sublime-Text-3/" style="font-size: 10.00px;">Sublime Text 3</a><a href="/hexoblog/tags/Testing/" style="font-size: 10.00px;">Testing</a><a href="/hexoblog/tags/coServ/" style="font-size: 14.00px;">coServ</a><a href="/hexoblog/tags/frond-end/" style="font-size: 10.00px;">frond-end</a><a href="/hexoblog/tags/gulp/" style="font-size: 10.00px;">gulp</a><a href="/hexoblog/tags/javascript/" style="font-size: 10.00px;">javascript</a><a href="/hexoblog/tags/mopcom/" style="font-size: 10.00px;">mopcom</a><a href="/hexoblog/tags/nodeJS/" style="font-size: 16.00px;">nodeJS</a><a href="/hexoblog/tags/sitemap/" style="font-size: 12.00px;">sitemap</a><a href="/hexoblog/tags/workshop/" style="font-size: 20.00px;">workshop</a>
     </div>
   </div>
 
@@ -158,7 +208,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/05/">May 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/11/">November 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/05/">May 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -168,6 +218,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/">AngualrJS directive use isolated scope binding issue in Firefox only</a>
+          </li>
         
           <li>
             <a href="/hexoblog/2015/11/05/mopcon-2015-工作人員參與心得-議程組-Jacky/">mopcon 2015 工作人員參與心得 議程組 - Jacky</a>
@@ -183,10 +237,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/hexoblog/2015/10/12/nodeJS-get-JSON-在-nodeJS-server-直接取得-Http-JSON/">nodeJS get JSON, 在 nodeJS server 直接取得 Http JSON</a>
-          </li>
-        
-          <li>
-            <a href="/hexoblog/2015/06/21/高雄前端社群-18-前端面試大補帖不求人！/">高雄前端社群#18 - 前端面試大補帖不求人！</a>
           </li>
         
       </ul>

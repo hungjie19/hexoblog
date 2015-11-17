@@ -4,17 +4,23 @@
   <meta charset="utf-8">
   <meta name="google-site-verification" content="Ukbf9UaOVCCReyEQF3fNFAGuEq64aBc7IuvLc-WL8qw" />
   
-  <title>Tag: gulp | hungjie&#39;s notes</title>
+  <title>AngualrJS directive use isolated scope binding issue in Firefox only | hungjie&#39;s notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Junlor front-end 學習筆記簿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="hungjie's notes">
-<meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/tags/gulp/">
+  <meta name="description" content="使用 angularJS 開心的寫一個 directive 使用獨立 scope (isolated scope) 的時候踩到一個filefox only的坑，因為只有 filefox 有，在 Chrome, Safari, ie 都沒發生過實在太特別了..所以紀錄一下..OTZ..感謝: raphahsu。
+直接看範例檔:
+sample Code 功能是 input ＋ remove butto">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AngualrJS directive use isolated scope binding issue in Firefox only">
+<meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/">
 <meta property="og:site_name" content="hungjie's notes">
-<meta property="og:description" content="Junlor front-end 學習筆記簿">
+<meta property="og:description" content="使用 angularJS 開心的寫一個 directive 使用獨立 scope (isolated scope) 的時候踩到一個filefox only的坑，因為只有 filefox 有，在 Chrome, Safari, ie 都沒發生過實在太特別了..所以紀錄一下..OTZ..感謝: raphahsu。
+直接看範例檔:
+sample Code 功能是 input ＋ remove butto">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hungjie's notes">
-<meta name="twitter:description" content="Junlor front-end 學習筆記簿">
+<meta name="twitter:title" content="AngualrJS directive use isolated scope binding issue in Firefox only">
+<meta name="twitter:description" content="使用 angularJS 開心的寫一個 directive 使用獨立 scope (isolated scope) 的時候踩到一個filefox only的坑，因為只有 filefox 有，在 Chrome, Safari, ie 都沒發生過實在太特別了..所以紀錄一下..OTZ..感謝: raphahsu。
+直接看範例檔:
+sample Code 功能是 input ＋ remove butto">
 
   
     <link rel="alternative" href="/atom.xml" title="hungjie&#39;s notes" type="application/atom+xml">
@@ -79,12 +85,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-coServ-開發小幫手使用-gulp-實踐-Live-Reload" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/" class="article-date">
-  <time datetime="2015-05-24T07:01:54.000Z" itemprop="datePublished">5月 24 2015</time>
+    <a href="/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/" class="article-date">
+  <time datetime="2015-11-11T13:15:33.000Z" itemprop="datePublished">11月 11 2015</time>
 </a>
     
   </div>
@@ -94,8 +98,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/">coServ 開發小幫手使用 gulp 實踐 Live Reload</a>
+    <h1 class="article-title" itemprop="name">
+      AngualrJS directive use isolated scope binding issue in Firefox only
     </h1>
   
 
@@ -103,31 +107,50 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://googledrive.com/host/0B4fEFbbW93y5RVh2cjFKa1R0eU0" alt="coServ + gulp 實踐 Live Reload"></p>
+        <p>使用 angularJS 開心的寫一個 directive 使用獨立 scope (isolated scope) 的時候踩到一個<code>filefox only</code>的坑，因為只有 filefox 有，在 Chrome, Safari, ie 都沒發生過實在太特別了..所以紀錄一下..OTZ..感謝: <code>raphahsu</code>。</p>
+<h2 id="直接看範例檔:">直接看範例檔:</h2>
+<p>sample Code 功能是 input ＋ remove button, 點擊 button 將會把 input 內容清空<br>相當於 <code>&lt;input type=&#39;search&#39;/&gt;</code> 的功能。</p>
+<figure class="highlight"><figcaption><span>firefoxissue.html</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">ng-app</span>=<span class="value">"myapp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>firefox directive issue<span class="tag">&lt;/<span class="title">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> app = angular.module(<span class="string">'myapp'</span>, []);</div><div class="line"></div><div class="line">    app.controller(<span class="string">'myCtrl'</span>,  <span class="function"><span class="keyword">function</span><span class="params">($scope)</span> </span>{</div><div class="line">        $scope.hello = <span class="string">"firefox"</span>;</div><div class="line">    });</div><div class="line"></div><div class="line">    app.directive(<span class="string">'firefoxissue'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">        <span class="keyword">return</span> {</div><div class="line">            restrict: <span class="string">'E'</span>,</div><div class="line">            replace: <span class="literal">true</span>, <span class="comment">// key Point !!</span></div><div class="line">            scope: {</div><div class="line">                listen: <span class="string">'='</span></div><div class="line">            },</div><div class="line">            template: <span class="string">'&lt;input type="text" ng-model="listen" placeholder="bowers?"/&gt;'</span>+</div><div class="line">                        <span class="string">'&lt;button ng-show="listen" ng-click="remove()"&gt;X&lt;/button&gt;'</span>,</div><div class="line">            link: <span class="function"><span class="keyword">function</span><span class="params">( scope )</span> </span>{</div><div class="line">                scope.remove = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">                    scope.listen = <span class="string">''</span>;</div><div class="line">                }</div><div class="line">            }</div><div class="line">        };</div><div class="line">    });</div><div class="line">    <span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"myCtrl"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">h1</span>&gt;</span>firefox driective issue Test<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="title">firefoxissue</span> <span class="attribute">listen</span>=<span class="value">"hello"</span>&gt;</span><span class="tag">&lt;/<span class="title">firefoxissue</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></div></pre></td></tr></table></figure>
 
-        
-          <p class="article-more-link">
-            <a href="/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/#more">Read More</a>
-          </p>
-        
+<p>主要是16行： <code>replace: true</code> 這部分不要用或者設定為 <code>false</code> 既可。<br>因此範例檔直接執行會是錯誤的狀態。</p>
+<h2 id="Reference:">Reference:</h2>
+<ul>
+<li><a href="https://github.com/angular/angular.js/issues/11627" target="_blank" rel="external">https://github.com/angular/angular.js/issues/11627</a></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/" data-id="ap55hxweq99cjsib" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/" data-id="d9cdockb5omb1k4w" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://hungjie19.github.io/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Live-Reload/">Live Reload</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/coServ/">coServ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/gulp/">gulp</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/AngualrJS/">AngualrJS</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/hexoblog/2015/11/05/mopcon-2015-工作人員參與心得-議程組-Jacky/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">mopcon 2015 工作人員參與心得 議程組 - Jacky</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-  
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -216,11 +239,13 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'hungjiehexoblog';
   
+  var disqus_url = 'http://hungjie19.github.io/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

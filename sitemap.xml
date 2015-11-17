@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hungjie19.github.io/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/</loc>
+    <lastmod>2015-11-17T11:38:13.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://hungjie19.github.io/hexoblog/2015/11/05/mopcon-2015-%E5%B7%A5%E4%BD%9C%E4%BA%BA%E5%93%A1%E5%8F%83%E8%88%87%E5%BF%83%E5%BE%97-%E8%AD%B0%E7%A8%8B%E7%B5%84-Jacky/</loc>
     <lastmod>2015-11-04T18:06:23.000Z</lastmod>
   </url>

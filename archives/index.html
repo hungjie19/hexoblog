@@ -104,44 +104,12 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p>今天下午踩到一個 angularJS 神奇坑洞，事情是這樣滴當 $scope 內容為 string <code>YES</code> 的時候 ng-show 遽然不會動作 O_o”</p>
-<p>sample Code:</p>
-<h4 id="in_controller">in controller</h4>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$scope.test = <span class="string">'yes'</span>;</div></pre></td></tr></table></figure>
 
-<h4 id="in_HTML">in HTML</h4>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">ng-show</span>=<span class="value">"test"</span>&gt;</span>test!<span class="tag">&lt;/<span class="title">span</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<p>ng-show 裡面綁定 $scope.test 並存在 value: ‘yes’, 為什麼 <span> 卻不會 show 哩？</span></p>
-<hr>
-<p>以下是一連串的實驗與驗證： </p>
-<h3 id="DEMO:_(可以切換右邊_Code_觀看_source_Code)">DEMO: (可以切換右邊 <code>Code</code> 觀看 source Code)</h3>
-<iframe class="plunk-preview" src="http://embed.plnkr.co/7S0UIpCvPGZ07SrspcY5/" width="100%" height="800px" frameborder="0"></iframe>
-
-<h4 id="範例1-_$scope-test2_=_‘NOO’">範例1. $scope.test2 = ‘NOO’</h4>
-<p>ng-show 可以正常判斷 test2 存在 value 因此顯示 <span></span></p>
-<h4 id="範例2-_$scope-test_=_‘NO’">範例2. $scope.test = ‘NO’</h4>
-<p>ng-show 無法判斷 test 轉型 boolean </p>
-<h4 id="範例3-_測試_$scope-test_?_‘true’_:_‘false’;">範例3. 測試 $scope.test ? ‘true’ : ‘false’;</h4>
-<p>透過簡單的 if else 測試 test 是否有 value?<br>結果是<code>true</code> O_o”</p>
-<h4 id="範例4-_在_ng-show_當中加入判斷">範例4. 在 ng-show 當中加入判斷</h4>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng-<span class="literal">show</span> = <span class="string">"test ? true : false"</span></div></pre></td></tr></table></figure>
-
-<p>結果：可以正常顯示</p>
-<p>因此向許多前輩請教後發現 AngularJS 將:</p>
-<ul>
-<li><code>Yes</code> 視為 true</li>
-<li><code>No</code> 視為 false</li>
-</ul>
-<p>O_o”</p>
-<p>在下面的 more test 範例將測試 <code>ng-show</code> 與 <code>ng-hide</code>在  $scope 變數內容為 string: yes, no, on, off 的小實驗。<br>實驗後 on, off 結果還是怪怪的，可能還要看下文章..</p>
-<h2 id="小結：">小結：</h2>
-<ul>
-<li>踩雷真的好好玩 O_o” </li>
-<li>盡量避開使用語意化的變數內容: yes, no, on, off (已知)</li>
-</ul>
-<h1 id="Reference:">Reference:</h1>
-<p>印象在學習 angularJS 初期有看過類似文章，可是一時找不到..日後補上哩 ^_^</p>
-
+        
+          <p class="article-more-link">
+            <a href="/hexoblog/2015/12/02/AngularJS-ng-show-ng-hide-and-scope-string-yes-no-on-off/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">

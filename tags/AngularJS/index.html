@@ -4,18 +4,17 @@
   <meta charset="utf-8">
   <meta name="google-site-verification" content="Ukbf9UaOVCCReyEQF3fNFAGuEq64aBc7IuvLc-WL8qw" />
   
-  <title>Node.js 上安裝 Hexo 並在 GitHub 建立 Blog step by step 教學-安裝 | hungjie&#39;s notes</title>
+  <title>Tag: AngularJS | hungjie&#39;s notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A fast, simple &amp; powerful blog framework powered by Node.js.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Node.js 上安裝 Hexo 並在 GitHub 建立 Blog step by step 教學-安裝">
-<meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/2015/05/08/Node-js-上安裝-Hexo-並在-GitHub-建立-Blog-step-by-step-教學-安裝/">
+  <meta name="description" content="Junlor front-end 學習筆記簿">
+<meta property="og:type" content="website">
+<meta property="og:title" content="hungjie's notes">
+<meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/tags/AngularJS/">
 <meta property="og:site_name" content="hungjie's notes">
-<meta property="og:description" content="A fast, simple &amp; powerful blog framework powered by Node.js.">
-<meta property="og:image" content="https://googledrive.com/host/0B4fEFbbW93y5dVZoRTBCbjJEVHc">
+<meta property="og:description" content="Junlor front-end 學習筆記簿">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node.js 上安裝 Hexo 並在 GitHub 建立 Blog step by step 教學-安裝">
-<meta name="twitter:description" content="A fast, simple &amp; powerful blog framework powered by Node.js.">
+<meta name="twitter:title" content="hungjie's notes">
+<meta name="twitter:description" content="Junlor front-end 學習筆記簿">
 
   
     <link rel="alternative" href="/atom.xml" title="hungjie&#39;s notes" type="application/atom+xml">
@@ -80,10 +79,12 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Node-js-上安裝-Hexo-並在-GitHub-建立-Blog-step-by-step-教學-安裝" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-AngularJS-ng-show-ng-hide-and-scope-string-yes-no-on-off" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/hexoblog/2015/05/08/Node-js-上安裝-Hexo-並在-GitHub-建立-Blog-step-by-step-教學-安裝/" class="article-date">
-  <time datetime="2015-05-08T00:06:37.000Z" itemprop="datePublished">5月 8 2015</time>
+    <a href="/hexoblog/2015/12/02/AngularJS-ng-show-ng-hide-and-scope-string-yes-no-on-off/" class="article-date">
+  <time datetime="2015-12-02T12:11:52.000Z" itemprop="datePublished">12月 2 2015</time>
 </a>
     
   </div>
@@ -93,8 +94,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Node.js 上安裝 Hexo 並在 GitHub 建立 Blog step by step 教學-安裝
+    <h1 itemprop="name">
+      <a class="article-title" href="/hexoblog/2015/12/02/AngularJS-ng-show-ng-hide-and-scope-string-yes-no-on-off/">angularJS ng-show ng-hide and $scope string = yes, no, on, off</a>
     </h1>
   
 
@@ -102,139 +103,108 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://googledrive.com/host/0B4fEFbbW93y5dVZoRTBCbjJEVHc" alt="Hexo"></p>
-<blockquote>
-<p>A fast, simple &amp; powerful blog framework powered by Node.js.</p>
-</blockquote>
-<a id="more"></a>
-<h1 id="Why_Hexo_?">Why Hexo ?</h1>
-<ul>
-<li>使用 <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> 建立個人 Blog 的好處有以下：<ol>
-<li>使用 <a href="https://nodejs.org/" target="_blank" rel="external">Node.js</a> 環境建立</li>
-<li>使用 <a href="https://www.npmjs.com/" target="_blank" rel="external">NPM</a> 管理套件安裝</li>
-<li>使用 <a href="http://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="external">Markdown</a> 語言快速編輯，筆記、Blog 一次搞定。</li>
-<li>文章裡面可以放上 <code>Code</code> 並加上 <a href="https://highlightjs.org/static/demo/" target="_blank" rel="external">highlight.js</a> 高亮語法顯示。</li>
-<li>可使用 <a href="https://github.com/" target="_blank" rel="external">GitHub</a> 版本管理 / 備份</li>
-<li>最後可以直接發佈到 <a href="https://pages.github.com/" target="_blank" rel="external">GitHub Page / GitHub.io</a></li>
-</ol>
-</li>
-</ul>
-<p>根據以上多種優點，因此建立一個 <strong>Hexo Blog Project</strong> 可以一次學習到多種工具與管理套件，因此也成為我買下 MBPR 後第一個想要玩的技術，接著就直接進入主題。</p>
+        <p>今天下午踩到一個 angularJS 神奇坑洞，事情是這樣滴當 $scope 內容為 string <code>YES</code> 的時候 ng-show 遽然不會動作 O_o”</p>
+<p>sample Code:</p>
+<h4 id="in_controller">in controller</h4>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$scope.test = <span class="string">'yes'</span>;</div></pre></td></tr></table></figure>
+
+<h4 id="in_HTML">in HTML</h4>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">ng-show</span>=<span class="value">"test"</span>&gt;</span>test!<span class="tag">&lt;/<span class="title">span</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>ng-show 裡面綁定 $scope.test 並存在 value: ‘yes’, 為什麼 <span> 卻不會 show 哩？</span></p>
 <hr>
-<h2 id="環境介紹">環境介紹</h2>
-<table>
-<thead>
-<tr>
-<th>系統</th>
-<th>版號</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MBPR</td>
-<td>2015</td>
-</tr>
-<tr>
-<td>OSX</td>
-<td>10.10.2</td>
-</tr>
-<tr>
-<td>Hexo</td>
-<td>2.8.3</td>
-</tr>
-<tr>
-<td>node.js</td>
-<td>v0.12.2</td>
-</tr>
-</tbody>
-</table>
-<h2 id="安裝_hexo_2-8-3_版本">安裝 hexo 2.8.3 版本</h2>
-<p>如果安裝過程出現 <strong>“權限錯誤”</strong> 可以試著在命令前加上 <code>sudo</code></p>
-<h3 id="解除安裝_hexo">解除安裝 hexo</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm uninstall hexo</div></pre></td></tr></table></figure>
+<p>以下是一連串的實驗與驗證： </p>
+<h3 id="DEMO:_(可以切換右邊_Code_觀看_source_Code)">DEMO: (可以切換右邊 <code>Code</code> 觀看 source Code)</h3>
+<iframe class="plunk-preview" src="http://embed.plnkr.co/7S0UIpCvPGZ07SrspcY5/" width="100%" height="800px" frameborder="0"></iframe>
 
-<h3 id="Step-1_安裝_hexo_2-8-3_版本">Step.1 安裝 hexo 2.8.3 版本</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo@v2.<span class="number">8.3</span> -g</div></pre></td></tr></table></figure>
+<h4 id="範例1-_$scope-test2_=_‘NOO’">範例1. $scope.test2 = ‘NOO’</h4>
+<p>ng-show 可以正常判斷 test2 存在 value 因此顯示 <span></span></p>
+<h4 id="範例2-_$scope-test_=_‘NO’">範例2. $scope.test = ‘NO’</h4>
+<p>ng-show 無法判斷 test 轉型 boolean </p>
+<h4 id="範例3-_測試_$scope-test_?_‘true’_:_‘false’;">範例3. 測試 $scope.test ? ‘true’ : ‘false’;</h4>
+<p>透過簡單的 if else 測試 test 是否有 value?<br>結果是<code>true</code> O_o”</p>
+<h4 id="範例4-_在_ng-show_當中加入判斷">範例4. 在 ng-show 當中加入判斷</h4>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng-<span class="literal">show</span> = <span class="string">"test ? true : false"</span></div></pre></td></tr></table></figure>
 
-<h3 id="Step-2_建置_hexo_存放資料夾">Step.2 建置 hexo 存放資料夾</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">XXX = 自訂資料夾名稱 ex: hexo</div><div class="line">mkdir XXX</div></pre></td></tr></table></figure>
-
-<h3 id="Step-3_移動到_hexo_存放資料夾">Step.3 移動到 hexo 存放資料夾</h3>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> XXX</div></pre></td></tr></table></figure>
-
-<h3 id="Step-4_初始化">Step.4 初始化</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo init</div><div class="line">npm install</div></pre></td></tr></table></figure>
-
-<h3 id="Step-5_hexo_2-8-3_Plugin">Step.5 hexo 2.8.3 Plugin</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-renderer-marked@<span class="number">0.1</span> --save</div><div class="line">npm install hexo-renderer-stylus@<span class="number">0.1</span> --save</div></pre></td></tr></table></figure>
-
-<h2 id="檢查是否完成安裝">檢查是否完成安裝</h2>
-<ol>
-<li>在 <code>node_modules</code> 資料夾下面有與 plugin 同名資料夾。</li>
-<li><code>package.json</code> 中有以下資料 :</li>
-</ol>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">    "<span class="attribute">hexo-renderer-marked</span>": <span class="value"><span class="string">"0.1"</span></span>,</div><div class="line">    "<span class="attribute">hexo-renderer-stylus</span>": <span class="value"><span class="string">"0.1"</span></span></div><div class="line">}</div></pre></td></tr></table></figure>
-
-<h3 id="Step-6_在主機上啟動_Server">Step.6 在主機上啟動 Server</h3>
-<figure class="highlight bush"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">server</span></div></pre></td></tr></table></figure>
-
-<blockquote>
-<p>現在開啟瀏覽器在網址列輸入以下就可以看到預設的 Hello Page 囉！！</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">localhost:<span class="number">4000</span></div></pre></td></tr></table></figure>
-
-<p>是不是很酷呢?!!</p>
-<hr>
-<h4 id="Reference:">Reference:</h4>
-<p><a href="https://twitter.com/hexojs?lang=zh-tw" target="_blank" rel="external">Hexo Twitter</a></p>
+<p>結果：可以正常顯示</p>
+<p>因此向許多前輩請教後發現 AngularJS 將:</p>
 <ul>
-<li><a href="http://hexo.io/zh-tw/docs/" target="_blank" rel="external">http://hexo.io/zh-tw/docs/</a></li>
-<li><a href="https://github.com/hexojs/hexo/issues/1094" target="_blank" rel="external">https://github.com/hexojs/hexo/issues/1094</a></li>
-<li><a href="http://pagent.github.io/2015/03/14/hexo-283-install/" target="_blank" rel="external">http://pagent.github.io/2015/03/14/hexo-283-install/</a></li>
+<li><code>Yes</code> 視為 true</li>
+<li><code>No</code> 視為 false</li>
 </ul>
+<p>O_o”</p>
+<p>在下面的 more test 範例將測試 <code>ng-show</code> 與 <code>ng-hide</code>在  $scope 變數內容為 string: yes, no, on, off 的小實驗。<br>實驗後 on, off 結果還是怪怪的，可能還要看下文章..</p>
+<h2 id="小結：">小結：</h2>
+<ul>
+<li>踩雷真的好好玩 O_o” </li>
+<li>盡量避開使用語意化的變數內容: yes, no, on, off (已知)</li>
+</ul>
+<h1 id="Reference:">Reference:</h1>
+<p>印象在學習 angularJS 初期有看過類似文章，可是一時找不到..日後補上哩 ^_^</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/08/Node-js-上安裝-Hexo-並在-GitHub-建立-Blog-step-by-step-教學-安裝/" data-id="pbajplkng15ljy19" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/12/02/AngularJS-ng-show-ng-hide-and-scope-string-yes-no-on-off/" data-id="9v7t7u2xjrreib3k" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/08/Node-js-上安裝-Hexo-並在-GitHub-建立-Blog-step-by-step-教學-安裝/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://hungjie19.github.io/hexoblog/2015/12/02/AngularJS-ng-show-ng-hide-and-scope-string-yes-no-on-off/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/AngularJS/">AngularJS</a></li></ul>
 
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/hexoblog/2015/05/08/Hexo-depoly-to-GitHub/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Hexo depoly to GitHub
-        
-      </div>
-    </a>
-  
-  
-    <a href="/hexoblog/2015/04/15/DAKVO-創業擂台/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">DAKVO 創業擂台</div>
-    </a>
-  
-</nav>
+</article>
 
+
+  
+    <article id="post-AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/hexoblog/2015/11/11/AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/" class="article-date">
+  <time datetime="2015-11-11T13:15:33.000Z" itemprop="datePublished">11月 11 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hexoblog/2015/11/11/AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/">AngualrJS directive use isolated scope binding issue in Firefox only</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用 angularJS 開心的寫一個 directive 使用獨立 scope (isolated scope) 的時候踩到一個<code>filefox only</code>的坑，因為只有 filefox 有，在 Chrome, Safari, ie 都沒發生過實在太特別了..所以紀錄一下..OTZ..感謝: <code>raphahsu</code>。<br>
+        
+          <p class="article-more-link">
+            <a href="/hexoblog/2015/11/11/AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/11/11/AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/" data-id="3mhd9i2jgtnx0wsi" class="article-share-link">Share</a>
+      
+        <a href="http://hungjie19.github.io/hexoblog/2015/11/11/AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/AngularJS/">AngularJS</a></li></ul>
+
+    </footer>
+  </div>
   
 </article>
 
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+  
+  
 </section>
         
           <aside id="sidebar">
@@ -323,13 +293,11 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'hungjiehexoblog';
   
-  var disqus_url = 'http://hungjie19.github.io/hexoblog/2015/05/08/Node-js-上安裝-Hexo-並在-GitHub-建立-Blog-step-by-step-教學-安裝/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

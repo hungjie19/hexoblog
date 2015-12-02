@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://hungjie19.github.io/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/</loc>
-    <lastmod>2015-11-17T11:40:14.000Z</lastmod>
+    <loc>http://hungjie19.github.io/hexoblog/2015/12/02/AngularJS-ng-show-ng-hide-and-scope-string-yes-no-on-off/</loc>
+    <lastmod>2015-12-02T13:01:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hungjie19.github.io/hexoblog/2015/11/11/AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/</loc>
+    <lastmod>2015-12-02T12:48:48.000Z</lastmod>
   </url>
   
   <url>

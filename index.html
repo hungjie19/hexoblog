@@ -81,9 +81,87 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
-    <article id="post-AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-AngularJS-ng-show-ng-hide-and-scope-string-yes-no-on-off" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/" class="article-date">
+    <a href="/hexoblog/2015/12/02/AngularJS-ng-show-ng-hide-and-scope-string-yes-no-on-off/" class="article-date">
+  <time datetime="2015-12-02T12:11:52.000Z" itemprop="datePublished">12月 2 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hexoblog/2015/12/02/AngularJS-ng-show-ng-hide-and-scope-string-yes-no-on-off/">angularJS ng-show ng-hide and $scope string = yes, no, on, off</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天下午踩到一個 angularJS 神奇坑洞，事情是這樣滴當 $scope 內容為 string <code>YES</code> 的時候 ng-show 遽然不會動作 O_o”</p>
+<p>sample Code:</p>
+<h4 id="in_controller">in controller</h4>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$scope.test = <span class="string">'yes'</span>;</div></pre></td></tr></table></figure>
+
+<h4 id="in_HTML">in HTML</h4>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">ng-show</span>=<span class="value">"test"</span>&gt;</span>test!<span class="tag">&lt;/<span class="title">span</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>ng-show 裡面綁定 $scope.test 並存在 value: ‘yes’, 為什麼 <span> 卻不會 show 哩？</span></p>
+<hr>
+<p>以下是一連串的實驗與驗證： </p>
+<h3 id="DEMO:_(可以切換右邊_Code_觀看_source_Code)">DEMO: (可以切換右邊 <code>Code</code> 觀看 source Code)</h3>
+<iframe class="plunk-preview" src="http://embed.plnkr.co/7S0UIpCvPGZ07SrspcY5/" width="100%" height="800px" frameborder="0"></iframe>
+
+<h4 id="範例1-_$scope-test2_=_‘NOO’">範例1. $scope.test2 = ‘NOO’</h4>
+<p>ng-show 可以正常判斷 test2 存在 value 因此顯示 <span></span></p>
+<h4 id="範例2-_$scope-test_=_‘NO’">範例2. $scope.test = ‘NO’</h4>
+<p>ng-show 無法判斷 test 轉型 boolean </p>
+<h4 id="範例3-_測試_$scope-test_?_‘true’_:_‘false’;">範例3. 測試 $scope.test ? ‘true’ : ‘false’;</h4>
+<p>透過簡單的 if else 測試 test 是否有 value?<br>結果是<code>true</code> O_o”</p>
+<h4 id="範例4-_在_ng-show_當中加入判斷">範例4. 在 ng-show 當中加入判斷</h4>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng-<span class="literal">show</span> = <span class="string">"test ? true : false"</span></div></pre></td></tr></table></figure>
+
+<p>結果：可以正常顯示</p>
+<p>因此向許多前輩請教後發現 AngularJS 將:</p>
+<ul>
+<li><code>Yes</code> 視為 true</li>
+<li><code>No</code> 視為 false</li>
+</ul>
+<p>O_o”</p>
+<p>在下面的 more test 範例將測試 <code>ng-show</code> 與 <code>ng-hide</code>在  $scope 變數內容為 string: yes, no, on, off 的小實驗。<br>實驗後 on, off 結果還是怪怪的，可能還要看下文章..</p>
+<h2 id="小結：">小結：</h2>
+<ul>
+<li>踩雷真的好好玩 O_o” </li>
+<li>盡量避開使用語意化的變數內容: yes, no, on, off (已知)</li>
+</ul>
+<h1 id="Reference:">Reference:</h1>
+<p>印象在學習 angularJS 初期有看過類似文章，可是一時找不到..日後補上哩 ^_^</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/12/02/AngularJS-ng-show-ng-hide-and-scope-string-yes-no-on-off/" data-id="9v7t7u2xjrreib3k" class="article-share-link">Share</a>
+      
+        <a href="http://hungjie19.github.io/hexoblog/2015/12/02/AngularJS-ng-show-ng-hide-and-scope-string-yes-no-on-off/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/AngularJS/">AngularJS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/hexoblog/2015/11/11/AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/" class="article-date">
   <time datetime="2015-11-11T13:15:33.000Z" itemprop="datePublished">11月 11 2015</time>
 </a>
     
@@ -95,7 +173,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/">AngualrJS directive use isolated scope binding issue in Firefox only</a>
+      <a class="article-title" href="/hexoblog/2015/11/11/AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/">AngualrJS directive use isolated scope binding issue in Firefox only</a>
     </h1>
   
 
@@ -106,18 +184,18 @@ ga('send', 'pageview');
         <p>使用 angularJS 開心的寫一個 directive 使用獨立 scope (isolated scope) 的時候踩到一個<code>filefox only</code>的坑，因為只有 filefox 有，在 Chrome, Safari, ie 都沒發生過實在太特別了..所以紀錄一下..OTZ..感謝: <code>raphahsu</code>。<br>
         
           <p class="article-more-link">
-            <a href="/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/#more">Read More</a>
+            <a href="/hexoblog/2015/11/11/AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/" data-id="d9cdockb5omb1k4w" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/11/11/AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/" data-id="3mhd9i2jgtnx0wsi" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://hungjie19.github.io/hexoblog/2015/11/11/AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/AngualrJS/">AngualrJS</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/AngularJS/">AngularJS</a></li></ul>
 
     </footer>
   </div>
@@ -160,7 +238,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/11/05/mopcon-2015-工作人員參與心得-議程組-Jacky/" data-id="ttxkbw2pvnd16bae" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/11/05/mopcon-2015-工作人員參與心得-議程組-Jacky/" data-id="kifraojwjf9wkhck" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/11/05/mopcon-2015-工作人員參與心得-議程組-Jacky/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -211,7 +289,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/10/15/nodeJS-get-google-表單，使用-google-spreadsheet/" data-id="wwnznbjeeu614cvi" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/10/15/nodeJS-get-google-表單，使用-google-spreadsheet/" data-id="xk5kewkxtfi0e45o" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/10/15/nodeJS-get-google-表單，使用-google-spreadsheet/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -262,7 +340,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/10/13/nodeJS-read-csv-to-JSON，使用-csvtojson/" data-id="bi30drw2ohbantna" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/10/13/nodeJS-read-csv-to-JSON，使用-csvtojson/" data-id="j5fa7oqwsotnzgpp" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/10/13/nodeJS-read-csv-to-JSON，使用-csvtojson/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -312,7 +390,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/10/12/nodeJS-get-JSON-在-nodeJS-server-直接取得-Http-JSON/" data-id="l4hasz93p90dwmvi" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/10/12/nodeJS-get-JSON-在-nodeJS-server-直接取得-Http-JSON/" data-id="evyvxrjr8otbyswj" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/10/12/nodeJS-get-JSON-在-nodeJS-server-直接取得-Http-JSON/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -360,7 +438,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/06/21/高雄前端社群-18-前端面試大補帖不求人！/" data-id="c9i9enfbw6b2uz4l" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/06/21/高雄前端社群-18-前端面試大補帖不求人！/" data-id="qa44fq4btm5zvqtm" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/06/21/高雄前端社群-18-前端面試大補帖不求人！/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -407,7 +485,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/06/06/JS-Devil-Day-JSDC-Meetup/" data-id="sl2vm1obngih8hgl" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/06/06/JS-Devil-Day-JSDC-Meetup/" data-id="5uqnmq30evya6u8h" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/06/06/JS-Devil-Day-JSDC-Meetup/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -453,7 +531,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/" data-id="ap55hxweq99cjsib" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/" data-id="vxfhx3s7whu8y0d9" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -503,58 +581,12 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/24/hexo-new-文章後幫你開啟-MarkDown-編輯器/" data-id="yvrhcz86ob29p57q" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/24/hexo-new-文章後幫你開啟-MarkDown-編輯器/" data-id="o3k64mrl6nih7hrv" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/05/24/hexo-new-文章後幫你開啟-MarkDown-編輯器/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-coServ-workshop-05-淺談Sass-RWD" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/hexoblog/2015/05/21/coServ-workshop-05-淺談Sass-RWD/" class="article-date">
-  <time datetime="2015-05-21T11:06:46.000Z" itemprop="datePublished">5月 21 2015</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/hexoblog/2015/05/21/coServ-workshop-05-淺談Sass-RWD/">coServ workshop #05 淺談Sass + RWD</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://googledrive.com/host/0B4fEFbbW93y5XzJtbHZJX09qNGs" alt="coServ workshop #05"></p>
-
-        
-          <p class="article-more-link">
-            <a href="/hexoblog/2015/05/21/coServ-workshop-05-淺談Sass-RWD/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/21/coServ-workshop-05-淺談Sass-RWD/" data-id="4ffml783080f7qdd" class="article-share-link">Share</a>
-      
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/21/coServ-workshop-05-淺談Sass-RWD/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/coServ/">coServ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/nodeJS/">nodeJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/workshop/">workshop</a></li></ul>
 
     </footer>
   </div>
@@ -578,7 +610,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/AngualrJS/">AngualrJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/DISQUS/">DISQUS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Interview/">Interview</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/JSON/">JSON</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Live-Reload/">Live Reload</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Mac-OSX/">Mac OSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Scrum/">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Sublime-Text-3/">Sublime Text 3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Testing/">Testing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/coServ/">coServ</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/frond-end/">frond-end</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/gulp/">gulp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/mopcom/">mopcom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/nodeJS/">nodeJS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/sitemap/">sitemap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/workshop/">workshop</a><span class="tag-list-count">9</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/AngularJS/">AngularJS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/DISQUS/">DISQUS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Interview/">Interview</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/JSON/">JSON</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Live-Reload/">Live Reload</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Mac-OSX/">Mac OSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Scrum/">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Sublime-Text-3/">Sublime Text 3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Testing/">Testing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/coServ/">coServ</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/frond-end/">frond-end</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/gulp/">gulp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/mopcom/">mopcom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/nodeJS/">nodeJS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/sitemap/">sitemap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/workshop/">workshop</a><span class="tag-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -587,7 +619,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/hexoblog/tags/AngualrJS/" style="font-size: 10.00px;">AngualrJS</a><a href="/hexoblog/tags/Bootstrap/" style="font-size: 10.00px;">Bootstrap</a><a href="/hexoblog/tags/DISQUS/" style="font-size: 10.00px;">DISQUS</a><a href="/hexoblog/tags/Hexo/" style="font-size: 18.00px;">Hexo</a><a href="/hexoblog/tags/Interview/" style="font-size: 10.00px;">Interview</a><a href="/hexoblog/tags/JSON/" style="font-size: 14.00px;">JSON</a><a href="/hexoblog/tags/Live-Reload/" style="font-size: 12.00px;">Live Reload</a><a href="/hexoblog/tags/Mac-OSX/" style="font-size: 10.00px;">Mac OSX</a><a href="/hexoblog/tags/Scrum/" style="font-size: 10.00px;">Scrum</a><a href="/hexoblog/tags/Sublime-Text-3/" style="font-size: 10.00px;">Sublime Text 3</a><a href="/hexoblog/tags/Testing/" style="font-size: 10.00px;">Testing</a><a href="/hexoblog/tags/coServ/" style="font-size: 14.00px;">coServ</a><a href="/hexoblog/tags/frond-end/" style="font-size: 10.00px;">frond-end</a><a href="/hexoblog/tags/gulp/" style="font-size: 10.00px;">gulp</a><a href="/hexoblog/tags/javascript/" style="font-size: 10.00px;">javascript</a><a href="/hexoblog/tags/mopcom/" style="font-size: 10.00px;">mopcom</a><a href="/hexoblog/tags/nodeJS/" style="font-size: 16.00px;">nodeJS</a><a href="/hexoblog/tags/sitemap/" style="font-size: 12.00px;">sitemap</a><a href="/hexoblog/tags/workshop/" style="font-size: 20.00px;">workshop</a>
+      <a href="/hexoblog/tags/AngularJS/" style="font-size: 12.00px;">AngularJS</a><a href="/hexoblog/tags/Bootstrap/" style="font-size: 10.00px;">Bootstrap</a><a href="/hexoblog/tags/DISQUS/" style="font-size: 10.00px;">DISQUS</a><a href="/hexoblog/tags/Hexo/" style="font-size: 18.00px;">Hexo</a><a href="/hexoblog/tags/Interview/" style="font-size: 10.00px;">Interview</a><a href="/hexoblog/tags/JSON/" style="font-size: 14.00px;">JSON</a><a href="/hexoblog/tags/Live-Reload/" style="font-size: 12.00px;">Live Reload</a><a href="/hexoblog/tags/Mac-OSX/" style="font-size: 10.00px;">Mac OSX</a><a href="/hexoblog/tags/Scrum/" style="font-size: 10.00px;">Scrum</a><a href="/hexoblog/tags/Sublime-Text-3/" style="font-size: 10.00px;">Sublime Text 3</a><a href="/hexoblog/tags/Testing/" style="font-size: 10.00px;">Testing</a><a href="/hexoblog/tags/coServ/" style="font-size: 14.00px;">coServ</a><a href="/hexoblog/tags/frond-end/" style="font-size: 10.00px;">frond-end</a><a href="/hexoblog/tags/gulp/" style="font-size: 10.00px;">gulp</a><a href="/hexoblog/tags/javascript/" style="font-size: 10.00px;">javascript</a><a href="/hexoblog/tags/mopcom/" style="font-size: 10.00px;">mopcom</a><a href="/hexoblog/tags/nodeJS/" style="font-size: 16.00px;">nodeJS</a><a href="/hexoblog/tags/sitemap/" style="font-size: 12.00px;">sitemap</a><a href="/hexoblog/tags/workshop/" style="font-size: 20.00px;">workshop</a>
     </div>
   </div>
 
@@ -596,7 +628,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/11/">November 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/05/">May 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/11/">November 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/05/">May 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -608,7 +640,11 @@ ga('send', 'pageview');
       <ul>
         
           <li>
-            <a href="/hexoblog/2015/11/11/AngualrJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/">AngualrJS directive use isolated scope binding issue in Firefox only</a>
+            <a href="/hexoblog/2015/12/02/AngularJS-ng-show-ng-hide-and-scope-string-yes-no-on-off/">angularJS ng-show ng-hide and $scope string = yes, no, on, off</a>
+          </li>
+        
+          <li>
+            <a href="/hexoblog/2015/11/11/AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/">AngualrJS directive use isolated scope binding issue in Firefox only</a>
           </li>
         
           <li>
@@ -621,10 +657,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/hexoblog/2015/10/13/nodeJS-read-csv-to-JSON，使用-csvtojson/">nodeJS read csv to JSON，使用 csvtojson</a>
-          </li>
-        
-          <li>
-            <a href="/hexoblog/2015/10/12/nodeJS-get-JSON-在-nodeJS-server-直接取得-Http-JSON/">nodeJS get JSON, 在 nodeJS server 直接取得 Http JSON</a>
           </li>
         
       </ul>

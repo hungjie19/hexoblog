@@ -4,17 +4,35 @@
   <meta charset="utf-8">
   <meta name="google-site-verification" content="Ukbf9UaOVCCReyEQF3fNFAGuEq64aBc7IuvLc-WL8qw" />
   
-  <title>Tag: Sublime Text 3 | Jacky&#39;s Notes</title>
+  <title>Protractor install and Start Testing | Jacky&#39;s Notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Junlor Front-End Engineer 學習筆記簿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jacky's Notes">
-<meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/tags/Sublime-Text-3/">
+  <meta name="description" content="Protractor 是一套 End-to-End Test Framework
+
+可模擬使用者在瀏覽器上面的使用情境
+AngularJS 官方推薦使用的測試 Framework
+包含 WebDriverJS
+包含 Selenium
+預設使用 Jasmine 斷言庫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Protractor install and Start Testing">
+<meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/2015/12/10/Protractor-install-and-Start-Testing/">
 <meta property="og:site_name" content="Jacky's Notes">
-<meta property="og:description" content="Junlor Front-End Engineer 學習筆記簿">
+<meta property="og:description" content="Protractor 是一套 End-to-End Test Framework
+
+可模擬使用者在瀏覽器上面的使用情境
+AngularJS 官方推薦使用的測試 Framework
+包含 WebDriverJS
+包含 Selenium
+預設使用 Jasmine 斷言庫">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jacky's Notes">
-<meta name="twitter:description" content="Junlor Front-End Engineer 學習筆記簿">
+<meta name="twitter:title" content="Protractor install and Start Testing">
+<meta name="twitter:description" content="Protractor 是一套 End-to-End Test Framework
+
+可模擬使用者在瀏覽器上面的使用情境
+AngularJS 官方推薦使用的測試 Framework
+包含 WebDriverJS
+包含 Selenium
+預設使用 Jasmine 斷言庫">
 
   
     <link rel="alternative" href="/atom.xml" title="Jacky&#39;s Notes" type="application/atom+xml">
@@ -79,12 +97,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Bootstrap-美麗網頁開發術" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Protractor-install-and-Start-Testing" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/hexoblog/2015/05/13/Bootstrap-美麗網頁開發術/" class="article-date">
-  <time datetime="2015-05-13T11:25:17.000Z" itemprop="datePublished">5月 13 2015</time>
+    <a href="/hexoblog/2015/12/10/Protractor-install-and-Start-Testing/" class="article-date">
+  <time datetime="2015-12-09T16:30:28.000Z" itemprop="datePublished">12月 10 2015</time>
 </a>
     
   </div>
@@ -94,8 +110,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/hexoblog/2015/05/13/Bootstrap-美麗網頁開發術/">Bootstrap 美麗網頁開發術 中山大學 workshop</a>
+    <h1 class="article-title" itemprop="name">
+      Protractor install and Start Testing
     </h1>
   
 
@@ -103,31 +119,89 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://googledrive.com/host/0B4fEFbbW93y5eGtDSl85alRSM28" alt="2015.05.13 Bootstrap 美麗網頁開發術 中山大學"></p>
+        <p><a href="http://www.protractortest.org" target="_blank" rel="external">Protractor</a> 是一套 End-to-End Test Framework</p>
+<ul>
+<li>可模擬使用者在瀏覽器上面的使用情境</li>
+<li>AngularJS 官方推薦使用的測試 Framework</li>
+<li>包含 <a href="http://webdriver.io/" target="_blank" rel="external">WebDriverJS</a></li>
+<li>包含 <a href="http://www.seleniumhq.org/" target="_blank" rel="external">Selenium</a></li>
+<li>預設使用 <a href="http://jasmine.github.io/" target="_blank" rel="external">Jasmine</a> 斷言庫</li>
+</ul>
+<a id="more"></a>
+<blockquote>
+<p>斷言 - 網路上的定義<br>在程序設計中，斷言是一種放在程序中的一階邏輯，目的是為了標示與驗證程序開發者預期的結果－當程序運行到斷言的位置時，對應的斷言應該為真。若斷言不會真時，程序會中止運行，並出現錯誤信息。</p>
+</blockquote>
+<h2 id="開始之前">開始之前</h2>
+<p>Protractor 必須執行在 <a href="http://nodejs.org/download/" target="_blank" rel="external">nodeJS</a> 環境下，因此必須安裝 <a href="http://nodejs.org/download/" target="_blank" rel="external">nodeJS</a> 後才可以執行以下安裝步驟：</p>
+<hr>
+<h2 id="step_1">step 1</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> -g protractor</span></div></pre></td></tr></table></figure>
 
-        
-          <p class="article-more-link">
-            <a href="/hexoblog/2015/05/13/Bootstrap-美麗網頁開發術/#more">Read More</a>
-          </p>
-        
+<h2 id="step_2">step 2</h2>
+<p>此步驟為更新/下載: <code>chromedriver.exe</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webdriver-manager <span class="keyword">update</span></div></pre></td></tr></table></figure>
+
+<h4 id="Windows_安裝路徑：">Windows 安裝路徑：</h4>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">C:<span class="command">\Users</span><span class="command">\你</span>的帳號<span class="command">\AppData</span><span class="command">\Roaming</span><span class="command">\npm</span><span class="command">\node</span>_modules<span class="command">\protractor</span><span class="command">\selenium</span></div></pre></td></tr></table></figure>
+
+<h3 id="step_3">step 3</h3>
+<p>此步驟為更新/下載: <code>selenium-server-standalone-2.48.2.jar</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webdriver-manager <span class="operator"><span class="keyword">start</span></span></div></pre></td></tr></table></figure>
+
+<h3 id="step_4_測試">step 4 測試</h3>
+<p>使用內建測試（目標 angularJS 官網首頁的範例檔）<br>移動到：<code>example</code>資料夾</p>
+<h4 id="Windows_安裝路徑：-1">Windows 安裝路徑：</h4>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd C:<span class="command">\Users</span><span class="command">\你</span>的帳號<span class="command">\AppData</span><span class="command">\Roaming</span><span class="command">\npm</span><span class="command">\node</span>_modules<span class="command">\protractor</span><span class="command">\example</span></div></pre></td></tr></table></figure>
+
+<h3 id="step_5_啟動">step 5 啟動</h3>
+<ul>
+<li>windows 需到 PATH 增加環境變數<ul>
+<li>增加 JDK 安裝後的執行檔路徑</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">protractor <span class="keyword">conf</span>.js</div></pre></td></tr></table></figure>
+
+<p>enjoy !</p>
+<h2 id="Reference:">Reference:</h2>
+<ul>
+<li><a href="http://www.protractortest.org" target="_blank" rel="external">http://www.protractortest.org</a></li>
+<li><a href="https://www.facebook.com/notes/paul-li/protractor-%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A%E7%AF%87/10152948608982211" target="_blank" rel="external">https://www.facebook.com/notes/paul-li/protractor-%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A%E7%AF%87/10152948608982211</a></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/13/Bootstrap-美麗網頁開發術/" data-id="bp9vj4246j77zcsb" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/12/10/Protractor-install-and-Start-Testing/" data-id="svi9upu6w4r3oa56" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/13/Bootstrap-美麗網頁開發術/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://hungjie19.github.io/hexoblog/2015/12/10/Protractor-install-and-Start-Testing/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Bootstrap/">Bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Sublime-Text-3/">Sublime Text 3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/workshop/">workshop</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Protractor/">Protractor</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/hexoblog/2015/12/06/高雄前端社群-21-React-Party/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">高雄前端社群#21 - React Party</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-  
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -216,11 +290,13 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'hungjiehexoblog';
   
+  var disqus_url = 'http://hungjie19.github.io/hexoblog/2015/12/10/Protractor-install-and-Start-Testing/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

@@ -1376,4 +1376,5 @@ pre .javascript .function {
 }
 .tagcloud a {
   margin-right: 5px;
+  display: inline-block;
 }

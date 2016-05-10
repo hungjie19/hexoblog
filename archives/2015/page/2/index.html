@@ -2,9 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="Ukbf9UaOVCCReyEQF3fNFAGuEq64aBc7IuvLc-WL8qw" />
   
-  <title>Archives: 2015 | Jacky&#39;s Notes</title>
+  <title>彙整: 2015 | Jacky&#39;s Notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Junlor Front-End Engineer 學習筆記簿">
 <meta property="og:type" content="website">
@@ -17,30 +16,20 @@
 <meta name="twitter:description" content="Junlor Front-End Engineer 學習筆記簿">
 
   
-    <link rel="alternative" href="/atom.xml" title="Jacky&#39;s Notes" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Jacky&#39;s Notes" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
   <link rel="stylesheet" href="/hexoblog/css/style.css" type="text/css">
 
   
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-62874725-1', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-
 
 </head>
+
 <body>
   <div id="container">
     <div id="wrap">
@@ -70,7 +59,7 @@ ga('send', 'pageview');
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="搜尋"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://hungjie19.github.io/hexoblog"></form>
@@ -113,9 +102,9 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/" data-id="fzlyleqczsqeenvp" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/" data-id="vocm1h0lfv4r94pj" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://hungjie19.github.io/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/#disqus_thread" class="article-comment-link">留言</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Live-Reload/">Live Reload</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/coServ/">coServ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/gulp/">gulp</a></li></ul>
@@ -141,7 +130,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/hexoblog/2015/05/24/hexo-new-文章後幫你開啟-MarkDown-編輯器/">hexo new 文章後幫你開啟 MarkDown 編輯器</a>
+      <a class="article-title" href="/hexoblog/2015/05/24/hexo-new-文章後幫你開啟-MarkDown-編輯器/">Hexo 新增文章後幫你開啟 markdown 編輯器</a>
     </h1>
   
 
@@ -149,11 +138,14 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本篇就是來解決這樣的問題：</p>
+        <p>每次我們開始撰寫文章的時候…會執行以下的流程：</p>
+<h4 id="1-_在_command_line_敲下熟悉的指令">1. 在 command line 敲下熟悉的指令</h4>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"我的新文章"</span></div></pre></td></tr></table></figure>
 
 
-<p>Commend Line 下完直接幫你開啟編輯器，直接撰寫文章！</p>
+
+<h4 id="2-_接著打開_atom、MacDown_或者其他_markdown_IDE_開始撰寫文章。">2. 接著打開 atom、MacDown 或者其他 markdown IDE 開始撰寫文章。</h4>
+<p>本篇將<code>自動化</code>以上兩個步驟，讓我們看下去如何操作吧。</p>
 
         
           <p class="article-more-link">
@@ -163,12 +155,12 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/24/hexo-new-文章後幫你開啟-MarkDown-編輯器/" data-id="9nqz6bvrizb7fyv3" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/24/hexo-new-文章後幫你開啟-MarkDown-編輯器/" data-id="81hbigykaq27be5e" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/24/hexo-new-文章後幫你開啟-MarkDown-編輯器/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://hungjie19.github.io/hexoblog/2015/05/24/hexo-new-文章後幫你開啟-MarkDown-編輯器/#disqus_thread" class="article-comment-link">留言</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/markdown/">markdown</a></li></ul>
 
     </footer>
   </div>
@@ -209,9 +201,9 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/21/coServ-workshop-05-淺談Sass-RWD/" data-id="43a6vsyj8zcnthc3" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/21/coServ-workshop-05-淺談Sass-RWD/" data-id="r0ndjr2dsnydrn5f" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/21/coServ-workshop-05-淺談Sass-RWD/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://hungjie19.github.io/hexoblog/2015/05/21/coServ-workshop-05-淺談Sass-RWD/#disqus_thread" class="article-comment-link">留言</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/coServ/">coServ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/nodeJS/">nodeJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/workshop/">workshop</a></li></ul>
@@ -255,9 +247,9 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/19/快速上手-Parse-前端測試神器-Selenium-雙主題初體驗/" data-id="w5mq0z67d3oda32o" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/19/快速上手-Parse-前端測試神器-Selenium-雙主題初體驗/" data-id="juhg7rmiaxetyq1f" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/19/快速上手-Parse-前端測試神器-Selenium-雙主題初體驗/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://hungjie19.github.io/hexoblog/2015/05/19/快速上手-Parse-前端測試神器-Selenium-雙主題初體驗/#disqus_thread" class="article-comment-link">留言</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Testing/">Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/workshop/">workshop</a></li></ul>
@@ -301,9 +293,9 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/18/modernweb-2015-地下共筆筆記/" data-id="y1rfh9q3mi8ajx8b" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/18/modernweb-2015-地下共筆筆記/" data-id="5t1it1ixeol80i0y" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/18/modernweb-2015-地下共筆筆記/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://hungjie19.github.io/hexoblog/2015/05/18/modernweb-2015-地下共筆筆記/#disqus_thread" class="article-comment-link">留言</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/workshop/">workshop</a></li></ul>
@@ -347,9 +339,9 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/17/Hexo-sitemap-提交至-Google-網站管理員-Web-Masters/" data-id="86j178aimun1e35f" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/17/Hexo-sitemap-提交至-Google-網站管理員-Web-Masters/" data-id="ne090ot3wdqeja9o" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/17/Hexo-sitemap-提交至-Google-網站管理員-Web-Masters/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://hungjie19.github.io/hexoblog/2015/05/17/Hexo-sitemap-提交至-Google-網站管理員-Web-Masters/#disqus_thread" class="article-comment-link">留言</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/sitemap/">sitemap</a></li></ul>
@@ -393,9 +385,9 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/16/Hexo-sitemap-error-TypeError-Cannot-read-property-sitemap-of-undefined/" data-id="48agwwmo26g29el1" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/16/Hexo-sitemap-error-TypeError-Cannot-read-property-sitemap-of-undefined/" data-id="nxga22bc4npfd3rr" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/16/Hexo-sitemap-error-TypeError-Cannot-read-property-sitemap-of-undefined/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://hungjie19.github.io/hexoblog/2015/05/16/Hexo-sitemap-error-TypeError-Cannot-read-property-sitemap-of-undefined/#disqus_thread" class="article-comment-link">留言</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/sitemap/">sitemap</a></li></ul>
@@ -442,9 +434,9 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/14/Hexo-livereload/" data-id="t7rwjz6bzfdj49u4" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/14/Hexo-livereload/" data-id="flp50obmhz0tu1s7" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/14/Hexo-livereload/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://hungjie19.github.io/hexoblog/2015/05/14/Hexo-livereload/#disqus_thread" class="article-comment-link">留言</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Live-Reload/">Live Reload</a></li></ul>
@@ -483,9 +475,9 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/13/Mac-終端機-iTerm-zsh-agonster-主題/" data-id="t6tix53ljuacp0hv" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/13/Mac-終端機-iTerm-zsh-agonster-主題/" data-id="1jxtmj2y27kf8oek" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/13/Mac-終端機-iTerm-zsh-agonster-主題/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://hungjie19.github.io/hexoblog/2015/05/13/Mac-終端機-iTerm-zsh-agonster-主題/#disqus_thread" class="article-comment-link">留言</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Mac-OSX/">Mac OSX</a></li></ul>
@@ -529,9 +521,9 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/13/Bootstrap-美麗網頁開發術/" data-id="bp9vj4246j77zcsb" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/13/Bootstrap-美麗網頁開發術/" data-id="vs43k9whcn5facqw" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/13/Bootstrap-美麗網頁開發術/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://hungjie19.github.io/hexoblog/2015/05/13/Bootstrap-美麗網頁開發術/#disqus_thread" class="article-comment-link">留言</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Bootstrap/">Bootstrap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Sublime-Text-3/">Sublime Text 3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/workshop/">workshop</a></li></ul>
@@ -543,49 +535,56 @@ ga('send', 'pageview');
 
 
   
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/hexoblog/archives/2015/">&laquo; Prev</a><a class="page-number" href="/hexoblog/archives/2015/">1</a><span class="page-number current">2</span><a class="page-number" href="/hexoblog/archives/2015/page/3/">3</a><a class="extend next" rel="next" href="/hexoblog/archives/2015/page/3/">Next &raquo;</a>
-    </nav>
-  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/hexoblog/archives/2015/">&laquo; __('prev')</a><a class="page-number" href="/hexoblog/archives/2015/">1</a><span class="page-number current">2</span><a class="page-number" href="/hexoblog/archives/2015/page/3/">3</a><a class="extend next" rel="next" href="/hexoblog/archives/2015/page/3/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
   
     
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/AngularJS/">AngularJS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/DISQUS/">DISQUS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Interview/">Interview</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/JSON/">JSON</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Live-Reload/">Live Reload</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Mac-OSX/">Mac OSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Protractor/">Protractor</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/ReactJS/">ReactJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Scrum/">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Sublime-Text-3/">Sublime Text 3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Testing/">Testing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/coServ/">coServ</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/frond-end/">frond-end</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/gulp/">gulp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/mopcom/">mopcom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/nodeJS/">nodeJS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/sitemap/">sitemap</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/workshop/">workshop</a><span class="tag-list-count">10</span></li></ul>
-    </div>
-  </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">標籤</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/AngularJS/">AngularJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Bootstrap/">Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/DISQUS/">DISQUS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Interview/">Interview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Live-Reload/">Live Reload</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Mac-OSX/">Mac OSX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Protractor/">Protractor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/ReactJS/">ReactJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Scrum/">Scrum</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Sublime-Text-3/">Sublime Text 3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/Testing/">Testing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/coServ/">coServ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/front-end/">front-end</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/mopcom/">mopcom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/nodeJS/">nodeJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/sitemap/">sitemap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/hexoblog/tags/workshop/">workshop</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤雲</h3>
     <div class="widget tagcloud">
-      <a href="/hexoblog/tags/AngularJS/" style="font-size: 12.00px;">AngularJS</a><a href="/hexoblog/tags/Bootstrap/" style="font-size: 10.00px;">Bootstrap</a><a href="/hexoblog/tags/DISQUS/" style="font-size: 10.00px;">DISQUS</a><a href="/hexoblog/tags/Hexo/" style="font-size: 18.00px;">Hexo</a><a href="/hexoblog/tags/Interview/" style="font-size: 10.00px;">Interview</a><a href="/hexoblog/tags/JSON/" style="font-size: 14.00px;">JSON</a><a href="/hexoblog/tags/Live-Reload/" style="font-size: 12.00px;">Live Reload</a><a href="/hexoblog/tags/Mac-OSX/" style="font-size: 10.00px;">Mac OSX</a><a href="/hexoblog/tags/Protractor/" style="font-size: 10.00px;">Protractor</a><a href="/hexoblog/tags/ReactJS/" style="font-size: 10.00px;">ReactJS</a><a href="/hexoblog/tags/Scrum/" style="font-size: 10.00px;">Scrum</a><a href="/hexoblog/tags/Sublime-Text-3/" style="font-size: 10.00px;">Sublime Text 3</a><a href="/hexoblog/tags/Testing/" style="font-size: 10.00px;">Testing</a><a href="/hexoblog/tags/coServ/" style="font-size: 14.00px;">coServ</a><a href="/hexoblog/tags/frond-end/" style="font-size: 10.00px;">frond-end</a><a href="/hexoblog/tags/gulp/" style="font-size: 10.00px;">gulp</a><a href="/hexoblog/tags/javascript/" style="font-size: 10.00px;">javascript</a><a href="/hexoblog/tags/mopcom/" style="font-size: 10.00px;">mopcom</a><a href="/hexoblog/tags/nodeJS/" style="font-size: 16.00px;">nodeJS</a><a href="/hexoblog/tags/sitemap/" style="font-size: 12.00px;">sitemap</a><a href="/hexoblog/tags/workshop/" style="font-size: 20.00px;">workshop</a>
+      <a href="/hexoblog/tags/AngularJS/" style="font-size: 13.33px;">AngularJS</a><a href="/hexoblog/tags/Bootstrap/" style="font-size: 11.67px;">Bootstrap</a><a href="/hexoblog/tags/DISQUS/" style="font-size: 11.67px;">DISQUS</a><a href="/hexoblog/tags/Hexo/" style="font-size: 18.33px;">Hexo</a><a href="/hexoblog/tags/Interview/" style="font-size: 11.67px;">Interview</a><a href="/hexoblog/tags/JSON/" style="font-size: 15.00px;">JSON</a><a href="/hexoblog/tags/Live-Reload/" style="font-size: 13.33px;">Live Reload</a><a href="/hexoblog/tags/Mac-OSX/" style="font-size: 11.67px;">Mac OSX</a><a href="/hexoblog/tags/Protractor/" style="font-size: 11.67px;">Protractor</a><a href="/hexoblog/tags/ReactJS/" style="font-size: 11.67px;">ReactJS</a><a href="/hexoblog/tags/Scrum/" style="font-size: 11.67px;">Scrum</a><a href="/hexoblog/tags/Sublime-Text-3/" style="font-size: 11.67px;">Sublime Text 3</a><a href="/hexoblog/tags/Testing/" style="font-size: 11.67px;">Testing</a><a href="/hexoblog/tags/blog/" style="font-size: 11.67px;">blog</a><a href="/hexoblog/tags/coServ/" style="font-size: 15.00px;">coServ</a><a href="/hexoblog/tags/frond-end/" style="font-size: 10.00px;">frond-end</a><a href="/hexoblog/tags/front-end/" style="font-size: 11.67px;">front-end</a><a href="/hexoblog/tags/gulp/" style="font-size: 11.67px;">gulp</a><a href="/hexoblog/tags/javascript/" style="font-size: 11.67px;">javascript</a><a href="/hexoblog/tags/markdown/" style="font-size: 11.67px;">markdown</a><a href="/hexoblog/tags/mopcom/" style="font-size: 11.67px;">mopcom</a><a href="/hexoblog/tags/nodeJS/" style="font-size: 16.67px;">nodeJS</a><a href="/hexoblog/tags/sitemap/" style="font-size: 13.33px;">sitemap</a><a href="/hexoblog/tags/workshop/" style="font-size: 20.00px;">workshop</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">彙整</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/12/">December 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/11/">November 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/05/">May 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/hexoblog/archives/2015/03/">March 2015</a></li></ul>
     </div>
   </div>
+
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recents</h3>
+    <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/hexoblog/2016/05/10/blog-new-open-and-test/">blog new open and test</a>
+          </li>
         
           <li>
             <a href="/hexoblog/2015/12/10/Protractor-install-and-Start-Testing/">Protractor install and Start Testing</a>
@@ -603,10 +602,6 @@ ga('send', 'pageview');
             <a href="/hexoblog/2015/11/11/AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/">AngualrJS directive use isolated scope binding issue in Firefox only</a>
           </li>
         
-          <li>
-            <a href="/hexoblog/2015/11/05/mopcon-2015-工作人員參與心得-議程組-Jacky/">mopcon 2015 工作人員參與心得 議程組 - Jacky</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -619,7 +614,7 @@ ga('send', 'pageview');
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2015 hungjie19<br>
+      &copy; 2016 hungjie19<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

@@ -3,29 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>nodeJS read csv to JSON，使用 csvtojson | Jacky&#39;s Notes</title>
+  <title>Tag: presentation | Jacky&#39;s Notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目標：
-
-讀取 csv 檔案
-解析 csv 成 JSON 檔案
-儲存 JSON 檔案">
-<meta property="og:type" content="article">
-<meta property="og:title" content="nodeJS read csv to JSON，使用 csvtojson">
-<meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/2015/10/13/nodeJS-read-csv-to-JSON，使用-csvtojson/">
+  <meta name="description" content="Junlor Front-End Engineer 學習筆記簿">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jacky's Notes">
+<meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/tags/presentation/">
 <meta property="og:site_name" content="Jacky's Notes">
-<meta property="og:description" content="目標：
-
-讀取 csv 檔案
-解析 csv 成 JSON 檔案
-儲存 JSON 檔案">
+<meta property="og:description" content="Junlor Front-End Engineer 學習筆記簿">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodeJS read csv to JSON，使用 csvtojson">
-<meta name="twitter:description" content="目標：
-
-讀取 csv 檔案
-解析 csv 成 JSON 檔案
-儲存 JSON 檔案">
+<meta name="twitter:title" content="Jacky's Notes">
+<meta name="twitter:description" content="Junlor Front-End Engineer 學習筆記簿">
 
   
     <link rel="alternate" href="/atom.xml" title="Jacky&#39;s Notes" type="application/atom+xml">
@@ -80,10 +68,12 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-nodeJS-read-csv-to-JSON，使用-csvtojson" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-HackMD-markdown-x-共筆-x-slide-x-Doc-一次滿足" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/hexoblog/2015/10/13/nodeJS-read-csv-to-JSON，使用-csvtojson/" class="article-date">
-  <time datetime="2015-10-13T15:03:58.000Z" itemprop="datePublished">10月 13 2015</time>
+    <a href="/hexoblog/2016/05/11/HackMD-markdown-x-共筆-x-slide-x-Doc-一次滿足/" class="article-date">
+  <time datetime="2016-05-10T17:27:00.000Z" itemprop="datePublished">5月 11 2016</time>
 </a>
     
   </div>
@@ -93,8 +83,8 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      nodeJS read csv to JSON，使用 csvtojson
+    <h1 itemprop="name">
+      <a class="article-title" href="/hexoblog/2016/05/11/HackMD-markdown-x-共筆-x-slide-x-Doc-一次滿足/">HackMD markdown x 共筆 x slide x Doc 一次滿足</a>
     </h1>
   
 
@@ -102,78 +92,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="目標：">目標：</h3>
-<ol>
-<li>讀取 csv 檔案</li>
-<li>解析 csv 成 JSON 檔案</li>
-<li>儲存 JSON 檔案</li>
-</ol>
-<a id="more"></a>
-<h3 id="開始之前：">開始之前：</h3>
-<p>我們將使用 npm 上面的一個模組 <code>csvtojson</code> 來幫助我們將 csv 解析成 JSON.</p>
-<ul>
-<li>npm<ul>
-<li><a href="https://www.npmjs.com/package/csvtojson" target="_blank" rel="external">https://www.npmjs.com/package/csvtojson</a></li>
-</ul>
-</li>
-<li>github<ul>
-<li><a href="https://github.com/Keyang/node-csvtojson" target="_blank" rel="external">https://github.com/Keyang/node-csvtojson</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="Installation">Installation</h3>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> csvtojson <span class="comment">--save</span></span></div></pre></td></tr></table></figure>
+        <p>向大家介紹一個很棒的 markdown 服務：<a href="https://hackmd.io/" target="_blank" rel="external">HackMD</a></p>
+<h1 id="火力展示_-_點我!!_"><a href="https://hackmd.io/p/HkyP-VU-#/" target="_blank" rel="external">火力展示 - 點我!! </a></h1>
+<p>是的，這份簡報是使用 <code>markdown</code> 編輯的。</p>
 
-<h3 id="一個簡單的_csv_to_json_範例程式架構如下：">一個簡單的 csv to json 範例程式架構如下：</h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// require nodeJS 內建 File System 模組.</span></div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"></div><div class="line"><span class="comment">// csvtojson modules 宣告</span></div><div class="line"><span class="keyword">var</span> Converter = <span class="built_in">require</span>(<span class="string">"csvtojson"</span>).Converter;</div><div class="line"><span class="keyword">var</span> newConverter = <span class="keyword">new</span> Converter({});</div><div class="line"></div><div class="line"><span class="comment">// csv 檔案位置/名稱，先存在變數中只是為了方便看 code.</span></div><div class="line"><span class="keyword">var</span> csvfile = <span class="string">'my_csv_File.csv'</span></div><div class="line"></div><div class="line"><span class="comment">// JSON 檔案儲存名稱</span></div><div class="line"><span class="keyword">var</span> saveFileName = <span class="string">'csvtojson.json'</span>;</div><div class="line"></div><div class="line"><span class="comment">// read from file </span></div><div class="line"><span class="comment">// 利用 fs 讀取 csv 檔案並交給 csvtojson 解析</span></div><div class="line">fs.createReadStream( csvfile ).pipe( newConverter );</div><div class="line"></div><div class="line"><span class="comment">// end_parsed will be emitted once parsing finished </span></div><div class="line"><span class="comment">// 當 csvtojson 結束解析的時候</span></div><div class="line">newConverter.on(<span class="string">"end_parsed"</span>, <span class="function"><span class="keyword">function</span> <span class="params">(jsonArray)</span> </span>{</div><div class="line">  <span class="comment">// 可開啟這行在 Command Line 觀看 data 內容</span></div><div class="line">  <span class="comment">// console.log(jsonArray); //here is your result jsonarray </span></div><div class="line"></div><div class="line"></div><div class="line">  <span class="comment">// 對 jsonArray 做處理，寫你的 code</span></div><div class="line"></div><div class="line"></div><div class="line">  <span class="comment">// 儲存成 JSON</span></div><div class="line">  <span class="comment">// fs.writeFile 使用 File System 的 writeFile 方法做儲存</span></div><div class="line">  <span class="comment">// 傳入三個參數（ 存檔名, 資料, 格式 ）</span></div><div class="line">  fs.writeFile( saveFileName, <span class="built_in">JSON</span>.stringify( jsonArray ), <span class="string">'utf8'</span>);</div><div class="line"></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'csv to JSON done !!'</span>);</div><div class="line">});</div></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="小結:">小結:</h3>
-<p>常常在使用 Excel / google spreadsheet 做統計資料的時候，就在想是不是可以把這些資料做成 JSON 檔案，再去和其他 api 結合做出好玩的應用，當然有很多線上的功能可幫助我們完成同樣的動作，但是利用 nodeJS 來實作一方面可以學習 nodeJS 並瞭解 JavaScript 不只可以寫網頁同時感受 nodeJS 強大威力！</p>
-<p>enjoy!!</p>
-
+        
+          <p class="article-more-link">
+            <a href="/hexoblog/2016/05/11/HackMD-markdown-x-共筆-x-slide-x-Doc-一次滿足/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/10/13/nodeJS-read-csv-to-JSON，使用-csvtojson/" data-id="aagfxh4tvrevogge" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2016/05/11/HackMD-markdown-x-共筆-x-slide-x-Doc-一次滿足/" data-id="0cbvy2wlu50mzr61" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/10/13/nodeJS-read-csv-to-JSON，使用-csvtojson/#disqus_thread" class="article-comment-link">留言</a>
+        <a href="http://hungjie19.github.io/hexoblog/2016/05/11/HackMD-markdown-x-共筆-x-slide-x-Doc-一次滿足/#disqus_thread" class="article-comment-link">留言</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/JSON/">JSON</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/nodeJS/">nodeJS</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/HackMD/">HackMD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/markdown/">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/presentation/">presentation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/slide/">slide</a></li></ul>
 
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/hexoblog/2015/10/15/nodeJS-get-google-表單，使用-google-spreadsheet/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          nodeJS get google 表單 to JSON，使用 google-spreadsheet
-        
-      </div>
-    </a>
-  
-  
-    <a href="/hexoblog/2015/10/12/nodeJS-get-JSON-在-nodeJS-server-直接取得-Http-JSON/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">nodeJS get JSON, 在 nodeJS server 直接取得 Http JSON</div>
-    </a>
-  
-</nav>
-
-  
 </article>
 
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+  
+
 </section>
         
           <aside id="sidebar">
@@ -265,13 +210,11 @@
 <script>
   var disqus_shortname = 'hungjiehexoblog';
   
-  var disqus_url = 'http://hungjie19.github.io/hexoblog/2015/10/13/nodeJS-read-csv-to-JSON，使用-csvtojson/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

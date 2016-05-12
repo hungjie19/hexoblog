@@ -649,6 +649,9 @@ a.article-title:hover {
   text-shadow: 0 1px #fff;
   text-decoration: none;
   text-align: center;
+  border: 1px solid #4caf50;
+  width: 70%;
+  margin: 0 auto;
 }
 .article-more-link a:hover {
   outline: 0;

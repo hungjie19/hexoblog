@@ -200,81 +200,109 @@ body {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-.article-entry h1 {
+.article-entry h1,
+.widget h1 {
   font-size: 2em;
 }
-.article-entry h2 {
+.article-entry h2,
+.widget h2 {
   font-size: 1.5em;
 }
-.article-entry h3 {
+.article-entry h3,
+.widget h3 {
   font-size: 1.3em;
 }
-.article-entry h4 {
+.article-entry h4,
+.widget h4 {
   font-size: 1.2em;
 }
-.article-entry h5 {
+.article-entry h5,
+.widget h5 {
   font-size: 1em;
 }
-.article-entry h6 {
+.article-entry h6,
+.widget h6 {
   font-size: 1em;
   color: #999;
 }
-.article-entry hr {
+.article-entry hr,
+.widget hr {
   border: 1px dashed #ddd;
 }
-.article-entry strong {
+.article-entry strong,
+.widget strong {
   font-weight: bold;
 }
 .article-entry em,
-.article-entry cite {
+.widget em,
+.article-entry cite,
+.widget cite {
   font-style: italic;
 }
 .article-entry sup,
-.article-entry sub {
+.widget sup,
+.article-entry sub,
+.widget sub {
   font-size: 0.75em;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
-.article-entry sup {
+.article-entry sup,
+.widget sup {
   top: -0.5em;
 }
-.article-entry sub {
+.article-entry sub,
+.widget sub {
   bottom: -0.2em;
 }
-.article-entry small {
+.article-entry small,
+.widget small {
   font-size: 0.85em;
 }
 .article-entry acronym,
-.article-entry abbr {
+.widget acronym,
+.article-entry abbr,
+.widget abbr {
   border-bottom: 1px dotted;
 }
 .article-entry ul,
+.widget ul,
 .article-entry ol,
-.article-entry dl {
+.widget ol,
+.article-entry dl,
+.widget dl {
   margin: 0 20px;
   line-height: 1.8em;
 }
 .article-entry ul ul,
+.widget ul ul,
 .article-entry ol ul,
+.widget ol ul,
 .article-entry ul ol,
-.article-entry ol ol {
+.widget ul ol,
+.article-entry ol ol,
+.widget ol ol {
   margin-top: 0;
   margin-bottom: 0;
 }
-.article-entry ul {
+.article-entry ul,
+.widget ul {
   list-style: disc;
 }
-.article-entry ol {
+.article-entry ol,
+.widget ol {
   list-style: decimal;
 }
-.article-entry dt {
+.article-entry dt,
+.widget dt {
   font-weight: bold;
 }
 #header {
-  height: 300px;
+  height: 500px;
   position: relative;
   border-bottom: 1px solid #ddd;
+  background: rgba(0,0,0,0.5);
 }
 #header:before,
 #header:after {
@@ -298,6 +326,11 @@ body {
   background: -ms-linear-gradient(transparent, rgba(0,0,0,0.2));
   background: linear-gradient(transparent, rgba(0,0,0,0.2));
 }
+@media screen and (max-width: 479px) {
+  #header {
+    height: 300px;
+  }
+}
 #header-outer {
   height: 100%;
   position: relative;
@@ -320,11 +353,14 @@ body {
 }
 #header-title {
   text-align: center;
-  height: 40px;
+  min-height: 40px;
   position: absolute;
   top: 50%;
   left: 0;
   margin-top: -20px;
+}
+#logo-wrap {
+  font-family: 'Orbitron', sans-serif;
 }
 #logo,
 #subtitle {
@@ -339,12 +375,12 @@ body {
   letter-spacing: 2px;
 }
 #subtitle {
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 24px;
+  line-height: 24px;
   letter-spacing: 1px;
 }
 #subtitle-wrap {
-  margin-top: 16px;
+  margin-top: 24px;
 }
 #main-nav {
   float: left;
@@ -1259,4 +1295,78 @@ pre .javascript .function {
   .mobile-nav-link:hover {
     color: #fff;
   }
+}
+.widget-wrap {
+  margin-bottom: 50px !important;
+}
+@media screen and (min-width: 768px) {
+  .widget-wrap {
+    display: inline;
+    float: left;
+    width: 23.3333333333333%;
+    margin: 0 0.8333333333333%;
+  }
+}
+.widget-title {
+  color: #ccc;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5em;
+  line-height: 1em;
+  font-weight: bold;
+}
+.widget {
+  color: #999;
+}
+.widget ul li,
+.widget ol li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  padding-right: 0.75em;
+}
+.widget {
+  line-height: 1.8em;
+  word-wrap: break-word;
+  font-size: 0.9em;
+}
+.widget ul,
+.widget ol {
+  list-style: none;
+  margin: 0;
+}
+.widget ul ul,
+.widget ol ul,
+.widget ul ol,
+.widget ol ol {
+  margin: 0 20px;
+}
+.widget ul ul,
+.widget ol ul {
+  list-style: disc;
+}
+.widget ul ol,
+.widget ol ol {
+  list-style: decimal;
+}
+.category-list-count,
+.tag-list-count,
+.archive-list-count {
+  padding-left: 5px;
+  color: #999;
+  font-size: 0.85em;
+}
+.category-list-count:before,
+.tag-list-count:before,
+.archive-list-count:before {
+  content: "(";
+}
+.category-list-count:after,
+.tag-list-count:after,
+.archive-list-count:after {
+  content: ")";
+}
+.tagcloud a {
+  margin-right: 5px;
+  display: inline-block;
 }

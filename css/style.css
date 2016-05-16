@@ -128,7 +128,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 .outer {
-  max-width: 1220px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -143,8 +143,8 @@ body {
 .inner {
   display: inline;
   float: left;
-  width: 98.3333333333333%;
-  margin: 0 0.8333333333333%;
+  width: 97.9166666666667%;
+  margin: 0 1.0416666666667%;
 }
 .left,
 .alignleft {
@@ -675,12 +675,20 @@ a.article-title:hover {
   height: 100%;
   margin-top: 0;
 }
+@media screen and (max-width: 479px) {
+  .article-more-link:before,
+  .article-more-link:after {
+    content: "";
+    display: table;
+  }
+  .article-more-link:after {
+    clear: both;
+  }
+}
 .article-more-link a {
   display: block;
   line-height: 2em;
   padding: 6px 15px;
-  -webkit-border-radius: 2em;
-  border-radius: 2em;
   color: #4caf50;
   text-shadow: 0 1px #fff;
   text-decoration: none;
@@ -696,6 +704,12 @@ a.article-title:hover {
   text-decoration: none;
   -webkit-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+@media screen and (max-width: 479px) {
+  .article-more-link a {
+    float: right;
+    width: 150px;
+  }
 }
 .article-footer {
   font-size: 0.85em;
@@ -1303,8 +1317,8 @@ pre .javascript .function {
   .widget-wrap {
     display: inline;
     float: left;
-    width: 23.3333333333333%;
-    margin: 0 0.8333333333333%;
+    width: 22.9166666666667%;
+    margin: 0 1.0416666666667%;
   }
 }
 .widget-title {

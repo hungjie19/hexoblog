@@ -99,146 +99,21 @@
 <h3 id="主要優點：">主要優點：</h3>
 <ol>
 <li>纯文字檔案，任何編輯器可以撰寫。</li>
-<li>讓大家<code>不需要</code>學習複雜的 HTML 語法<ul>
-<li>就能夠使用標記語言格式進而達到管理文件的目地。</li>
-</ul>
-</li>
+<li>讓大家<code>不需要</code>學習複雜的 HTML 語法就能夠使用標記語言格式。</li>
 <li>語法簡單，易學。</li>
 <li>好閱讀，就算沒有轉化成 HTML 語言之前結構也是非常完整的。</li>
 <li>甚至已經取代我做筆記的格式。</li>
 </ol>
-<h3 id="附檔名：">附檔名：</h3>
-<ol>
-<li><code>.md</code></li>
-<li><code>.markdown</code></li>
-</ol>
-<p>以上皆可，如果在 gitLab 中使用 New Page 所產生的檔案附檔名為: <code>.markdown</code>。</p>
-<h2 id="誰在用_?">誰在用 ?</h2>
-<ul>
-<li>Github</li>
-<li>GitLab</li>
-<li>hackpad</li>
-<li>HackMD</li>
-<li>FaceBook Notes</li>
-<li>Slack</li>
-<li>Medium</li>
-</ul>
-<p>越來越多 <code>文章發佈系統</code> 或 <code>溝通軟體</code>，都已經支援 markdown 格式，好 markdown 不學嗎？</p>
-<hr>
-<h2 id="markdown_syntax">markdown syntax</h2>
-<h3 id="標題大到小">標題大到小</h3>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="header"># H1 test</span></div><div class="line"><span class="header">## H2 test</span></div><div class="line">...</div><div class="line"><span class="header">###### H6 test</span></div></pre></td></tr></table></figure>
 
-<h1 id="H1_test">H1 test</h1>
-<h2 id="H2_test">H2 test</h2>
-<h6 id="H6_test">H6 test</h6>
-<hr>
-<h3 id="加入列表">加入列表</h3>
-<p>通常我們會條列式的逐條記錄內容重點，既可使用以下語法。</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">列表範例：</div><div class="line"><span class="bullet">- </span>珍珠奶茶</div><div class="line"><span class="code">    - 半糖微冰 2</span></div><div class="line"><span class="code">    - 三分微冰 4</span></div><div class="line"><span class="code">    - 無糖去冰 5</span></div><div class="line"><span class="bullet">- </span>雞排</div><div class="line"><span class="code">    - 切</span></div><div class="line"><span class="code">        - 原味 2</span></div><div class="line"><span class="code">        - 辣味 4</span></div><div class="line"><span class="code">    - 不切</span></div><div class="line"><span class="code">        - 原味 3</span></div><div class="line"><span class="code">        - 辣味 7</span></div><div class="line"></div><div class="line">數字列表範例：</div><div class="line"><span class="bullet">1. </span>復仇者聯盟</div><div class="line"><span class="bullet">2. </span>鋼鐵人</div><div class="line"><span class="bullet">3. </span>美國隊長</div></pre></td></tr></table></figure>
-
-<hr>
-<p>列表範例：</p>
-<ul>
-<li>珍珠奶茶<ul>
-<li>半糖微冰 2</li>
-<li>三分微冰 4</li>
-<li>無糖去冰 5</li>
-</ul>
-</li>
-<li>雞排<ul>
-<li>切<ul>
-<li>原味 2</li>
-<li>辣味 4</li>
-</ul>
-</li>
-<li>不切<ul>
-<li>原味 3</li>
-<li>辣味 7</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>數字列表範例：</p>
-<ol>
-<li>復仇者聯盟</li>
-<li>鋼鐵人</li>
-<li>美國隊長</li>
-</ol>
-<hr>
-<h3 id="數字列表的小技巧">數字列表的小技巧</h3>
-<p>情境：如果我要把以上範例的 <code>復仇者聯盟</code> 移動到最後一筆，那我不就要把所有編號也改過一次…</p>
-<p>不，你只需要記住數字列表都使用 <code>1.</code> 當語法就可以了，程式會依序幫你編號。 </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">語法：</div><div class="line"><span class="bullet">1. </span>鋼鐵人</div><div class="line"><span class="bullet">1. </span>美國隊長</div><div class="line"><span class="bullet">1. </span>復仇者聯盟</div></pre></td></tr></table></figure>
-
-<p>範例：</p>
-<ol>
-<li>鋼鐵人</li>
-<li>美國隊長</li>
-<li>復仇者聯盟</li>
-</ol>
-<hr>
-<h3 id="加入一段程式碼">加入一段程式碼</h3>
-<p>這個功能算是 markdown 重要的應用，一般的 <code>文字記錄簿 (word text or blog)</code> 都無法將程式碼縮排完整保留，而透過 markdown 格式可以完整記錄下來。</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">// markdown example:</div><div class="line">｀｀｀ markdown</div><div class="line"><span class="header"># H1 test</span></div><div class="line"><span class="header">## H2 test</span></div><div class="line">｀｀｀</div><div class="line"></div><div class="line">// javascript example:</div><div class="line">｀｀｀ javascript</div><div class="line">function(){</div><div class="line"><span class="code">    console.log('markdown test OK!');</span></div><div class="line">}</div><div class="line">｀｀｀</div><div class="line"></div><div class="line">// 解釋</div><div class="line">｀｀｀ language</div><div class="line"><span class="bullet">1. </span>區塊上下各插入三個 ｀ 符號（~ 鍵，範例為全形，真正語法需用半形）</div><div class="line"><span class="bullet">2. </span>語法上方，加入 1 個空格，後面可帶入的參數代表的是：程式語言</div><div class="line"><span class="bullet">3. </span>此區塊可以自由運用，所有空格符號都不會被移除。</div><div class="line"><span class="bullet">4. </span>因此可以貼上 Code 而格式不會跑掉。</div><div class="line"><span class="bullet">5. </span>搭配 highlight.js 就可以顯示跟平常 IDE 一樣的顏色。</div><div class="line">｀｀｀</div></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="加入連結或圖片">加入連結或圖片</h3>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">加入連結：</div><div class="line">[<span class="link_label">連接名稱</span>](<span class="link_url">url</span>)</div><div class="line">ex: [<span class="link_label">google</span>](<span class="link_url">https://www.google.com.tw</span>)</div><div class="line"></div><div class="line">加入圖片：</div><div class="line">![<span class="link_label">圖片名稱</span>](<span class="link_url">url</span>)</div></pre></td></tr></table></figure>
-
-<p>連結範例：<br><a href="https://www.google.com.tw" target="_blank" rel="external">google</a></p>
-<p>圖片範例：<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png" alt="Markdown"></p>
-<hr>
-<h2 id="學習更多_Markdown_語法：">學習更多 Markdown 語法：</h2>
-<ul>
-<li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" rel="external">學習更多 GitHub Markdown</a></li>
-<li><a href="https://blue.cse.buffalo.edu/gitlab/help/markdown/markdown.md" target="_blank" rel="external">學習更多 GitLab Markdown</a></li>
-<li><a href="http://www.emoji-cheat-sheet.com/" target="_blank" rel="external">加入表情符號 emoji (不一定支援)</a></li>
-</ul>
-<h2 id="即時編輯器">即時編輯器</h2>
-<ul>
-<li>IDE<ul>
-<li><a href="https://github.com/atom/markdown-preview" target="_blank" rel="external">atom 具備 markdown preview 功能可以設定 github style</a></li>
-<li>MacDown (Mac)</li>
-</ul>
-</li>
-<li>Online editer<ul>
-<li><a href="hackmd.io">HackMD 還可生成投影片，推薦使用！</a></li>
-</ul>
-</li>
-<li>CHROME 套件<ul>
-<li><a href="https://chrome.google.com/webstore/detail/minimalist-markdown-edito/pghodfjepegmciihfhdipmimghiakcjf?utm_source=chrome-app-launcher-search" target="_blank" rel="external">Minimalist Markdown Editor</a></li>
-<li><a href="https://chrome.google.com/webstore/detail/marxico/kidnkfckhbdkfgbicccmdggmpgogehop?utm_source=chrome-ntp-icon" target="_blank" rel="external">馬克飛象 (大陸)</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="還可以做什麼_?">還可以做什麼 ?</h2>
-<ul>
-<li>寫書: <ul>
-<li><a href="http://conv.denshochan.com/tw/" target="_blank" rel="external">ePub3</a></li>
-<li><a href="https://www.gitbook.com/" target="_blank" rel="external">gitbook</a></li>
-</ul>
-</li>
-<li>寫 Blog<ul>
-<li><a href="https://hexo.io/" target="_blank" rel="external">Hexo (本 blog 使用)</a></li>
-<li><a href="https://jekyllrb.com/" target="_blank" rel="external">jekyll</a></li>
-<li><a href="http://logdown.com/" target="_blank" rel="external">logdown</a></li>
-<li><a href="https://en.support.wordpress.com/markdown/" target="_blank" rel="external">wordpress</a></li>
-</ul>
-</li>
-<li>寫投影片 slide<ul>
-<li><a href="https://hungjie19.github.io/hexoblog/2016/05/11/HackMD-markdown-x-%E5%85%B1%E7%AD%86-x-slide-x-Doc-%E4%B8%80%E6%AC%A1%E6%BB%BF%E8%B6%B3/" target="_blank" rel="external">HackMD</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="好_markdown_不學嗎？">好 markdown 不學嗎？</h2>
-<p>試著打一遍，很快就學會了，真的！</p>
-
+        
+          <p class="article-more-link">
+            <a href="/hexoblog/2016/05/17/what-is-markdown-and-who-use-it/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2016/05/17/what-is-markdown-and-who-use-it/" data-id="rtkb2ilyi78i26wj" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2016/05/17/what-is-markdown-and-who-use-it/" data-id="a338bpntcvod2c8e" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2016/05/17/what-is-markdown-and-who-use-it/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -289,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2016/05/11/HackMD-markdown-x-共筆-x-slide-x-Doc-一次滿足/" data-id="7rujeqahw8ldnlyi" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2016/05/11/HackMD-markdown-x-共筆-x-slide-x-Doc-一次滿足/" data-id="s8cj1xyyxcphdl48" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2016/05/11/HackMD-markdown-x-共筆-x-slide-x-Doc-一次滿足/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -340,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2016/05/10/change-Hexo-theme-and-test-Hexo-3.2-and-Blog-restart/" data-id="cr6jhov67xhje0y0" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2016/05/10/change-Hexo-theme-and-test-Hexo-3.2-and-Blog-restart/" data-id="nkx0ofempxtxt2u4" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2016/05/10/change-Hexo-theme-and-test-Hexo-3.2-and-Blog-restart/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -393,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/12/10/Protractor-install-and-Start-Testing/" data-id="v5eu3tjcb9w2fbib" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/12/10/Protractor-install-and-Start-Testing/" data-id="qjxfvqjkt7toy4bk" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/12/10/Protractor-install-and-Start-Testing/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -448,7 +323,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/12/06/高雄前端社群-21-React-Party/" data-id="0vbxogj17bcor5ol" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/12/06/高雄前端社群-21-React-Party/" data-id="nyxap5r1sq8at6vq" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/12/06/高雄前端社群-21-React-Party/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -494,7 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/12/02/AngularJS-ng-show-ng-hide-and-scope-string-yes-no-on-off/" data-id="t4xyrrwb6homylr1" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/12/02/AngularJS-ng-show-ng-hide-and-scope-string-yes-no-on-off/" data-id="jj1jsmnv9wbkoniu" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/12/02/AngularJS-ng-show-ng-hide-and-scope-string-yes-no-on-off/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -539,7 +414,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/11/11/AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/" data-id="mvleqvfk49jz123e" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/11/11/AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/" data-id="lgok17hgillry3sr" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/11/11/AngularJS-directive-use-isolated-scope-binding-issue-in-Firefox-only/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -587,7 +462,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/11/05/mopcon-2015-工作人員參與心得-議程組-Jacky/" data-id="miqfh7pup8agboiv" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/11/05/mopcon-2015-工作人員參與心得-議程組-Jacky/" data-id="lcqquj1yv48oagmk" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/11/05/mopcon-2015-工作人員參與心得-議程組-Jacky/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -638,7 +513,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/10/15/nodeJS-get-google-表單，使用-google-spreadsheet/" data-id="gx3no61iktyvurat" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/10/15/nodeJS-get-google-表單，使用-google-spreadsheet/" data-id="byj965ys6nsg18mg" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/10/15/nodeJS-get-google-表單，使用-google-spreadsheet/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -689,7 +564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/10/13/nodeJS-read-csv-to-JSON，使用-csvtojson/" data-id="d1kolqfrhpju7hk2" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/10/13/nodeJS-read-csv-to-JSON，使用-csvtojson/" data-id="ig91797hl7eaiscb" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/10/13/nodeJS-read-csv-to-JSON，使用-csvtojson/#disqus_thread" class="article-comment-link">留言</a>
       

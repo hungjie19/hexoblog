@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn, Record, Share]]></subtitle>
   <link href="/hexoblog/atom.xml" rel="self"/>
   <link href="http://hungjie19.github.io/hexoblog/"/>
-  <updated>2016-05-17T17:05:29.174Z</updated>
+  <updated>2016-05-19T15:40:23.691Z</updated>
   <id>http://hungjie19.github.io/hexoblog/</id>
   
   <author>
@@ -13,6 +13,33 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[markdown 簡介以 hackmd 為例 - softnshare.slack.com ES6 線上讀書會直播錄影內容]]></title>
+    <link href="http://hungjie19.github.io/hexoblog/2016/05/19/markdown-%E7%B0%A1%E4%BB%8B%E4%BB%A5-hackmd-%E7%82%BA%E4%BE%8B-softnshare-slack-com-ES6-%E7%B7%9A%E4%B8%8A%E8%AE%80%E6%9B%B8%E6%9C%83%E7%9B%B4%E6%92%AD%E9%8C%84%E5%BD%B1%E5%85%A7%E5%AE%B9/"/>
+    <id>http://hungjie19.github.io/hexoblog/2016/05/19/markdown-簡介以-hackmd-為例-softnshare-slack-com-ES6-線上讀書會直播錄影內容/</id>
+    <published>2016-05-19T15:31:59.000Z</published>
+    <updated>2016-05-19T15:39:54.000Z</updated>
+    <content type="html"><![CDATA[<p><br></p>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/8maKJ6CJ9no" frameborder="0" allowfullscreen><br></iframe>
+
+<p><a href="https://youtu.be/8maKJ6CJ9no" target="_blank" rel="external">youtube link</a></p>
+<p>第一次直播錄影好緊張啊…一堆東西講錯，有了這次的經驗下次大概知道怎麼改善跟避免了，說錯的地方，請不吝指教，謝謝囉。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><br></p>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/8maKJ6CJ9no" frameborder="0" allowfullscreen><br></iframe>
+
+]]>
+    </summary>
+    
+      <category term="markdown" scheme="http://hungjie19.github.io/hexoblog/tags/markdown/"/>
+    
+      <category term="hackmd" scheme="http://hungjie19.github.io/hexoblog/tags/hackmd/"/>
+    
+      <category term="slack@softnshare" scheme="http://hungjie19.github.io/hexoblog/tags/slack-softnshare/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[what is markdown and who use it]]></title>
@@ -1831,39 +1858,6 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p><img src="https://googledrive.com/host/0B4fEFbbW93y5NUVTWS1wdGI4QTA" alt="Dsitemap 提交至 Google 網站管理員"></p>
-]]>
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://hungjie19.github.io/hexoblog/tags/Hexo/"/>
-    
-      <category term="sitemap" scheme="http://hungjie19.github.io/hexoblog/tags/sitemap/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexo sitemap [error] TypeError: Cannot read property 'sitemap' of undefined]]></title>
-    <link href="http://hungjie19.github.io/hexoblog/2015/05/16/Hexo-sitemap-error-TypeError-Cannot-read-property-sitemap-of-undefined/"/>
-    <id>http://hungjie19.github.io/hexoblog/2015/05/16/Hexo-sitemap-error-TypeError-Cannot-read-property-sitemap-of-undefined/</id>
-    <published>2015-05-16T03:20:54.000Z</published>
-    <updated>2015-05-16T05:01:59.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="https://googledrive.com/host/0B4fEFbbW93y5TloxVTZSbU5wbEE" alt="sitemap ［error］ Cannot read property &#39;sitemap&#39; of undefined"></p>
-<a id="more"></a>
-<h2 id="版本：">版本：</h2>
-<ul>
-<li>Hexo 2.8.3</li>
-</ul>
-<p>將原本 <code>hexo-generator-sitemap Plugin</code> 修改成以下版本既可。</p>
-<figure class="highlight bush"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>npm uninstall hexo-generator-sitemap</div><div class="line"><span class="variable">$ </span>npm install hexo-generator-sitemap<span class="variable">@0</span>.<span class="number">2.0</span> --save</div></pre></td></tr></table></figure>
-
-<h3 id="_config-yml">_config.yml</h3>
-<figure class="highlight bush"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="label">sitemap:</span></div><div class="line">    path: sitemap.xml</div></pre></td></tr></table></figure>
-
-<hr>
-<p>Reference :<br><a href="https://github.com/hexojs/hexo-generator-sitemap/issues/10" target="_blank" rel="external">When I use the plugin, I can’t deploy my blog with error #10</a><br><a href="https://github.com/hexojs/hexo-generator-sitemap" target="_blank" rel="external">hexo-generator-sitemap</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="https://googledrive.com/host/0B4fEFbbW93y5TloxVTZSbU5wbEE" alt="sitemap ［error］ Cannot read property &#39;sitemap&#39; of undefined"></p>
 ]]>
     
     </summary>

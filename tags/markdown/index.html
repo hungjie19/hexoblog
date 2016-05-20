@@ -71,6 +71,162 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-使用-hackmd-online-editor-與-markdown-語法製作工程師簡報" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/hexoblog/2016/05/20/使用-hackmd-online-editor-與-markdown-語法製作工程師簡報/" class="article-date">
+  <time datetime="2016-05-20T15:01:16.000Z" itemprop="datePublished">5月 20 2016</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hexoblog/2016/05/20/使用-hackmd-online-editor-與-markdown-語法製作工程師簡報/">使用 hackmd online editor 與 markdown 語法製作工程師簡報</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="HackMD_投影片語法介紹：">HackMD 投影片語法介紹：</h2>
+<h2 id="章節與小節語法">章節與小節語法</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">按鍵與方向</th>
+<th>定義</th>
+<th>分頁符號</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">→</td>
+<td>章節</td>
+<td>- - -</td>
+</tr>
+<tr>
+<td style="text-align:center">↓</td>
+<td>小節</td>
+<td>- - - -</td>
+</tr>
+</tbody>
+</table>
+<h3 id="範例：">範例：</h3>
+<p>假設我們要介紹一本書從首頁～第二章它的結構如下</p>
+<ul>
+<li>首頁</li>
+<li>第一章<ul>
+<li>1.1 節</li>
+<li>1.2 節</li>
+</ul>
+</li>
+<li>第二章</li>
+</ul>
+<h3 id="語法範例：">語法範例：</h3>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">首頁</div><div class="line"></div><div class="line"><span class="horizontal_rule">--- (→ 章節)</span></div><div class="line"> </div><div class="line"><span class="header"># 第一章</span></div><div class="line"></div><div class="line"><span class="horizontal_rule">---- (↓ 小節)</span></div><div class="line"></div><div class="line"><span class="header"># 1.1 節</span></div><div class="line">內容..</div><div class="line"></div><div class="line"><span class="horizontal_rule">---- (↓ 小節)</span></div><div class="line"></div><div class="line"><span class="header"># 1.2 節</span></div><div class="line">內容..</div><div class="line"></div><div class="line"><span class="horizontal_rule">--- (→ 章節)</span></div><div class="line"></div><div class="line"><span class="header"># 第二章</span></div></pre></td></tr></table></figure>
+
+<h4 id="小提醒">小提醒</h4>
+<ul>
+<li>分頁符號最好前後加上空行，才不會有語法沒有解析到的情形</li>
+<li>解析成功在編輯器內會是藍色</li>
+<li>頁面區塊內（分頁）符</li>
+</ul>
+<hr>
+<h2 id="更換投影片背景顏色">更換投影片背景顏色</h2>
+<p>Is the background syntax</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- .slide: data-background="#1A237E" --&gt;</span>`</div></pre></td></tr></table></figure>
+
+<p>將需要的顏色使用 <code>Hex Color</code> 修改成相對應色碼既可。</p>
+<hr>
+<h2 id="為內容加上淡出動畫">為內容加上淡出動畫</h2>
+<p>Is the fragment syntax</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- .element: class="fragment" data-fragment-index="1" --&gt;</span></div></pre></td></tr></table></figure>
+
+<p>直接修改 <code>data-fragment-index=&quot;1&quot;</code> 的值就可以調整出場順序</p>
+<h4 id="淡出動畫_範例：">淡出動畫 範例：</h4>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line"></div><div class="line">## 淡出動畫</div><div class="line">- 淡出動畫1<span class="comment">&lt;!-- .element: class="fragment" data-fragment-index="1" --&gt;</span></div><div class="line">- 淡出動畫2<span class="comment">&lt;!-- .element: class="fragment" data-fragment-index="2" --&gt;</span></div><div class="line">- 淡出動畫2<span class="comment">&lt;!-- .element: class="fragment" data-fragment-index="3" --&gt;</span></div><div class="line"></div><div class="line">---</div></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="調整投影片轉場動畫">調整投影片轉場動畫</h2>
+<p>Is the transition syntax</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- .slide: data-transition="concave" --&gt;</span></div></pre></td></tr></table></figure>
+
+<h4 id="轉場動畫其他效果：">轉場動畫其他效果：</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">效果名稱</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">none</td>
+<td>無</td>
+</tr>
+<tr>
+<td style="text-align:center">fade</td>
+<td>淡入淡出</td>
+</tr>
+<tr>
+<td style="text-align:center">slide</td>
+<td>向左平移</td>
+</tr>
+<tr>
+<td style="text-align:center">convex</td>
+<td>向內旋轉</td>
+</tr>
+<tr>
+<td style="text-align:center">concave</td>
+<td>向外旋轉</td>
+</tr>
+<tr>
+<td style="text-align:center">zoom</td>
+<td>向外放大</td>
+</tr>
+</tbody>
+</table>
+<p>並且可以分別為投影片 進/出場，加上後綴符號設定：</p>
+<ul>
+<li>進場：<code>-in</code></li>
+<li>出場：<code>-out</code></li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">特效加上後綴符號範例:</div><div class="line"><span class="comment">&lt;!-- .slide: data-transition="zoom-in convex-out" --&gt;</span></div></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="調整投影片轉場速度">調整投影片轉場速度</h2>
+<p>Custom the transition speed!</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- .slide: data-transition-speed="fast" --&gt;</span></div></pre></td></tr></table></figure>
+
+<p>速度有三種可以調整：</p>
+<ul>
+<li>default</li>
+<li>fast</li>
+<li>slow</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hungjie19.github.io/hexoblog/2016/05/20/使用-hackmd-online-editor-與-markdown-語法製作工程師簡報/" data-id="ssep4t2p35e4r3hc" class="article-share-link">Share</a>
+      
+        <a href="http://hungjie19.github.io/hexoblog/2016/05/20/使用-hackmd-online-editor-與-markdown-語法製作工程師簡報/#disqus_thread" class="article-comment-link">留言</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/HackMD/">HackMD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/markdown/">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/presentation/">presentation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/slide/">slide</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-markdown-簡介以-hackmd-為例-softnshare-slack-com-ES6-線上讀書會直播錄影內容" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/hexoblog/2016/05/19/markdown-簡介以-hackmd-為例-softnshare-slack-com-ES6-線上讀書會直播錄影內容/" class="article-date">
@@ -102,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2016/05/19/markdown-簡介以-hackmd-為例-softnshare-slack-com-ES6-線上讀書會直播錄影內容/" data-id="j1m5tw51s1q8y29m" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2016/05/19/markdown-簡介以-hackmd-為例-softnshare-slack-com-ES6-線上讀書會直播錄影內容/" data-id="5x0511eeb9l40qs3" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2016/05/19/markdown-簡介以-hackmd-為例-softnshare-slack-com-ES6-線上讀書會直播錄影內容/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -158,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2016/05/17/what-is-markdown-and-who-use-it/" data-id="g4eaij7pzg2w2dfm" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2016/05/17/what-is-markdown-and-who-use-it/" data-id="zlbxm7waq6lr9tf6" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2016/05/17/what-is-markdown-and-who-use-it/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -209,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2016/05/11/HackMD-markdown-x-共筆-x-slide-x-Doc-一次滿足/" data-id="9jf3kzmtqhevqps0" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2016/05/11/HackMD-markdown-x-共筆-x-slide-x-Doc-一次滿足/" data-id="y7vriu3g3dijeu6r" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2016/05/11/HackMD-markdown-x-共筆-x-slide-x-Doc-一次滿足/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -262,7 +418,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/24/hexo-new-文章後幫你開啟-MarkDown-編輯器/" data-id="qr4zffmno1pikz0w" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/24/hexo-new-文章後幫你開啟-MarkDown-編輯器/" data-id="kxdsybiv5tzvc01c" class="article-share-link">Share</a>
       
         <a href="http://hungjie19.github.io/hexoblog/2015/05/24/hexo-new-文章後幫你開啟-MarkDown-編輯器/#disqus_thread" class="article-comment-link">留言</a>
       
@@ -302,6 +458,10 @@
       <ul>
         
           <li>
+            <a href="/hexoblog/2016/05/20/使用-hackmd-online-editor-與-markdown-語法製作工程師簡報/">使用 hackmd online editor 與 markdown 語法製作工程師簡報</a>
+          </li>
+        
+          <li>
             <a href="/hexoblog/2016/05/19/markdown-簡介以-hackmd-為例-softnshare-slack-com-ES6-線上讀書會直播錄影內容/">markdown 簡介以 hackmd 為例 - softnshare.slack.com ES6 線上讀書會直播錄影內容</a>
           </li>
         
@@ -315,10 +475,6 @@
         
           <li>
             <a href="/hexoblog/2016/05/10/change-Hexo-theme-and-test-Hexo-3.2-and-Blog-restart/">change Hexo theme and test Hexo 3.2 and Blog restart</a>
-          </li>
-        
-          <li>
-            <a href="/hexoblog/2015/12/10/Protractor-install-and-Start-Testing/">Protractor install and Start Testing</a>
           </li>
         
       </ul>

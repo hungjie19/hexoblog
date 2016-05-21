@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn, Record, Share]]></subtitle>
   <link href="/hexoblog/atom.xml" rel="self"/>
   <link href="http://hungjie19.github.io/hexoblog/"/>
-  <updated>2016-05-21T13:28:13.382Z</updated>
+  <updated>2016-05-21T13:40:23.275Z</updated>
   <id>http://hungjie19.github.io/hexoblog/</id>
   
   <author>
@@ -19,8 +19,16 @@
     <link href="http://hungjie19.github.io/hexoblog/2016/05/21/TaiwanLeft-%E4%B8%8D%E5%8F%AA%E6%98%AF%E7%B0%A1%E5%A0%B1-week2-%E7%AD%86%E8%A8%98/"/>
     <id>http://hungjie19.github.io/hexoblog/2016/05/21/TaiwanLeft-不只是簡報-week2-筆記/</id>
     <published>2016-05-21T12:54:59.000Z</published>
-    <updated>2016-05-21T13:23:28.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="製作簡報花費時間">製作簡報花費時間</h2>
+    <updated>2016-05-21T13:39:45.000Z</updated>
+    <content type="html"><![CDATA[<ul>
+<li>國立嘉義大學</li>
+<li>不只是簡報</li>
+<li>教師: 王思齊</li>
+</ul>
+<p>TaiwanLeft MOOCs 線上學習 “不只是簡報” 筆記。</p>
+<p>非常不錯的課程值得推薦！</p>
+<a id="more"></a>
+<h2 id="製作簡報花費時間">製作簡報花費時間</h2>
 <p>Garr Raynolds 說簡報三階段：</p>
 <ul>
 <li>準備</li>
@@ -242,16 +250,15 @@
 </ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="製作簡報花費時間">製作簡報花費時間</h2>
-<p>Garr Raynolds 說簡報三階段：</p>
-<ul>
-<li>準備</li>
-<li>設計</li>
-<li>呈現</li>
+    <![CDATA[<ul>
+<li>國立嘉義大學</li>
+<li>不只是簡報</li>
+<li>教師: 王思齊</li>
 </ul>
-<h2 id="準備">準備</h2>
-<p>最耗時</p>
-<]]>
+<p>TaiwanLeft MOOCs 線上學習 “不只是簡報” 筆記。</p>
+<p>非常不錯的課程值得推薦！</p>
+]]>
+    
     </summary>
     
       <category term="TaiwanLeft" scheme="http://hungjie19.github.io/hexoblog/tags/TaiwanLeft/"/>

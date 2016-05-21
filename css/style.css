@@ -536,7 +536,8 @@ body {
   margin: 0 12px 1em;
 }
 .article-header {
-  padding: 20px 20px 0;
+  padding: 20px 0;
+  border-bottom: solid 1px #ddd;
 }
 .article-title {
   text-decoration: none;
@@ -598,6 +599,18 @@ a.article-title:hover {
 .article-entry dl {
   margin-top: 1.8em;
   margin-bottom: 1.8em;
+}
+.article-entry ul ul,
+.article-entry ol ul,
+.article-entry dl ul {
+  margin-left: 2em;
+  list-style: circle;
+  font-size: 0.9em;
+}
+.article-entry ul ul ul,
+.article-entry ol ul ul,
+.article-entry dl ul ul {
+  list-style: square;
 }
 .article-entry img,
 .article-entry video {
@@ -1119,14 +1132,14 @@ a.article-title:hover {
 }
 .article-entry pre,
 .article-entry .highlight {
-  background: #000;
+  background: #2d2d2d;
   margin: 0 -20px;
   padding: 15px 20px;
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
   overflow: auto;
-  color: #eaeaea;
+  color: #ccc;
   line-height: 36px;
 }
 .article-entry .highlight .gutter pre,
@@ -1163,7 +1176,7 @@ a.article-title:hover {
 }
 .article-entry .highlight figcaption {
   font-size: 0.85em;
-  color: #969896;
+  color: #999;
   line-height: 1em;
   margin-bottom: 1em;
 }
@@ -1190,7 +1203,7 @@ a.article-title:hover {
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
-  background: #000;
+  background: #2d2d2d;
   padding: 15px 20px 15px 0;
 }
 .article-entry .gist .gist-file {
@@ -1216,8 +1229,8 @@ a.article-title:hover {
   border: none;
 }
 .article-entry .gist .gist-file .gist-meta {
-  background: #000;
-  color: #969896;
+  background: #2d2d2d;
+  color: #999;
   font: 0.85em "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
   text-shadow: 0 0;
   padding: 0;
@@ -1233,7 +1246,7 @@ a.article-title:hover {
 }
 pre .comment,
 pre .title {
-  color: #969896;
+  color: #999;
 }
 pre .variable,
 pre .attribute,
@@ -1247,7 +1260,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #d54e53;
+  color: #f2777a;
 }
 pre .number,
 pre .preprocessor,
@@ -1255,12 +1268,12 @@ pre .built_in,
 pre .literal,
 pre .params,
 pre .constant {
-  color: #e78c45;
+  color: #f99157;
 }
 pre .class,
 pre .ruby .class .title,
 pre .css .rules .attribute {
-  color: #b9ca4a;
+  color: #9c9;
 }
 pre .string,
 pre .value,
@@ -1268,10 +1281,10 @@ pre .inheritance,
 pre .header,
 pre .ruby .symbol,
 pre .xml .cdata {
-  color: #b9ca4a;
+  color: #9c9;
 }
 pre .css .hexcolor {
-  color: #70c0b1;
+  color: #6cc;
 }
 pre .function,
 pre .python .decorator,
@@ -1281,11 +1294,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #7aa6da;
+  color: #69c;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #c397d8;
+  color: #c9c;
 }
 @media screen and (max-width: 479px) {
   #mobile-nav {

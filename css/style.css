@@ -602,10 +602,20 @@ a.article-title:hover {
 }
 .article-entry ul ul,
 .article-entry ol ul,
-.article-entry dl ul {
+.article-entry dl ul,
+.article-entry ul ol,
+.article-entry ol ol,
+.article-entry dl ol,
+.article-entry ul dl,
+.article-entry ol dl,
+.article-entry dl dl {
   margin-left: 2em;
-  list-style: circle;
   font-size: 0.9em;
+}
+.article-entry ul ul,
+.article-entry ol ul,
+.article-entry dl ul {
+  list-style: circle;
 }
 .article-entry ul ul ul,
 .article-entry ol ul ul,

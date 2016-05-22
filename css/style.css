@@ -543,7 +543,7 @@ body {
   text-decoration: none;
   font-size: 2em;
   font-weight: bold;
-  color: #555;
+  color: #221f1f;
   line-height: 1.1em;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
@@ -551,7 +551,7 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #258fb8;
+  color: #0bbbbb;
 }
 .article-entry {
   color: #555;
@@ -589,6 +589,15 @@ a.article-title:hover {
 .article-entry h6 {
   line-height: 1.1em;
   margin: 1.1em 0;
+}
+.article-entry h1 {
+  color: #221f1f;
+}
+.article-entry h2 {
+  color: #0e5fd8;
+}
+.article-entry h3 {
+  color: #0e5fd8;
 }
 .article-entry a {
   color: #258fb8;
@@ -1169,7 +1178,7 @@ a.article-title:hover {
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
 }
 .article-entry code {
-  background: #ffd400;
+  color: #e50914;
   text-shadow: 0 1px #fff;
   padding: 0 0.3em;
 }

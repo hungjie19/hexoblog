@@ -651,9 +651,10 @@ a.article-title:hover {
 }
 .article-entry blockquote {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.4em;
-  margin: 1.8em 20px;
-  text-align: center;
+  margin: 2em 0;
+  padding-left: 1.5em;
+  border-left: 4px solid #42b983;
+  font-size: 1.1em;
 }
 .article-entry blockquote footer {
   font-size: 20px;

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn, Record, Share]]></subtitle>
   <link href="/hexoblog/atom.xml" rel="self"/>
   <link href="http://hungjie19.github.io/hexoblog/"/>
-  <updated>2016-05-22T17:24:11.721Z</updated>
+  <updated>2016-05-22T17:31:54.334Z</updated>
   <id>http://hungjie19.github.io/hexoblog/</id>
   
   <author>
@@ -19,8 +19,19 @@
     <link href="http://hungjie19.github.io/hexoblog/2016/05/20/%E4%BD%BF%E7%94%A8-hackmd-online-editor-%E8%88%87-markdown-%E8%AA%9E%E6%B3%95%E8%A3%BD%E4%BD%9C%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%B0%A1%E5%A0%B1/"/>
     <id>http://hungjie19.github.io/hexoblog/2016/05/20/使用-hackmd-online-editor-與-markdown-語法製作工程師簡報/</id>
     <published>2016-05-20T15:01:16.000Z</published>
-    <updated>2016-05-21T04:22:52.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="HackMD_投影片語法介紹：">HackMD 投影片語法介紹：</h2>
+    <updated>2016-05-22T17:31:19.000Z</updated>
+    <content type="html"><![CDATA[<ul>
+<li>outline:<ol>
+<li>章節與小節語法</li>
+<li>更換投影片背景顏色</li>
+<li>為內容加上淡出動畫</li>
+<li>調整投影片轉場動畫</li>
+<li>調整投影片轉場速度</li>
+</ol>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="HackMD_投影片語法介紹：">HackMD 投影片語法介紹：</h2>
 <h2 id="章節與小節語法">章節與小節語法</h2>
 <table>
 <thead>
@@ -138,13 +149,18 @@
 </ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="HackMD_投影片語法介紹：">HackMD 投影片語法介紹：</h2>
-<h2 id="章節與小節語法">章節與小節語法</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">按鍵與方向</th>
-<t]]>
+    <![CDATA[<ul>
+<li>outline:<ol>
+<li>章節與小節語法</li>
+<li>更換投影片背景顏色</li>
+<li>為內容加上淡出動畫</li>
+<li>調整投影片轉場動畫</li>
+<li>調整投影片轉場速度</li>
+</ol>
+</li>
+</ul>
+]]>
+    
     </summary>
     
       <category term="HackMD" scheme="http://hungjie19.github.io/hexoblog/tags/HackMD/"/>

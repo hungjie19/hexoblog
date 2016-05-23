@@ -565,10 +565,7 @@ a.article-title:hover {
 .article-entry:after {
   clear: both;
 }
-.article-entry p {
-  line-height: 1.8em;
-  margin: 0.5em 0;
-}
+.article-entry p,
 .article-entry table {
   line-height: 1.8em;
   margin: 1.8em 0;

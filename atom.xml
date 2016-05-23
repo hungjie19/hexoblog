@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn, Record, Share]]></subtitle>
   <link href="/hexoblog/atom.xml" rel="self"/>
   <link href="http://hungjie19.github.io/hexoblog/"/>
-  <updated>2016-05-23T12:26:17.640Z</updated>
+  <updated>2016-05-23T16:53:41.753Z</updated>
   <id>http://hungjie19.github.io/hexoblog/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://hungjie19.github.io/hexoblog/2016/05/23/Github-atom-IDE-Plugin-%E7%B0%A1%E4%BB%8B%E8%88%87%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/"/>
     <id>http://hungjie19.github.io/hexoblog/2016/05/23/Github-atom-IDE-Plugin-簡介與使用心得/</id>
     <published>2016-05-23T11:06:04.000Z</published>
-    <updated>2016-05-23T12:24:54.000Z</updated>
+    <updated>2016-05-23T16:52:45.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://og.github.com/atom-mark/atom-mark@1200x630.png" alt="atom"></p>
 <h2 id="atom_a_hackable_text_editor"><a href="https://atom.io/" target="_blank" rel="external">atom a hackable text editor</a></h2>
 <ul>
@@ -309,7 +309,7 @@
 </ul>
 <p>atom 基本上還算是很年輕的編輯器，並且不斷的在強化當中，其中可以關注的像是它的開發工具 <a href="http://electron.atom.io/" target="_blank" rel="external">Electron.</a> 基本上可以用前端技術打造桌上軟體了，非常厲害！至於效能的問題就持續關注 github 如果有更新版本就在裝看看，或者持續追蹤是否有其他開發者針對效能做調整、改善，後續再補充。</p>
 <blockquote>
-<p>使用三週心得：大部份拿都拿撰寫 markdown 文件，或練習 ReactJS.. 持續觀察中。</p>
+<p>使用三週心得：大部份拿都拿撰寫 markdown 文件..:P 持續觀察中。</p>
 </blockquote>
 ]]></content>
     <summary type="html">
@@ -521,7 +521,7 @@
     <link href="http://hungjie19.github.io/hexoblog/2016/05/17/what-is-markdown-and-who-use-it/"/>
     <id>http://hungjie19.github.io/hexoblog/2016/05/17/what-is-markdown-and-who-use-it/</id>
     <published>2016-05-16T16:30:45.000Z</published>
-    <updated>2016-05-22T16:10:55.000Z</updated>
+    <updated>2016-05-23T16:29:27.000Z</updated>
     <content type="html"><![CDATA[<h2 id="what_is_markdown_?">what is markdown ?</h2>
 <p><code>Markdown</code> 是一種格式化文件的語言。</p>
 <p>一種輕量的標記語言，最終會轉換成 HTML 語法，既可輕易散佈在網路上。</p>
@@ -566,7 +566,7 @@
 <hr>
 <h3 id="2-_加入列表">2. 加入列表</h3>
 <p>通常我們會條列式的逐條記錄內容重點，既可使用以下語法。</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">列表範例：</div><div class="line"><span class="bullet">- </span>珍珠奶茶</div><div class="line"><span class="code">    - 半糖微冰 2</span></div><div class="line"><span class="code">    - 三分微冰 4</span></div><div class="line"><span class="code">    - 無糖去冰 5</span></div><div class="line"><span class="bullet">- </span>雞排</div><div class="line"><span class="code">    - 切</span></div><div class="line"><span class="code">        - 原味 2</span></div><div class="line"><span class="code">        - 辣味 4</span></div><div class="line"><span class="code">    - 不切</span></div><div class="line"><span class="code">        - 原味 3</span></div><div class="line"><span class="code">        - 辣味 7</span></div><div class="line"></div><div class="line">數字列表範例：</div><div class="line"><span class="bullet">1. </span>復仇者聯盟</div><div class="line"><span class="bullet">2. </span>鋼鐵人</div><div class="line"><span class="bullet">3. </span>美國隊長</div></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">列表範例：</div><div class="line"><span class="bullet">- </span>珍珠奶茶</div><div class="line"><span class="code">    - 半糖微冰 2</span></div><div class="line"><span class="code">    - 三分微冰 4</span></div><div class="line"><span class="code">    - 無糖去冰 5</span></div><div class="line"></div><div class="line">數字列表範例：</div><div class="line"><span class="bullet">1. </span>復仇者聯盟</div><div class="line"><span class="bullet">2. </span>鋼鐵人</div><div class="line"><span class="bullet">3. </span>美國隊長</div></pre></td></tr></table></figure>
 
 <hr>
 <p>列表範例：</p>
@@ -575,19 +575,6 @@
 <li>半糖微冰 2</li>
 <li>三分微冰 4</li>
 <li>無糖去冰 5</li>
-</ul>
-</li>
-<li>雞排<ul>
-<li>切<ul>
-<li>原味 2</li>
-<li>辣味 4</li>
-</ul>
-</li>
-<li>不切<ul>
-<li>原味 3</li>
-<li>辣味 7</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -623,12 +610,13 @@
 <hr>
 <h2 id="學習更多_Markdown_語法：">學習更多 Markdown 語法：</h2>
 <ul>
-<li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" rel="external">學習更多 GitHub Markdown</a></li>
-<li><a href="https://blue.cse.buffalo.edu/gitlab/help/markdown/markdown.md" target="_blank" rel="external">學習更多 GitLab Markdown</a></li>
+<li><a href="http://markdown.tw/" target="_blank" rel="external">學習更多 Markdown</a></li>
+<li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" rel="external">學習更多 Markdown by GitHub</a></li>
+<li><a href="https://blue.cse.buffalo.edu/gitlab/help/markdown/markdown.md" target="_blank" rel="external">學習更多 Markdown by GitLab</a></li>
 <li><a href="http://www.emoji-cheat-sheet.com/" target="_blank" rel="external">加入表情符號 emoji (不一定支援)</a></li>
 </ul>
 <h2 id="還有其他語法嗎？">還有其他語法嗎？</h2>
-<p>還有什麼樣式是你想夾到文件內的嗎？那就直接撰寫 HTML 到文件裡面吧。</p>
+<p>還有什麼樣式是你想夾到文件內的嗎？那就直接撰寫 HTML, CSS 到文件裡面吧。</p>
 <p>因為最後會生成 HTML 檔案 :P</p>
 <hr>
 <h2 id="即時編輯器">即時編輯器</h2>
@@ -673,12 +661,12 @@
 <h2 id="好_markdown_不學嗎？">好 markdown 不學嗎？</h2>
 <p>試著打一遍，很快就學會了，真的！</p>
 <h2 id="Markdown_缺點：">Markdown 缺點：</h2>
-<p>Markdown 主要缺點是發佈平台或轉換引擎，發佈 Markdown 有兩種方式一種是直接將撰寫好的文件 push 到平台如 github, fackbook 等支援 Markdown 格式平台，這取決於此平台支援到什麼程度的 Markdown 語法。如：FaceBook 不支援 code block, 外部連結圖片。</p>
+<p>Markdown 主要缺點是<code>發佈平台</code>或<code>轉換引擎</code>，發佈 Markdown 有兩種方式一種是直接將撰寫好的文件 push 到平台如 github, fackbook 等支援 Markdown 格式平台，這取決於此平台支援到什麼程度的 Markdown 語法。如：FaceBook 不支援 code block, 外部連結圖片。</p>
 <p>另一種既是透過轉換引擎或透過線上轉檔成為最終的 HTML 檔案在散布到網路上，所以會取決於背後轉換的引擎可以解析到什麼 Markdown 語法。</p>
 <p>基本上個平台都會說明可以使用的語法，如本文介紹的幾個簡單的用法，其他如: emoji 就比較少支援一點，所以各家的支援度都會有所不同是要注意的地方。</p>
-<p>另一個 Markdown 小缺點是 Table 寫起來非常不好閱讀，小型還可以，如果超過 3 欄建議可以直接使用 HTML table 語法<a href="http://www.w3schools.com/html/html_tables.asp" target="_blank" rel="external">參考 w3schools table 範例</a></p>
+<p>另一個 Markdown 小缺點是 <code>Table</code> 寫起來非常不好閱讀，小型還可以，如果超過 3 欄建議可以直接使用 HTML table 語法 <a href="http://www.w3schools.com/html/html_tables.asp" target="_blank" rel="external">參考 w3schools table 範例</a></p>
 <p>以上是 Markdown 的小介紹。</p>
-<p>你也來寫一個吧！</p>
+<p><code>你也來寫一個吧！</code></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="what_is_markdown_?">what is markdown ?</h2>

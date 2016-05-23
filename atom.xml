@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn, Record, Share]]></subtitle>
   <link href="/hexoblog/atom.xml" rel="self"/>
   <link href="http://hungjie19.github.io/hexoblog/"/>
-  <updated>2016-05-22T17:31:54.334Z</updated>
+  <updated>2016-05-23T12:26:17.640Z</updated>
   <id>http://hungjie19.github.io/hexoblog/</id>
   
   <author>
@@ -13,6 +13,322 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Github atom IDE Plugin 簡介與使用心得]]></title>
+    <link href="http://hungjie19.github.io/hexoblog/2016/05/23/Github-atom-IDE-Plugin-%E7%B0%A1%E4%BB%8B%E8%88%87%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/"/>
+    <id>http://hungjie19.github.io/hexoblog/2016/05/23/Github-atom-IDE-Plugin-簡介與使用心得/</id>
+    <published>2016-05-23T11:06:04.000Z</published>
+    <updated>2016-05-23T12:24:54.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://og.github.com/atom-mark/atom-mark@1200x630.png" alt="atom"></p>
+<h2 id="atom_a_hackable_text_editor"><a href="https://atom.io/" target="_blank" rel="external">atom a hackable text editor</a></h2>
+<ul>
+<li>GitHub 出品必屬佳作。</li>
+<li>內建 Package Control 與搜尋安裝介面。</li>
+<li>所有功能都是<code>模組</code>可以自訂 ( ex: 外觀可以透過 CSS 修改 )。</li>
+</ul>
+<a id="more"></a>
+<blockquote>
+<p>筆者原本使用 sublimeText 經社群朋友推薦使用 atom 進而 <del>荼毒</del> 推薦同事，因此本文件為共筆紀錄（nabi, ann）。</p>
+</blockquote>
+<h2 id="快速鍵">快速鍵</h2>
+<p>大部份的快速鍵都跟 sublimeText 差不多，這邊只列出不同或特殊的地方。</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>windows</th>
+<th>Mac</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>設定面板</td>
+<td><code>Ctrl</code> + <code>,</code></td>
+<td><code>command</code> + <code>,</code></td>
+</tr>
+<tr>
+<td>開發者工具</td>
+<td><code>Ctrl</code> + <code>alt</code> + <code>I</code></td>
+<td><code>command</code> + <code>option</code> + <code>,</code></td>
+</tr>
+<tr>
+<td>向上移動 Line</td>
+<td><code>Ctrl</code> + <code>↑</code></td>
+<td><code>control</code> + <code>command</code> + <code>↑</code></td>
+</tr>
+<tr>
+<td>向下移動 Line</td>
+<td><code>Ctrl</code> + <code>↓</code></td>
+<td><code>control</code> + <code>command</code> + <code>↓</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Customized_Style_Setting">Customized Style Setting</h2>
+<blockquote>
+<p>Atom is a desktop application built with HTML, JavaScript, CSS, and Node.js integration. It runs on <a href="http://electron.atom.io/" target="_blank" rel="external">Electron.</a></p>
+</blockquote>
+<ol>
+<li>因此身為一個<code>前端工程師</code>改改 CSS 也是很正常的。</li>
+<li>開啟 CSS 設定檔：<code>ctrl + shift + p</code> 輸入 <code>Stylesheet</code></li>
+<li>選擇：<code>Open Your Stylesheet</code></li>
+<li>開啟 <code>style.less</code> 檔案，此可以撰寫 CSS hack your atom。</li>
+</ol>
+<h3 id="編輯區中間那條白線好煩-_移除_wrap_guide">編輯區中間那條白線好煩.. 移除 wrap guide</h3>
+<p>加入以下 CSS 語法：</p>
+<figure class="highlight CSS"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.atom-text-editor::shadow {</div><div class="line">    .wrap-guide {</div><div class="line">        visibility: hidden;</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h3 id="改變_results_found_page_的_path_顏色">改變 results found page 的 path 顏色</h3>
+<p>修改以下 CSS 語法：</p>
+<figure class="highlight CSS"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class">.preview-pane</span> <span class="class">.results-view</span> <span class="class">.path-name</span> <span class="rules">{</span></div><div class="line">	<span class="comment">/* show path */</span></div><div class="line">	<span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="function">hsla</span>(<span class="number">210</span>, <span class="number">60%</span>, <span class="number">40%</span>, <span class="number">0.5</span>)</span></span>;</div><div class="line"><span class="rule">}</span></div></pre></td></tr></table></figure>
+
+<h2 id="theme">theme</h2>
+<p>設定路徑：<code>settings -&gt; 左邊選擇 theme</code></p>
+<p>theme 在 setting 裡面分別可以設定兩種：第一種是整個 IDE 的外觀設定 theme - UI，另一種則是編輯器中的語法樣式設定: highlight，字型，大小等…</p>
+<h4 id="theme_-_Syntax">theme - Syntax</h4>
+<ul>
+<li>atom-monokai theme<ul>
+<li>monokai - sublimeText 預設樣式剛剛跳過來的朋友可以裝一下。</li>
+</ul>
+</li>
+</ul>
+<h4 id="theme_-_UI">theme - UI</h4>
+<ul>
+<li>atom-material<ul>
+<li>follows Google’s Material Design Guidelines.</li>
+<li><a href="https://atom.io/themes/atom-material-ui" target="_blank" rel="external">https://atom.io/themes/atom-material-ui</a></li>
+<li>安裝後感覺 padding 有點寬。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Editor_Settings">Editor Settings</h2>
+<ol>
+<li>Show Indent Guide<ul>
+<li>開啟編輯器輔助直線、對齊線</li>
+</ul>
+</li>
+<li>Tab Length<ul>
+<li>設定為 <code>4</code> or <code>2</code> 端看團隊 Code Style</li>
+<li>sublimeText 預設 <code>4</code>。</li>
+</ul>
+</li>
+<li>whitespace<ul>
+<li>自動移除空白</li>
+<li>Package search <code>whitespace</code></li>
+<li>如果 git  commit 時候出現很多修改紀錄，既使此功能貼心的幫你刪除空白。</li>
+<li>將 <code>Remove Trailing Whitespace</code> option 移除</li>
+<li>參考：<ul>
+<li><a href="http://stackoverflow.com/questions/30403150/atom-text-editor-remove-trailing-whitespace-on-save" target="_blank" rel="external">http://stackoverflow.com/questions/30403150/atom-text-editor-remove-trailing-whitespace-on-save</a></li>
+<li><a href="https://www.codehive.io/boards/81EEfbE" target="_blank" rel="external">https://www.codehive.io/boards/81EEfbE</a></li>
+<li><a href="http://superuser.com/questions/961352/atom-automatically-removing-trailing-spaces" target="_blank" rel="external">http://superuser.com/questions/961352/atom-automatically-removing-trailing-spaces</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>關閉拼字檢查<ul>
+<li>紅色虛線為 atom 拼字檢查 Plugin</li>
+<li>設定：Packages &gt; spell-check &gt; Toggle</li>
+</ul>
+</li>
+</ol>
+<h2 id="Plugin">Plugin</h2>
+<h3 id="Language">Language</h3>
+<ol>
+<li>AngularJS<ul>
+<li>提供 AngularJS 內建<code>方法</code>和<code>變數</code>的關鍵字，讓你輕鬆使用 AngularJS</li>
+</ul>
+</li>
+<li>Markdown Preview<ul>
+<li>直接在 atom 裡面預覽 Markdown 轉換後的樣式</li>
+<li>快速鍵：<code>ctrl</code> + <code>shift</code> + <code>P</code> 加上 <code>ctrl</code> + <code>shift</code> + <code>M</code></li>
+<li>到 <code>Setting &gt; Use GitHub.com style</code> 打勾 view 會變成 GitHub style 白色背景</li>
+</ul>
+</li>
+</ol>
+<h3 id="React">React</h3>
+<ol>
+<li>language-babel<ul>
+<li>JSX註解小幫手</li>
+</ul>
+</li>
+<li>language-javascript-jsx<ul>
+<li>JSX語法高亮提示</li>
+</ul>
+</li>
+<li>react<ul>
+<li>應有盡有react套件</li>
+<li><a href="https://orktes.github.io/atom-react/" target="_blank" rel="external">https://orktes.github.io/atom-react/</a></li>
+</ul>
+</li>
+<li>trailing-spaces<ul>
+<li>Highlights trailing white space.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Support">Support</h3>
+<ol>
+<li>emmet<ul>
+<li>Zen Code</li>
+</ul>
+</li>
+<li>autocomplete-paths (autocomplete 是一系列家族，還有各種功能)<ul>
+<li>自動列出路徑下所有有資料夾與資料</li>
+</ul>
+</li>
+<li>pigments<ul>
+<li>色碼直接顯示</li>
+</ul>
+</li>
+<li>color-picker<ul>
+<li>右鍵叫出選單，可以直接選顏色、透明度</li>
+</ul>
+</li>
+<li>atom-beautify<ul>
+<li>一鍵 Beautify 所有格式</li>
+</ul>
+</li>
+<li>Go To Line<ul>
+<li><code>Ctrl</code> + <code>G</code> 跳到你想要的行數</li>
+</ul>
+</li>
+<li>docblockr<ul>
+<li>程式註解小幫手</li>
+<li><code>\**</code> + <code>Tab</code></li>
+</ul>
+</li>
+<li>javascript-snippets (snippets 是一系列家族，還有各種程式語言)<ul>
+<li>自動產生 JS 對應語法或片段</li>
+</ul>
+</li>
+<li>file-watcher<ul>
+<li>監看 file 變動 reload atom</li>
+<li>嘗試解決 git discard file 後 atom 沒有同步改變內容。</li>
+<li>安裝後會提示你是不是要 reload 新的資料進 atom</li>
+</ul>
+</li>
+<li>Highlight Line<ul>
+<li>高亮游標在的那一行，幫助判斷游標位置</li>
+<li>好用</li>
+</ul>
+</li>
+<li>Highlight Selected<ul>
+<li>點兩下 word 會幫你 highlight 相同字串</li>
+<li>沒內建，必裝。</li>
+</ul>
+</li>
+<li>drag-drop-text<ul>
+<li>拖動 word 包含複製、移動、剪下功能</li>
+<li>simple-drag-drop-text &lt;- 這是簡易版</li>
+<li>沒內建，必裝。</li>
+</ul>
+</li>
+</ol>
+<h3 id="View">View</h3>
+<ol>
+<li>minimap<ul>
+<li>在右側產生 sublimeText 的 “code 小地圖”</li>
+</ul>
+</li>
+<li>symbols-tree-view<ul>
+<li>在右邊幫你列出這支檔案所有的 class, function, var..</li>
+<li>click can Scroll to !</li>
+<li>右鍵可以設定顯示類別 <a href="http://www.searchlight8.com/symbols-tree-view/" target="_blank" rel="external">參考</a></li>
+<li>非常厲害！</li>
+</ul>
+</li>
+<li>file-icons<ul>
+<li>資料小圖顯示為 type 縮圖 icon</li>
+<li>漂亮必裝</li>
+</ul>
+</li>
+</ol>
+<h3 id="Git">Git</h3>
+<ol>
+<li>git-plus<ul>
+<li>在 atom 中操作 git 指令</li>
+</ul>
+</li>
+<li>atomatigit<ul>
+<li>可介面化操作git</li>
+</ul>
+</li>
+<li>Git Log<ul>
+<li>在 atom 中檢視 git Log</li>
+</ul>
+</li>
+<li>Merge Conflicts<ul>
+<li>Git Merge Tool</li>
+<li>list 衝突檔案</li>
+<li>利用顏色區塊分類本地檔案、遠端檔案</li>
+</ul>
+</li>
+</ol>
+<h3 id="Other">Other</h3>
+<ol>
+<li>sync-settings<ul>
+<li>利用 GitHub 帳號同步你所有電腦的 atom Plugin</li>
+<li><a href="http://garfieldduck.me/atom-sync-settings/" target="_blank" rel="external">使用參考部落格</a></li>
+</ul>
+</li>
+<li>Indent helper<ul>
+<li>選取後依據 <code>=</code> or <code>:</code> 平均對齊</li>
+</ul>
+</li>
+</ol>
+<h2 id="好玩的_Plugin">好玩的 Plugin</h2>
+<ul>
+<li>active-power-mode<ul>
+<li>啟動後讓你可以毀天滅地的 coding</li>
+<li><a href="https://atom.io/packages/activate-power-mode" target="_blank" rel="external">https://atom.io/packages/activate-power-mode</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="atom_使用兩週心得：">atom 使用兩週心得：</h2>
+<ul>
+<li>atom 好處<ol>
+<li>免費、開源、plugin 持續增加中。</li>
+<li>plugin 安裝介面非常好用。</li>
+<li>不喜歡的樣式可以撰寫 CSS 語法自訂，非常酷。</li>
+<li>與 sublimeText 相去不遠，沒有購買提示、沒有更新提示。</li>
+<li>plugin 非常新奇部分在 sublimeText 沒看過非常酷。</li>
+</ol>
+</li>
+<li>待改進觀察..<ol>
+<li>有點 log <ul>
+<li>有點 log<ul>
+<li>有點 log  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>將分頁拉出來變成獨立視窗，這個動作我常使用..可是非常卡..</li>
+<li>不小心點到壓縮過後的檔案..會跑很久..</li>
+</ol>
+</li>
+</ul>
+<p>atom 基本上還算是很年輕的編輯器，並且不斷的在強化當中，其中可以關注的像是它的開發工具 <a href="http://electron.atom.io/" target="_blank" rel="external">Electron.</a> 基本上可以用前端技術打造桌上軟體了，非常厲害！至於效能的問題就持續關注 github 如果有更新版本就在裝看看，或者持續追蹤是否有其他開發者針對效能做調整、改善，後續再補充。</p>
+<blockquote>
+<p>使用三週心得：大部份拿都拿撰寫 markdown 文件，或練習 ReactJS.. 持續觀察中。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://og.github.com/atom-mark/atom-mark@1200x630.png" alt="atom"></p>
+<h2 id="atom_a_hackable_text_editor"><a href="https://atom.io/" target="_blank" rel="external">atom a hackable text editor</a></h2>
+<ul>
+<li>GitHub 出品必屬佳作。</li>
+<li>內建 Package Control 與搜尋安裝介面。</li>
+<li>所有功能都是<code>模組</code>可以自訂 ( ex: 外觀可以透過 CSS 修改 )。</li>
+</ul>
+]]>
+    
+    </summary>
+    
+      <category term="atom" scheme="http://hungjie19.github.io/hexoblog/tags/atom/"/>
+    
+      <category term="IDE" scheme="http://hungjie19.github.io/hexoblog/tags/IDE/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[使用 hackmd online editor 與 markdown 語法製作工程師簡報]]></title>
@@ -2490,62 +2806,6 @@
       <category term="gulp" scheme="http://hungjie19.github.io/hexoblog/tags/gulp/"/>
     
       <category term="Live Reload" scheme="http://hungjie19.github.io/hexoblog/tags/Live-Reload/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexo 新增文章後幫你開啟 markdown 編輯器]]></title>
-    <link href="http://hungjie19.github.io/hexoblog/2015/05/24/hexo-new-%E6%96%87%E7%AB%A0%E5%BE%8C%E5%B9%AB%E4%BD%A0%E9%96%8B%E5%95%9F-MarkDown-%E7%B7%A8%E8%BC%AF%E5%99%A8/"/>
-    <id>http://hungjie19.github.io/hexoblog/2015/05/24/hexo-new-文章後幫你開啟-MarkDown-編輯器/</id>
-    <published>2015-05-23T16:23:47.000Z</published>
-    <updated>2016-05-09T17:52:14.000Z</updated>
-    <content type="html"><![CDATA[<p>每次我們開始撰寫文章的時候…會執行以下的流程：</p>
-<h4 id="1-_在_command_line_敲下熟悉的指令">1. 在 command line 敲下熟悉的指令</h4>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"我的新文章"</span></div></pre></td></tr></table></figure>
-
-
-
-<h4 id="2-_接著打開_atom、MacDown_或者其他_markdown_IDE_開始撰寫文章。">2. 接著打開 atom、MacDown 或者其他 markdown IDE 開始撰寫文章。</h4>
-<p>本篇將<code>自動化</code>以上兩個步驟，讓我們看下去如何操作吧。</p>
-<a id="more"></a>
-<p>Commend Line 下完直接幫你開啟編輯器，直接撰寫文章！</p>
-<p>大家在新增完文章後的動作應該是會開啟 <code>Finder</code> 找到 Hexo 放置的資料夾然後至路徑 <code>Source/_posts</code> 找到剛剛新增的文章，在開啟 <code>Markdown</code> 編輯器或直接開 <code>Sublime Text</code> 撰寫文章，隨著文章變多找起來是相當不易，且動作也煩瑣。</p>
-<p><a href="http://liam0205.me/2015/05/01/open-editor-after-hexo-new-immediately/" target="_blank" rel="external">本文參考 liam0205</a></p>
-<ol>
-<li>首先在 <code>hexo</code> 目錄下找到 <code>scripts</code> 資料夾如果沒有就新增一個囉！ </li>
-<li>新增一個 <code>JavaScript</code> 檔案，加入下面的 <code>Sample code</code><ul>
-<li>示範開啟 <code>MacDown</code> </li>
-<li>註解中示範的是 <code>Sublime Text</code></li>
-</ul>
-</li>
-</ol>
-<h3 id="Sample_Code:">Sample Code:</h3>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> exec = <span class="built_in">require</span>(<span class="string">'child_process'</span>).exec;</div><div class="line"></div><div class="line"><span class="comment">// Hexo 2.x</span></div><div class="line">hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span><span class="params">(path)</span></span>{</div><div class="line">    <span class="comment">//exec('open -a "/Applications/Sublime Text.app" ' + path);</span></div><div class="line">    exec(<span class="string">'open -a "/Applications/MacDown.app" '</span> + path);</div><div class="line">});</div></pre></td></tr></table></figure>
-
-<p><strong>原理:</strong> 用 JavaScript 監聽 “new” event</p>
-<p><a href="https://github.com/hexojs/hexo/issues/1007" target="_blank" rel="external">tommy351 commented on Jan 26</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">You can <span class="keyword">try</span> to listen to the <span class="keyword">new</span> event. For example:</div><div class="line"></div><div class="line"><span class="keyword">var</span> spawn = <span class="built_in">require</span>(<span class="string">'child_process'</span>).spawn;</div><div class="line"></div><div class="line"><span class="comment">// Hexo 2.x</span></div><div class="line">hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span><span class="params">(path)</span></span>{</div><div class="line">  spawn(<span class="string">'vi'</span>, [path]);</div><div class="line">});</div><div class="line"></div><div class="line"><span class="comment">// Hexo 3</span></div><div class="line">hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span><span class="params">(data)</span></span>{</div><div class="line">  spawn(<span class="string">'vi'</span>, [data.path]);</div><div class="line">});</div></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Reference:">Reference:</h2>
-<p><a href="http://liam0205.me/2015/05/01/open-editor-after-hexo-new-immediately/" target="_blank" rel="external">http://liam0205.me/2015/05/01/open-editor-after-hexo-new-immediately/</a><br><a href="http://hexo.io/zh-tw/docs/plugins.html" target="_blank" rel="external">http://hexo.io/zh-tw/docs/plugins.html</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>每次我們開始撰寫文章的時候…會執行以下的流程：</p>
-<h4 id="1-_在_command_line_敲下熟悉的指令">1. 在 command line 敲下熟悉的指令</h4>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> <span class="string">"我的新文章"</span></div></pre></td></tr></table></figure>
-
-
-
-<h4 id="2-_接著打開_atom、MacDown_或者其他_markdown_IDE_開始撰寫文章。">2. 接著打開 atom、MacDown 或者其他 markdown IDE 開始撰寫文章。</h4>
-<p>本篇將<code>自動化</code>以上兩個步驟，讓我們看下去如何操作吧。</p>
-]]>
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://hungjie19.github.io/hexoblog/tags/Hexo/"/>
-    
-      <category term="markdown" scheme="http://hungjie19.github.io/hexoblog/tags/markdown/"/>
     
   </entry>
   

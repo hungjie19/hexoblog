@@ -137,22 +137,26 @@
 
   // change banner
   var imgList = [
-    'https://zero-space.s3.amazonaws.com/photos/7abd4e93-0025-4ff6-a87d-4757596e23c5x840.jpg',
-    'https://zero-space.s3.amazonaws.com/photos/e7e7a846-2277-4bee-8cf6-6acfb72cb412x840.jpg',
-    'https://zero-space.s3.amazonaws.com/photos/e327e5e9-7a22-4195-90a2-bc8456cead21x840.jpg',
-    'https://zero-space.s3.amazonaws.com/photos/30509901-2278-4f39-bae0-a5f12cdaff6ax840.jpg',
-    'https://zero-space.s3.amazonaws.com/photos/6cff77d3-e400-4375-9622-3dfa2f5f21aex840.jpg',
-    'https://zero-space.s3.amazonaws.com/photos/8aa51238-6e04-4840-9d6e-7786959a2bfcx840.jpg',
-    'https://zero-space.s3.amazonaws.com/photos/4ddd70cd-dd7b-4d59-abe1-04f82ba84527x840.jpg',
+    '7abd4e93-0025-4ff6-a87d-4757596e23c5x840.jpg',
+    'e7e7a846-2277-4bee-8cf6-6acfb72cb412x840.jpg',
+    'e327e5e9-7a22-4195-90a2-bc8456cead21x840.jpg',
+    '30509901-2278-4f39-bae0-a5f12cdaff6ax840.jpg',
+    '6cff77d3-e400-4375-9622-3dfa2f5f21aex840.jpg',
+    '8aa51238-6e04-4840-9d6e-7786959a2bfcx840.jpg',
+    '4ddd70cd-dd7b-4d59-abe1-04f82ba84527x840.jpg',
+    '93034bf5-2c0a-4d49-98a8-fd5dabd7822bx840.jpg',
+    'a19148fc-19cd-4b96-be42-d765426ffb1fx840.jpg',
+    '13e8f219-7b85-4944-acf5-69e2d71d2cb5x840.jpg',
+    'cdbf7cf6-72e9-4698-a213-b8824ba74374x840.jpg',
+    'f5531e8f-a7ba-4eb1-9549-5c327606d232x840.jpg'
   ],
   imgListLength = imgList.length;
 
   function getBanner (argument) {
-    var random = Math.floor( ( Math.random() * imgListLength ) + 1);
-    $('#banner').css({'background': 'url('+ imgList[ random ] +') center #000'});
+    var random = Math.floor( ( Math.random() * imgListLength ) + 1) - 1;
+    $('#banner').css({'background-image': 'url(https://zero-space.s3.amazonaws.com/photos/'+ imgList[ random ] +')'});
   }
-  
+
   getBanner();
-  // console.log('banner',  );
 
 })(jQuery);

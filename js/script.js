@@ -134,4 +134,25 @@
 
     $container.removeClass('mobile-nav-on');
   });
+
+  // change banner
+  var imgList = [
+    'https://zero-space.s3.amazonaws.com/photos/7abd4e93-0025-4ff6-a87d-4757596e23c5x840.jpg',
+    'https://zero-space.s3.amazonaws.com/photos/e7e7a846-2277-4bee-8cf6-6acfb72cb412x840.jpg',
+    'https://zero-space.s3.amazonaws.com/photos/e327e5e9-7a22-4195-90a2-bc8456cead21x840.jpg',
+    'https://zero-space.s3.amazonaws.com/photos/30509901-2278-4f39-bae0-a5f12cdaff6ax840.jpg',
+    'https://zero-space.s3.amazonaws.com/photos/6cff77d3-e400-4375-9622-3dfa2f5f21aex840.jpg',
+    'https://zero-space.s3.amazonaws.com/photos/8aa51238-6e04-4840-9d6e-7786959a2bfcx840.jpg',
+    'https://zero-space.s3.amazonaws.com/photos/4ddd70cd-dd7b-4d59-abe1-04f82ba84527x840.jpg',
+  ],
+  imgListLength = imgList.length;
+
+  function getBanner (argument) {
+    var random = Math.floor( ( Math.random() * imgListLength ) + 1);
+    $('#banner').css({'background': 'url('+ imgList[ random ] +') center #000'});
+  }
+  
+  getBanner();
+  // console.log('banner',  );
+
 })(jQuery);

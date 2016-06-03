@@ -4,15 +4,134 @@
   <subtitle><![CDATA[Learn, Record, Share]]></subtitle>
   <link href="/hexoblog/atom.xml" rel="self"/>
   <link href="http://hungjie19.github.io/hexoblog/"/>
-  <updated>2016-05-25T17:34:32.268Z</updated>
+  <updated>2016-06-03T15:59:28.026Z</updated>
   <id>http://hungjie19.github.io/hexoblog/</id>
   
   <author>
-    <name><![CDATA[hungjie19]]></name>
+    <name><![CDATA[Jacky.H.Hung]]></name>
     
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[閱讀演講筆記 - QCon 全球軟體開發大會 - React 生態圈 by 郭达峰]]></title>
+    <link href="http://hungjie19.github.io/hexoblog/2016/06/03/react%E7%94%9F%E6%85%8B%E5%9C%88by%E9%83%AD%E8%BE%BE%E5%B3%B0/"/>
+    <id>http://hungjie19.github.io/hexoblog/2016/06/03/react生態圈by郭达峰/</id>
+    <published>2016-06-03T15:55:36.000Z</published>
+    <updated>2016-06-03T15:58:31.000Z</updated>
+    <content type="html"><![CDATA[<ul>
+<li>出處：<a href="http://www.infoq.com/cn/presentations/explore-react-ecosystem" target="_blank" rel="external">http://www.infoq.com/cn/presentations/explore-react-ecosystem</a></li>
+<li>投影片：<a href="http://airjd.com/view/iow64jnc000zrpj" target="_blank" rel="external">http://airjd.com/view/iow64jnc000zrpj</a></li>
+<li>講者：郭达峰（Strikingly 的联合创始人）</li>
+<li>來源：<a href="https://www.facebook.com/groups/f2e.tw/?fref=nf" target="_blank" rel="external">Front-End Developers Taiwan</a></li>
+</ul>
+<p>完整的說明 React 生態圈與要解決的事情，有提到 <code>GraphQL</code> 講得非常生動，聽完覺得這個解決方案還不錯，後端工程師應該表示欣慰。</p>
+<hr>
+<p>覺得前端世界非常快速的產生許多解決方法與技術，如：BackBone.js</p>
+<p>前端技術正在面臨著前所未有的工程化挑戰</p>
+<h2 id="React_生態圈">React 生態圈</h2>
+<ul>
+<li>目標平台</li>
+<li>數據處理</li>
+<li>語言</li>
+</ul>
+<h3 id="目標平台">目標平台</h3>
+<ul>
+<li>Server side Rendering</li>
+<li>Client-Side Rendering<ul>
+<li>用戶體驗比較好，只需用 ajax 替換跳不同的頁面</li>
+<li>首次打開速度<ul>
+<li>需下載完 JavaScript </li>
+<li>call api</li>
+</ul>
+</li>
+<li>SEO<ul>
+<li>爬蟲不認得未渲染前的頁面內容</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Twitter 2011 年曾經回到 Server side Rendering 的技術</p>
+</blockquote>
+<h4 id="我們想要的是什麼？">我們想要的是什麼？</h4>
+<blockquote>
+<p>寫一次 UI 元件，前/後端都可以使用。</p>
+</blockquote>
+<p>有沒有辦法後端可以先渲染出基礎的 HTML 到了用戶前端再加上 JavaScript 動態效果與操作，這讓不就可以完美解決第一次下載速度較慢，與 SEO 的問題。</p>
+<p>其實 React <code>Virtual DOM</code> 就可以讓我們完成這件事情，因為在後端與前端都繪出同一個元件，既 <code>同構 (isomorphic)</code></p>
+<h4 id="多目標平台">多目標平台</h4>
+<blockquote>
+<p>因為 Virtual DOM 因此可以實現。</p>
+</blockquote>
+<ul>
+<li>目標平台不再侷限在瀏覽器</li>
+<li>React Native<ul>
+<li>faceBook Ads Manage</li>
+<li><code>85%</code> 程式碼重複使用</li>
+</ul>
+</li>
+<li>React TUI 實現，並且可以用 CHROME 去 debug</li>
+<li>解決 SEO</li>
+<li>解決首次開啟 app 速度較慢問題</li>
+</ul>
+<blockquote>
+<p>用你最熟悉的前端開發流程，和 JavaScript 語法去開發不同平台的應用程式。</p>
+</blockquote>
+<h2 id="數據處理">數據處理</h2>
+<ul>
+<li>Flux</li>
+<li>GraphQL / Relay</li>
+</ul>
+<h3 id="GraphQL_是什麼？">GraphQL 是什麼？</h3>
+<p>GraphQL 是 RESTful 之外的另一種 API 設計模式，<code>在某些情況下</code>，是更好的選擇。</p>
+<h3 id="RESTful_API_的問題？">RESTful API 的問題？</h3>
+<p>如果我要顯示一個畫面包含： 使用者資訊, 購物車內容。</p>
+<p>我必須要去 call 兩隻 API 等到請求回應後我才能把畫面顯示上去。</p>
+<h4 id="Custom_endpoint">Custom endpoint</h4>
+<p>你可以使用 Custom endpoint 把兩筆資料合併來解決呀！？</p>
+<blockquote>
+<p>可是瑞凡.. 你有很多 API 你也要通通合併嗎？你如何管理這些 API 呢？</p>
+</blockquote>
+<h4 id="Over_fetching">Over fetching</h4>
+<p>不同設備需要的資料 <code>粒度</code> 不同，如：</p>
+<ul>
+<li>iPhone <ul>
+<li>使用者名稱 + 購物車前三筆資料</li>
+</ul>
+</li>
+<li>PC<ul>
+<li>使用者詳細資訊 + 購物車資料 (根據螢幕大小)</li>
+</ul>
+</li>
+<li>還有版本不同呢？</li>
+<li>每次需求改變，後端都要先修改，前端才有資料可以接</li>
+</ul>
+<blockquote>
+<p>後端表示難過 Q_Q”</p>
+<p>The REST interface is designed to be efficient for <strong>large-grain</strong> hypermedia data transfer..</p>
+<ul>
+<li>Dr Roy T Fielding, Author of REST<br>REST 作者說：REST 更適合應用在大粒度數據場景。</li>
+</ul>
+</blockquote>
+<p>現在我們的場景是什麼？我們有不同的前端設備，有不同的版本，對於 API 的資料內容有不同的要求？要怎麼解決這個問題！？</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<ul>
+<li>出處：<a href="http://www.infoq.com/cn/presentations/explore-react-ecosystem" target="_blank" rel="external">http://www.infoq.com/cn/p]]>
+    </summary>
+    
+      <category term="node" scheme="http://hungjie19.github.io/hexoblog/tags/node/"/>
+    
+      <category term="react" scheme="http://hungjie19.github.io/hexoblog/tags/react/"/>
+    
+      <category term="GraphQL" scheme="http://hungjie19.github.io/hexoblog/tags/GraphQL/"/>
+    
+      <category term="Relay" scheme="http://hungjie19.github.io/hexoblog/tags/Relay/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Github atom IDE Plugin 簡介與使用心得]]></title>
@@ -2742,62 +2861,6 @@
       <category term="workshop" scheme="http://hungjie19.github.io/hexoblog/tags/workshop/"/>
     
       <category term="javascript" scheme="http://hungjie19.github.io/hexoblog/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[coServ 開發小幫手使用 gulp 實踐 Live Reload]]></title>
-    <link href="http://hungjie19.github.io/hexoblog/2015/05/24/coServ-%E9%96%8B%E7%99%BC%E5%B0%8F%E5%B9%AB%E6%89%8B%E4%BD%BF%E7%94%A8-gulp-%E5%AF%A6%E8%B8%90-Live-Reload/"/>
-    <id>http://hungjie19.github.io/hexoblog/2015/05/24/coServ-開發小幫手使用-gulp-實踐-Live-Reload/</id>
-    <published>2015-05-24T07:01:54.000Z</published>
-    <updated>2015-05-24T08:18:30.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="https://googledrive.com/host/0B4fEFbbW93y5RVh2cjFKa1R0eU0" alt="coServ + gulp 實踐 Live Reload"></p>
-<a id="more"></a>
-<p>本篇參考 <a href="https://www.youtube.com/watch?v=swQ5pVxDHwo" target="_blank" rel="external">youTobe by Ben Lue</a></p>
-<h3 id="開始之前">開始之前</h3>
-<ul>
-<li><a href="http://www.coservjs.org/" target="_blank" rel="external">install coServ</a></li>
-<li><a href="http://hungjie19.github.io/hexoblog/2015/03/11/coServ-install/#more" target="_blank" rel="external">也可以參考之前的coServ安裝心得</a></li>
-</ul>
-<h2 id="install_Tools">install Tools</h2>
-<h3 id="gulp">gulp</h3>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> gulp</span></div></pre></td></tr></table></figure>
-
-<h3 id="browser-sync">browser-sync</h3>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> npm install browser-sync</div></pre></td></tr></table></figure>
-
-
-
-<p>以上完成後在 coServ 資料夾中產生 <code>gulpfile.js</code> 內容：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span>  browserSync = <span class="built_in">require</span>(<span class="string">'browser-sync'</span>),</div><div class="line">     gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line">     config = <span class="built_in">require</span>(<span class="string">'./lib/server/config.js'</span>),</div><div class="line">     coServ = <span class="built_in">require</span>(<span class="string">'./coServ'</span>);</div><div class="line"></div><div class="line"><span class="comment">// deal with the www path</span></div><div class="line"><span class="keyword">var</span>  reload = browserSync.reload,</div><div class="line">     wwwPath = config.getWWW();</div><div class="line"></div><div class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    browserSync({</div><div class="line">        proxy: <span class="string">'127.0.0.1:8080'</span></div><div class="line">    });</div><div class="line"></div><div class="line">    gulp.watch([<span class="string">'./**/*.html'</span>, <span class="string">'./**/*.css'</span>, <span class="string">'./**/*.js'</span>, <span class="string">'./**/*.inc'</span>, <span class="string">'./**/*.lang'</span>],</div><div class="line">        {cwd: wwwPath}, reload);</div><div class="line"></div><div class="line">    gulp.watch([<span class="string">'./themes/*/blocks/modules/**/*.js'</span>], {cwd: wwwPath}, <span class="function"><span class="keyword">function</span><span class="params">(e)</span> </span>{</div><div class="line">        coServ.restart();</div><div class="line">    });</div><div class="line">});</div></pre></td></tr></table></figure>
-
-
-<p>最後原本啟動 server 命令為：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">node</span> coserv</div></pre></td></tr></table></figure>
-
-<p>現在有了 <code>gulp</code> 的幫忙直接啟動它，就會幫我們開啟網頁與監聽檔案變動，即時的幫你更新網頁修改畫面！</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp</div></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="gulp_issue_參考">gulp issue <a href="https://laracasts.com/discuss/channels/elixir/bash-gulp-command-not-found" target="_blank" rel="external">參考</a></h3>
-<p>Command Line : <code>gulp</code> 發生以下回應：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="command"><span class="keyword">command</span> <span class="title">not</span> <span class="title">found</span>: <span class="title">gulp</span></span></div></pre></td></tr></table></figure>
-
-<h3 id="將_gulp_改全域安裝的方式，以下：">將 gulp 改全域安裝的方式，以下：</h3>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> <span class="comment">--global gulp</span></span></div><div class="line">npm <span class="keyword">install</span></div></pre></td></tr></table></figure>
-
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="https://googledrive.com/host/0B4fEFbbW93y5RVh2cjFKa1R0eU0" alt="coServ + gulp 實踐 Live Reload"></p>
-]]>
-    
-    </summary>
-    
-      <category term="coServ" scheme="http://hungjie19.github.io/hexoblog/tags/coServ/"/>
-    
-      <category term="gulp" scheme="http://hungjie19.github.io/hexoblog/tags/gulp/"/>
-    
-      <category term="Live Reload" scheme="http://hungjie19.github.io/hexoblog/tags/Live-Reload/"/>
     
   </entry>
   

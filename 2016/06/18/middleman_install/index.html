@@ -3,17 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: node | Jacky&#39;s Notes</title>
+  <title>middleman install | Jacky&#39;s Notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Junlor Front-End Engineer 學習筆記簿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jacky's Notes">
-<meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/tags/node/">
+  <meta name="description" content="最近專案需要用到 middleman 因此紀錄一下一些基礎的語法與使用情境。
+middleman 是一個基於 ruby 的整合性 web 前端開發工具。
+從開發工具到打包都幫你整合好，只需要安裝完成 middleman 就可以開始開發你的系統。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="middleman install">
+<meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/2016/06/18/middleman_install/">
 <meta property="og:site_name" content="Jacky's Notes">
-<meta property="og:description" content="Junlor Front-End Engineer 學習筆記簿">
+<meta property="og:description" content="最近專案需要用到 middleman 因此紀錄一下一些基礎的語法與使用情境。
+middleman 是一個基於 ruby 的整合性 web 前端開發工具。
+從開發工具到打包都幫你整合好，只需要安裝完成 middleman 就可以開始開發你的系統。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jacky's Notes">
-<meta name="twitter:description" content="Junlor Front-End Engineer 學習筆記簿">
+<meta name="twitter:title" content="middleman install">
+<meta name="twitter:description" content="最近專案需要用到 middleman 因此紀錄一下一些基礎的語法與使用情境。
+middleman 是一個基於 ruby 的整合性 web 前端開發工具。
+從開發工具到打包都幫你整合好，只需要安裝完成 middleman 就可以開始開發你的系統。">
 
   
     <link rel="alternate" href="/hexoblog/atom.xml" title="Jacky&#39;s Notes" type="application/atom+xml">
@@ -69,12 +75,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-react生態圈by郭达峰" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-middleman_install" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/hexoblog/2016/06/03/react生態圈by郭达峰/" class="article-date">
-  <time datetime="2016-06-03T15:55:36.000Z" itemprop="datePublished">6月 3 2016</time>
+    <a href="/hexoblog/2016/06/18/middleman_install/" class="article-date">
+  <time datetime="2016-06-17T18:19:00.000Z" itemprop="datePublished">6月 18 2016</time>
 </a>
     
   </div>
@@ -84,8 +88,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/hexoblog/2016/06/03/react生態圈by郭达峰/">閱讀演講筆記 - QCon 全球軟體開發大會 - React 生態圈 by 郭达峰</a>
+    <h1 class="article-title" itemprop="name">
+      middleman install
     </h1>
   
 
@@ -93,125 +97,83 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>出處：<a href="http://www.infoq.com/cn/presentations/explore-react-ecosystem" target="_blank" rel="external">http://www.infoq.com/cn/presentations/explore-react-ecosystem</a></li>
-<li>投影片：<a href="http://airjd.com/view/iow64jnc000zrpj" target="_blank" rel="external">http://airjd.com/view/iow64jnc000zrpj</a></li>
-<li>講者：郭达峰（Strikingly 的联合创始人）</li>
-<li>來源：<a href="https://www.facebook.com/groups/f2e.tw/?fref=nf" target="_blank" rel="external">Front-End Developers Taiwan</a></li>
-</ul>
-<p>完整的說明 React 生態圈與要解決的事情，有提到 <code>GraphQL</code> 講得非常生動，聽完覺得這個解決方案還不錯，後端工程師應該表示欣慰。</p>
+        <p>最近專案需要用到 middleman 因此紀錄一下一些基礎的語法與使用情境。</p>
+<p>middleman 是一個基於 ruby 的整合性 web 前端開發工具。</p>
+<p>從開發工具到打包都幫你整合好，只需要安裝完成 middleman 就可以開始開發你的系統。</p>
+<a id="more"></a>
+<h2 id="開始之前：">開始之前：</h2>
+<p>middleman 需使用 ruby 環境建構，因此先確認 ruby 版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ruby -v</div><div class="line"></div><div class="line">ruby version: <span class="number">2.1</span>.<span class="number">5</span>p273</div></pre></td></tr></table></figure>
+
 <hr>
-<p>覺得前端世界非常快速的產生許多解決方法與技術，如：BackBone.js -&gt; angular.js</p>
-<p>Node.js &amp; io.js =&gt; 合併 O_o” </p>
+<h2 id="安裝_middleman">安裝 middleman</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem install middleman</div></pre></td></tr></table></figure>
+
+<h2 id="開始使用_middleman">開始使用 middleman</h2>
+<p>類似於各式 Cli 語法，如 Hexo: <code>hexo init</code></p>
+<h3 id="建立一個_middleman_專案語法如下：">建立一個 middleman 專案語法如下：</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">middleman init [project name]</div></pre></td></tr></table></figure>
+
+<h3 id="接著啟動_sever_看看是否可以成功啟動：">接著啟動 sever 看看是否可以成功啟動：</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">middleman server</div></pre></td></tr></table></figure>
+
 <blockquote>
-<p>前端技術正在面臨著前所未有的工程化挑戰</p>
+<p>如果成功看到 middleman 首頁，恭喜你已經成安裝囉。</p>
 </blockquote>
-<h2 id="React_生態圈">React 生態圈</h2>
-<ul>
-<li>目標平台</li>
-<li>數據處理</li>
-<li>語言</li>
-</ul>
-<h3 id="目標平台">目標平台</h3>
-<ul>
-<li>Server side Rendering</li>
-<li>Client-Side Rendering<ul>
-<li>用戶體驗比較好，只需用 ajax 替換跳不同的頁面</li>
-<li>首次打開速度<ul>
-<li>需下載完 JavaScript </li>
-<li>call api</li>
-</ul>
-</li>
-<li>SEO<ul>
-<li>爬蟲不認得未渲染前的頁面內容</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<hr>
+<h2 id="引用或_clone_middleman_專案後要做的事">引用或 clone middleman 專案後要做的事</h2>
+<p>對於 ruby 不是很熟，不過碰過前端的同學們可以這樣理解看看：</p>
 <blockquote>
-<p>Twitter 2011 年曾經回到 Server side Rendering 的技術</p>
+<p><code>gem</code> 把他想像成 node.js 中的 <code>module</code> :P</p>
 </blockquote>
-<h4 id="我們想要的是什麼？">我們想要的是什麼？</h4>
-<blockquote>
-<p>寫一次 UI 元件，前/後端都可以使用。</p>
-</blockquote>
-<p>有沒有辦法後端可以先渲染出基礎的 HTML 到了用戶前端再加上 JavaScript 動態效果與操作，這讓不就可以完美解決第一次下載速度較慢，與 SEO 的問題。</p>
-<p>其實 React <code>Virtual DOM</code> 就可以讓我們完成這件事情，因為在後端與前端都繪出同一個元件，既 <code>同構 (isomorphic)</code></p>
-<h4 id="多目標平台">多目標平台</h4>
-<blockquote>
-<p>因為 Virtual DOM 因此可以實現。</p>
-</blockquote>
-<ul>
-<li>目標平台不再侷限在瀏覽器</li>
-<li>React Native<ul>
-<li>faceBook Ads Manage</li>
-<li><code>85%</code> 程式碼重複使用</li>
-</ul>
-</li>
-<li>React TUI 實現，並且可以用 CHROME 去 debug</li>
-<li>解決 SEO</li>
-<li>解決首次開啟 app 速度較慢問題</li>
-</ul>
-<blockquote>
-<p>用你最熟悉的前端開發流程，和 JavaScript 語法去開發不同平台的應用程式。</p>
-</blockquote>
-<h2 id="數據處理">數據處理</h2>
-<ul>
-<li>Flux</li>
-<li>GraphQL / Relay</li>
-</ul>
-<h3 id="GraphQL_是什麼？">GraphQL 是什麼？</h3>
-<p>GraphQL 是 RESTful 之外的另一種 API 設計模式，<code>在某些情況下</code>，是更好的選擇。</p>
-<h3 id="RESTful_API_的問題？">RESTful API 的問題？</h3>
-<p>如果我要顯示一個畫面包含： 使用者資訊, 購物車內容。</p>
-<p>我必須要去 call 兩隻 API 等到請求回應後我才能把畫面顯示上去。</p>
-<h4 id="Custom_endpoint">Custom endpoint</h4>
-<p>你可以使用 Custom endpoint 把兩筆資料合併來解決呀！？</p>
-<blockquote>
-<p>可是瑞凡.. 你有很多 API 你也要通通合併嗎？你如何管理這些 API 呢？</p>
-</blockquote>
-<h4 id="Over_fetching">Over fetching</h4>
-<p>不同設備需要的資料 <code>粒度</code> 不同，如：</p>
-<ul>
-<li>iPhone <ul>
-<li>使用者名稱 + 購物車前三筆資料</li>
-</ul>
-</li>
-<li>PC<ul>
-<li>使用者詳細資訊 + 購物車資料（根據螢幕大小）</li>
-</ul>
-</li>
-<li>還記得要向下支援舊版本嗎？（資料格式不同）</li>
-<li>每次需求改變，後端都要先修改，前端才有資料可以接（功能什麼時候會好？問後端啊！（攤））</li>
-</ul>
-<blockquote>
-<p>後端表示難過 Q_Q”</p>
-<p>The REST interface is designed to be efficient for <strong>large-grain</strong> hypermedia data transfer..</p>
-<ul>
-<li>Dr Roy T Fielding, Author of REST<br>REST 作者說：REST 更適合應用在大粒度數據場景。</li>
-</ul>
-</blockquote>
-<p>現在我們的場景是什麼？我們有不同的前端設備，有不同的版本，對於 API 的資料內容有不同的要求？要怎麼解決這個問題！？</p>
+<p>所以我們在下載或 clone 一個 middleman 專案後要做的事情是：</p>
+<p><code>安裝相依性 gem file</code> 我們不可能一個一個安裝，不過如果你堅持..</p>
+<p>因此一定有類似於 <code>npm install</code> 的功能語法。</p>
+<p>那麼就是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bundle install</div></pre></td></tr></table></figure>
+
+<p>一連串的 gem file 安裝完成後，在使用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">middleman server</div></pre></td></tr></table></figure>
+
+<p>啟動 server 看看吧！</p>
+<h2 id="打包">打包</h2>
+<p>一鍵打包真是 middleman 的優點之一，快來使用看看吧！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">middleman build</div></pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2016/06/03/react生態圈by郭达峰/" data-id="fxmeiu1jl8nlwx9y" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2016/06/18/middleman_install/" data-id="scrmw71gz4enseq4" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2016/06/03/react生態圈by郭达峰/#disqus_thread" class="article-comment-link">留言</a>
+        <a href="http://hungjie19.github.io/hexoblog/2016/06/18/middleman_install/#disqus_thread" class="article-comment-link">留言</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/GraphQL/">GraphQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Relay/">Relay</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/react/">react</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/middleman/">middleman</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/hexoblog/2016/06/03/react生態圈by郭达峰/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">閱讀演講筆記 - QCon 全球軟體開發大會 - React 生態圈 by 郭达峰</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
       </div>
@@ -297,11 +259,13 @@
 <script>
   var disqus_shortname = 'hungjiehexoblog';
   
+  var disqus_url = 'http://hungjie19.github.io/hexoblog/2016/06/18/middleman_install/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

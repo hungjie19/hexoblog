@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Node.js 上安裝 Hexo 並在 GitHub 建立 Blog step by step 教學-安裝 | Jacky&#39;s Notes</title>
+  <title>Tag: flux | Jacky&#39;s Notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A fast, simple &amp; powerful blog framework powered by Node.js.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Node.js 上安裝 Hexo 並在 GitHub 建立 Blog step by step 教學-安裝">
-<meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/2015/05/08/Node-js-上安裝-Hexo-並在-GitHub-建立-Blog-step-by-step-教學-安裝/">
+  <meta name="description" content="Junlor Front-End Engineer 學習筆記簿">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jacky's Notes">
+<meta property="og:url" content="http://hungjie19.github.io/hexoblog/hexoblog/tags/flux/">
 <meta property="og:site_name" content="Jacky's Notes">
-<meta property="og:description" content="A fast, simple &amp; powerful blog framework powered by Node.js.">
-<meta property="og:image" content="https://googledrive.com/host/0B4fEFbbW93y5dVZoRTBCbjJEVHc">
+<meta property="og:description" content="Junlor Front-End Engineer 學習筆記簿">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node.js 上安裝 Hexo 並在 GitHub 建立 Blog step by step 教學-安裝">
-<meta name="twitter:description" content="A fast, simple &amp; powerful blog framework powered by Node.js.">
+<meta name="twitter:title" content="Jacky's Notes">
+<meta name="twitter:description" content="Junlor Front-End Engineer 學習筆記簿">
 
   
     <link rel="alternate" href="/hexoblog/atom.xml" title="Jacky&#39;s Notes" type="application/atom+xml">
@@ -70,10 +69,12 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Node-js-上安裝-Hexo-並在-GitHub-建立-Blog-step-by-step-教學-安裝" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-react_flux" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/hexoblog/2015/05/08/Node-js-上安裝-Hexo-並在-GitHub-建立-Blog-step-by-step-教學-安裝/" class="article-date">
-  <time datetime="2015-05-08T00:06:37.000Z" itemprop="datePublished">5月 8 2015</time>
+    <a href="/hexoblog/2016/06/14/react_flux/" class="article-date">
+  <time datetime="2016-06-14T14:35:00.000Z" itemprop="datePublished">6月 14 2016</time>
 </a>
     
   </div>
@@ -83,8 +84,8 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Node.js 上安裝 Hexo 並在 GitHub 建立 Blog step by step 教學-安裝
+    <h1 itemprop="name">
+      <a class="article-title" href="/hexoblog/2016/06/14/react_flux/">flux 筆記 - 使用 react.js 與計數器範例</a>
     </h1>
   
 
@@ -92,138 +93,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://googledrive.com/host/0B4fEFbbW93y5dVZoRTBCbjJEVHc" alt="Hexo"></p>
-<blockquote>
-<p>A fast, simple &amp; powerful blog framework powered by Node.js.</p>
-</blockquote>
-<a id="more"></a>
-<h1 id="Why_Hexo_?">Why Hexo ?</h1>
+        <p><img src="http://no-kill-switch.ghost.io/content/images/2015/06/react.png" alt=""></p>
+<h3 id="outline">outline</h3>
 <ul>
-<li>使用 <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> 建立個人 Blog 的好處有以下：<ol>
-<li>使用 <a href="https://nodejs.org/" target="_blank" rel="external">Node.js</a> 環境建立</li>
-<li>使用 <a href="https://www.npmjs.com/" target="_blank" rel="external">NPM</a> 管理套件安裝</li>
-<li>使用 <a href="http://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="external">Markdown</a> 語言快速編輯，筆記、Blog 一次搞定。</li>
-<li>文章裡面可以放上 <code>Code</code> 並加上 <a href="https://highlightjs.org/static/demo/" target="_blank" rel="external">highlight.js</a> 高亮語法顯示。</li>
-<li>可使用 <a href="https://github.com/" target="_blank" rel="external">GitHub</a> 版本管理 / 備份</li>
-<li>最後可以直接發佈到 <a href="https://pages.github.com/" target="_blank" rel="external">GitHub Page / GitHub.io</a></li>
-</ol>
-</li>
-</ul>
-<p>根據以上多種優點，因此建立一個 <strong>Hexo Blog Project</strong> 可以一次學習到多種工具與管理套件，因此也成為我買下 MBPR 後第一個想要玩的技術，接著就直接進入主題。</p>
-<hr>
-<h2 id="環境介紹">環境介紹</h2>
-<table>
-<thead>
-<tr>
-<th>系統</th>
-<th>版號</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MBPR</td>
-<td>2015</td>
-</tr>
-<tr>
-<td>OSX</td>
-<td>10.10.2</td>
-</tr>
-<tr>
-<td>Hexo</td>
-<td>2.8.3</td>
-</tr>
-<tr>
-<td>node.js</td>
-<td>v0.12.2</td>
-</tr>
-</tbody>
-</table>
-<h2 id="安裝_hexo_2-8-3_版本">安裝 hexo 2.8.3 版本</h2>
-<p>如果安裝過程出現 <strong>“權限錯誤”</strong> 可以試著在命令前加上 <code>sudo</code></p>
-<h3 id="解除安裝_hexo">解除安裝 hexo</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm uninstall hexo</div></pre></td></tr></table></figure>
-
-<h3 id="Step-1_安裝_hexo_2-8-3_版本">Step.1 安裝 hexo 2.8.3 版本</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo@v2.<span class="number">8.3</span> -g</div></pre></td></tr></table></figure>
-
-<h3 id="Step-2_建置_hexo_存放資料夾">Step.2 建置 hexo 存放資料夾</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">XXX = 自訂資料夾名稱 ex: hexo</div><div class="line">mkdir XXX</div></pre></td></tr></table></figure>
-
-<h3 id="Step-3_移動到_hexo_存放資料夾">Step.3 移動到 hexo 存放資料夾</h3>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> XXX</div></pre></td></tr></table></figure>
-
-<h3 id="Step-4_初始化">Step.4 初始化</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo init</div><div class="line">npm install</div></pre></td></tr></table></figure>
-
-<h3 id="Step-5_hexo_2-8-3_Plugin">Step.5 hexo 2.8.3 Plugin</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-renderer-marked@<span class="number">0.1</span> --save</div><div class="line">npm install hexo-renderer-stylus@<span class="number">0.1</span> --save</div></pre></td></tr></table></figure>
-
-<h2 id="檢查是否完成安裝">檢查是否完成安裝</h2>
-<ol>
-<li>在 <code>node_modules</code> 資料夾下面有與 plugin 同名資料夾。</li>
-<li><code>package.json</code> 中有以下資料 :</li>
-</ol>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">    "<span class="attribute">hexo-renderer-marked</span>": <span class="value"><span class="string">"0.1"</span></span>,</div><div class="line">    "<span class="attribute">hexo-renderer-stylus</span>": <span class="value"><span class="string">"0.1"</span></span></div><div class="line">}</div></pre></td></tr></table></figure>
-
-<h3 id="Step-6_在主機上啟動_Server">Step.6 在主機上啟動 Server</h3>
-<figure class="highlight bush"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">server</span></div></pre></td></tr></table></figure>
-
-<blockquote>
-<p>現在開啟瀏覽器在網址列輸入以下就可以看到預設的 Hello Page 囉！！</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">localhost:<span class="number">4000</span></div></pre></td></tr></table></figure>
-
-<p>是不是很酷呢?!!</p>
-<hr>
-<p>####Reference:<br><a href="https://twitter.com/hexojs?lang=zh-tw" target="_blank" rel="external">Hexo Twitter</a></p>
-<ul>
-<li><a href="http://hexo.io/zh-tw/docs/" target="_blank" rel="external">http://hexo.io/zh-tw/docs/</a></li>
-<li><a href="https://github.com/hexojs/hexo/issues/1094" target="_blank" rel="external">https://github.com/hexojs/hexo/issues/1094</a></li>
-<li><a href="http://pagent.github.io/2015/03/14/hexo-283-install/" target="_blank" rel="external">http://pagent.github.io/2015/03/14/hexo-283-install/</a></li>
+<li>什麼是 Flux</li>
+<li>Flux 簡介</li>
+<li>Demo: 計數器</li>
 </ul>
 
+        
+          <p class="article-more-link">
+            <a href="/hexoblog/2016/06/14/react_flux/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hungjie19.github.io/hexoblog/2015/05/08/Node-js-上安裝-Hexo-並在-GitHub-建立-Blog-step-by-step-教學-安裝/" data-id="olq8nprjtbg7fhix" class="article-share-link">Share</a>
+      <a data-url="http://hungjie19.github.io/hexoblog/2016/06/14/react_flux/" data-id="k96io3s0ze4momow" class="article-share-link">Share</a>
       
-        <a href="http://hungjie19.github.io/hexoblog/2015/05/08/Node-js-上安裝-Hexo-並在-GitHub-建立-Blog-step-by-step-教學-安裝/#disqus_thread" class="article-comment-link">留言</a>
+        <a href="http://hungjie19.github.io/hexoblog/2016/06/14/react_flux/#disqus_thread" class="article-comment-link">留言</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/flux/">flux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexoblog/tags/react/">react</a></li></ul>
 
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/hexoblog/2015/05/08/Hexo-depoly-to-GitHub/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Hexo depoly to GitHub
-        
-      </div>
-    </a>
-  
-  
-    <a href="/hexoblog/2015/04/15/DAKVO-創業擂台/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">DAKVO 創業擂台</div>
-    </a>
-  
-</nav>
-
-  
 </article>
 
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+  
+
 </section>
         
       </div>
@@ -309,13 +209,11 @@
 <script>
   var disqus_shortname = 'hungjiehexoblog';
   
-  var disqus_url = 'http://hungjie19.github.io/hexoblog/2015/05/08/Node-js-上安裝-Hexo-並在-GitHub-建立-Blog-step-by-step-教學-安裝/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

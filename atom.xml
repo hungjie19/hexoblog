@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learn, Record, Share]]></subtitle>
   <link href="/hexoblog/atom.xml" rel="self"/>
   <link href="http://hungjie19.github.io/hexoblog/"/>
-  <updated>2016-06-19T15:28:44.341Z</updated>
+  <updated>2016-06-20T15:57:50.018Z</updated>
   <id>http://hungjie19.github.io/hexoblog/</id>
   
   <author>
@@ -73,6 +73,188 @@
     </summary>
     
       <category term="middleman" scheme="http://hungjie19.github.io/hexoblog/tags/middleman/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[flux 筆記 - 使用 react.js 與計數器範例]]></title>
+    <link href="http://hungjie19.github.io/hexoblog/2016/06/14/react_flux/"/>
+    <id>http://hungjie19.github.io/hexoblog/2016/06/14/react_flux/</id>
+    <published>2016-06-14T14:35:00.000Z</published>
+    <updated>2016-06-20T15:57:26.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://no-kill-switch.ghost.io/content/images/2015/06/react.png" alt=""></p>
+<h3 id="outline">outline</h3>
+<ul>
+<li>什麼是 Flux</li>
+<li>Flux 簡介</li>
+<li>Demo: 計數器</li>
+</ul>
+<a id="more"></a>
+<h2 id="什麼是_Flux?">什麼是 Flux?</h2>
+<ul>
+<li>Design Pattern</li>
+<li>單向資料流</li>
+<li>利於大型 SPA 開發流程</li>
+</ul>
+<h3 id="MVC">MVC</h3>
+<p><img src="https://cdn.infoq.com/statics_s2_20160517-0032u4/resource/news/2014/05/facebook-mvc-flux/en/resources/flux-react-mvc.png" alt=""></p>
+<h3 id="Flux">Flux</h3>
+<p><img src="https://cdn.infoq.com/statics_s2_20160517-0032u4/resource/news/2014/05/facebook-mvc-flux/en/resources/flux-react.png" alt=""></p>
+<h3 id="Facebook_Flux_流程圖">Facebook Flux 流程圖</h3>
+<p><img src="https://facebook.github.io/react/img/blog/flux-diagram.png" alt=""></p>
+<hr>
+<h2 id="Flux_角色">Flux 角色</h2>
+<ul>
+<li>Action</li>
+<li>Dispatcher</li>
+<li>Store</li>
+<li>View<ul>
+<li>React</li>
+</ul>
+</li>
+</ul>
+<h3 id="Action">Action</h3>
+<ul>
+<li>Object</li>
+<li>定義所有 APP 事件</li>
+<li>可以快速掌握 App 所有的功能</li>
+</ul>
+<p>Action exampl:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">	type: <span class="string">'ADD_USER'</span>,</div><div class="line">	name: <span class="string">'jacky'</span>,</div><div class="line">	age: <span class="string">'18'</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h3 id="Action_creator?">Action creator?</h3>
+<ul>
+<li>將 action 送給 dispatch</li>
+</ul>
+<p>Action creator exampl:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> user = {</div><div class="line">	type: <span class="string">'ADD_USER'</span>,</div><div class="line">	name: <span class="string">'jacky'</span>,</div><div class="line">	age: <span class="string">'18'</span></div><div class="line">}</div><div class="line"></div><div class="line">AppDispatcher.dispatch( user );</div></pre></td></tr></table></figure>
+
+<h3 id="Action_creator_exampl_改寫:">Action creator exampl 改寫:</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">AppDispatcher.dispatch({</div><div class="line">	type: <span class="string">'ADD_USER'</span>,</div><div class="line">	name: <span class="string">'jacky'</span>,</div><div class="line">	age: <span class="string">'18'</span></div><div class="line">});</div></pre></td></tr></table></figure>
+
+<h2 id="Dispatcher">Dispatcher</h2>
+<ul>
+<li>統一向 Store 派送 action 事件機制</li>
+<li>只有一個</li>
+</ul>
+<h2 id="Store">Store</h2>
+<ul>
+<li>操作資料</li>
+<li>儲存資料</li>
+<li>發出事件，告訴所有人有資料改變</li>
+</ul>
+<h2 id="View">View</h2>
+<ul>
+<li>接收事件</li>
+<li>重新取得資料</li>
+<li>根據資料改變 UI</li>
+</ul>
+<hr>
+<h2 id="用彈珠台舉例：">用彈珠台舉例：</h2>
+<table>
+<thead>
+<tr>
+<th>Flux</th>
+<th>彈珠檯</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Action</td>
+<td>彈珠</td>
+</tr>
+<tr>
+<td>Action Creators</td>
+<td>彈簧拉把</td>
+</tr>
+<tr>
+<td>Dispatcher</td>
+<td>透過中間的釘子分類</td>
+</tr>
+<tr>
+<td>Store</td>
+<td>彈珠掉落的位子</td>
+</tr>
+<tr>
+<td>View</td>
+<td>得到的分數</td>
+</tr>
+</tbody>
+</table>
+<h2 id="如何改變分數?">如何改變分數?</h2>
+<ul>
+<li>Flux: <ul>
+<li>發一個 Action! </li>
+</ul>
+</li>
+<li>彈珠檯: <ul>
+<li>打一顆彈珠！</li>
+</ul>
+</li>
+</ul>
+<p><br></p>
+<hr>
+<p><br></p>
+<h2 id="Demo:_計數器">Demo: 計數器</h2>
+<h3 id="Dispatcher-1">Dispatcher</h3>
+<p>加入 Dispatcher </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.App.AppDispatcher = <span class="keyword">new</span> Flux.Dispatcher();</div></pre></td></tr></table></figure>
+
+<h3 id="Action-1">Action</h3>
+<p>設計計數器有兩個按鈕，所以有兩個 action 負責<code>加1</code>與<code>減1</code></p>
+<p>type 是必要的 key ，之後到了 Store 用來分類處理</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.App.CountActions = {</div><div class="line">  addClick() {</div><div class="line">    AppDispatcher.dispatch({</div><div class="line">      type: <span class="string">'加1'</span>,</div><div class="line">      value: <span class="number">1</span></div><div class="line">    });</div><div class="line">  },</div><div class="line">  subClick() {</div><div class="line">    AppDispatcher.dispatch({</div><div class="line">      type: <span class="string">'減1'</span>,</div><div class="line">      value: -<span class="number">1</span></div><div class="line">    });</div><div class="line">  }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h3 id="Store-1">Store</h3>
+<p>負責將 Dispatcher 傳過來的 action 資料做處理</p>
+<p>可以看到 <code>AppDispatcher.register</code> 裡面是一個 switch 分類各種 action type</p>
+<p>接著分類到各自要處理的 function 中，回傳處理後的資料，改變 Store</p>
+<p>因此 Store 的資料是自己操作改變的，</p>
+<p>Store 可以說是一個閉包的概念 COUNT 則是私有數值</p>
+<p>公開 getAll 讓大家取得 COUNT 數值</p>
+<p>再提供 addChangeListener 讓需要的人註冊事件監聽</p>
+<p>操作完 Store 資料會執行發布事件 <code>_emitter.emit(CHANGE_EVENT);</code></p>
+<p>接著再 view 那端就會接收到 <code>&#39;CHANGE&#39;</code> 事件，再回到 Store get COUNT</p>
+<p>因此只要一直循環這個流程就可以建立出一套系統</p>
+<p>每個元件只需要關注自己需要的資料既可</p>
+<p>而資料統一集中在一個地方不會有被別人更改的情形</p>
+<p>需要更改資料，必須建立一個 action 來統一管理所有功能</p>
+<p>再透過 Dispatcher 將 action 丟給每個 Store 並根據 type 去改變相對應的資料。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// event</span></div><div class="line"><span class="keyword">const</span> CHANGE_EVENT = <span class="string">'CHANGE'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> _emitter = <span class="keyword">new</span> EventEmitter();</div><div class="line"></div><div class="line"><span class="comment">// STROE</span></div><div class="line"><span class="keyword">let</span> COUNT = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> addition = (count, value) =&gt; {</div><div class="line">  <span class="built_in">console</span>.log(count + <span class="string">' + '</span> + value);</div><div class="line">  <span class="keyword">return</span> count + value</div><div class="line">}</div><div class="line"></div><div class="line"><span class="built_in">window</span>.App.CountStore = {</div><div class="line">  getAll() {</div><div class="line">    <span class="keyword">return</span> COUNT;</div><div class="line">  },</div><div class="line">  addChangeListener(callback) {</div><div class="line">    _emitter.on(CHANGE_EVENT, callback);</div><div class="line">    <span class="keyword">return</span> () =&gt; _emitter.removeListener(CHANGE_EVENT, callback);</div><div class="line">  },</div><div class="line">  dispatchToken: AppDispatcher.register((action) =&gt; {</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'action:'</span>, action.type );</div><div class="line">    <span class="keyword">switch</span> (action.type) {</div><div class="line">      <span class="keyword">case</span> <span class="string">'加1'</span>:</div><div class="line">        COUNT = addition( COUNT, action.value );</div><div class="line">        _emitter.emit(CHANGE_EVENT);</div><div class="line">        <span class="keyword">break</span>;</div><div class="line"></div><div class="line">      <span class="keyword">case</span> <span class="string">'減1'</span>:</div><div class="line">        COUNT = addition( COUNT, action.value );</div><div class="line">        _emitter.emit(CHANGE_EVENT);</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">        </div><div class="line">    }</div><div class="line">  })</div><div class="line">};</div></pre></td></tr></table></figure>
+
+<h3 id="View-1">View</h3>
+<p>在 react 元件內加入監聽：加在<code>已經 Mount</code> 階段，因為此階段，元件已經被產生，所以可以接收資料來改變元件。</p>
+<p>接著在 react 元件 <code>將要卸載</code> 階段，取消監聽事件。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> CountApp extends React.Component {</div><div class="line"></div><div class="line">  componentDidMount() {</div><div class="line">    <span class="keyword">this</span>._removeChangeListener = CountStore.addChangeListener(</div><div class="line">      () =&gt; <span class="keyword">this</span>.setState({ clickCount: CountStore.getAll() })</div><div class="line">    );</div><div class="line">  }</div><div class="line"></div><div class="line">  componentWillUnmount() {</div><div class="line">    <span class="keyword">this</span>._removeChangeListener();</div><div class="line">  }</div></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="心得">心得</h2>
+<p>長期就對 react/flux 有很高的興趣，可是單純看官網範例與部落格文章都不能明白 flux 流程與每位角色的負責工作。</p>
+<p>這次趁導讀 flux 機會 run 幾次最間單的計數器與 todolist 範例就可以了解 flux Design Pattern 的奧妙之處，感覺這樣的機制真的很適合許多場景，因為 flux 類似於 observer 的 Design Pattern 所以就算是 angular 雙向綁定的框架，我想是可以混用在 api get / set 流程上，讓原本雜亂的 $scope 有了方向性，覺得很棒。</p>
+<p>非常感謝 shiningjason1989 做了 react 每一個步驟的教材，並在文章中反覆的問你，真的了解了這章節的內容了嗎？非常棒的教材。</p>
+<h2 id="reference">reference</h2>
+<ul>
+<li><a href="https://github.com/shiningjason1989/react-quick-tutorial" target="_blank" rel="external">https://github.com/shiningjason1989/react-quick-tutorial</a></li>
+<li><a href="https://medium.com/4cats-io/深入淺出-flux-44a48c320e11" target="_blank" rel="external">https://medium.com/4cats-io/深入淺出-flux-44a48c320e11</a></li>
+<li><a href="http://andyyou.logdown.com/posts/241839-flux-notes" target="_blank" rel="external">http://andyyou.logdown.com/posts/241839-flux-notes</a></li>
+<li><a href="http://blog.techbridge.cc/2016/04/29/introduce-flux-from-flux-and-mvc/" target="_blank" rel="external">http://blog.techbridge.cc/2016/04/29/introduce-flux-from-flux-and-mvc/</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://no-kill-switch.ghost.io/content/images/2015/06/react.png" alt=""></p>
+<h3 id="outline">outline</h3>
+<ul>
+<li>什麼是 Flux</li>
+<li>Flux 簡介</li>
+<li>Demo: 計數器</li>
+</ul>
+]]>
+    
+    </summary>
+    
+      <category term="flux" scheme="http://hungjie19.github.io/hexoblog/tags/flux/"/>
+    
+      <category term="react" scheme="http://hungjie19.github.io/hexoblog/tags/react/"/>
     
   </entry>
   
@@ -2527,276 +2709,6 @@
       <category term="nodeJS" scheme="http://hungjie19.github.io/hexoblog/tags/nodeJS/"/>
     
       <category term="JSON" scheme="http://hungjie19.github.io/hexoblog/tags/JSON/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[高雄前端社群#18 - 前端面試大補帖不求人！]]></title>
-    <link href="http://hungjie19.github.io/hexoblog/2015/06/21/%E9%AB%98%E9%9B%84%E5%89%8D%E7%AB%AF%E7%A4%BE%E7%BE%A4-18-%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%A9%A6%E5%A4%A7%E8%A3%9C%E5%B8%96%E4%B8%8D%E6%B1%82%E4%BA%BA%EF%BC%81/"/>
-    <id>http://hungjie19.github.io/hexoblog/2015/06/21/高雄前端社群-18-前端面試大補帖不求人！/</id>
-    <published>2015-06-21T05:49:59.000Z</published>
-    <updated>2016-05-09T17:55:52.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="https://googledrive.com/host/0B4fEFbbW93y5VkZDOTZpZzRKWlE" alt="高雄前端社群#18 - 前端面試大補帖不求人！"></p>
-<p>這次主題找了四位都是近幾月找到前端、網頁 offer 的朋友，分享他們的前端求職過程、如何自學前端開發、為什麼想要投入前端來進行交流。</p>
-<p>分享者共通點：近三個月獲得前端職缺或設計師職缺。</p>
-<a id="more"></a>
-<hr>
-<h2 id="鍾傑倫_-_台南前端面試經驗">鍾傑倫 - 台南前端面試經驗</h2>
-<ul>
-<li>kdan Mobile F2E<ul>
-<li>前端工程師</li>
-</ul>
-</li>
-<li>JavaSvript<ul>
-<li>物件導向機制？</li>
-<li>MVC</li>
-</ul>
-</li>
-<li>出演算法題目，洗牌撲克牌<ul>
-<li>後續寄信給主管詢問演算法最佳解</li>
-</ul>
-</li>
-<li>自己架網站<ul>
-<li>Firebase</li>
-<li>github page</li>
-<li>API</li>
-</ul>
-</li>
-<li>面試心得：<ul>
-<li>演算法題目？稍微準備經典題目</li>
-<li>履歷（作品）</li>
-<li>企圖心</li>
-<li>學習淺力</li>
-</ul>
-</li>
-<li>選擇公司<ul>
-<li>未來發展</li>
-<li>限制</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="謝宛珊_-_高雄/台北_網頁設計師面試經驗">謝宛珊 - 高雄/台北 網頁設計師面試經驗</h2>
-<ul>
-<li>奇豐資訊<ul>
-<li>設計師</li>
-</ul>
-</li>
-<li>求職經歷<ul>
-<li>設計＞前端＞企劃？</li>
-</ul>
-</li>
-<li>履歷<ul>
-<li>你做過的好事證據</li>
-<li>作品集</li>
-<li>有創意</li>
-</ul>
-</li>
-<li>面試<ul>
-<li>服裝儀容</li>
-<li>自信禮貌</li>
-<li>跟面試官聊天</li>
-</ul>
-</li>
-<li>台北：<ul>
-<li>雄獅旅遊 - 真正職務 製作出版設計</li>
-<li>華美航運 - 國際物流 集貨倉儲，我要當一個主管！面試官回問：當主管最需要的一件事情是什麼？是氣勢是魄力。</li>
-<li>浩鑫科技 - UI/UX</li>
-<li>通泰媒體 - 網路媒體播放</li>
-<li>奧文環球 - 博弈類, 環境很好, 需出差</li>
-<li>酷多創意傳媒 - 代理憤怒鳥</li>
-</ul>
-</li>
-<li>高雄：<ul>
-<li>環球誠信 - 美式作風, 英文要求高</li>
-<li>台灣新蛋 - newegg, 丟版型需有RWD</li>
-<li>奇豐資訊 - 直接時作網頁 1小時</li>
-<li>鈞達資訊 - 社區社群app, 實作網頁</li>
-<li>魔術師科技 - 博弈產業, 環境好, 待遇高, 供應午晚餐</li>
-<li>頤瑞網路科技 - 主管先行用104留言版詢問問題</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="王生豪_-_台中_/_台北_前端面試經驗">王生豪 - 台中 / 台北 前端面試經驗</h2>
-<ul>
-<li>意外的前端旅程<ul>
-<li>資策會 - 前端工程師</li>
-<li>程式 x 圖形 x 動態 ？ 乾嗚科零？</li>
-<li>前端工程師 - 三個願望一次滿足</li>
-<li>技能樹</li>
-</ul>
-</li>
-<li>動手做最快 - 書只是輔助</li>
-<li>入門書單<ul>
-<li>深入淺出 HTML&amp;CSS</li>
-<li>深入淺出 jQurey</li>
-<li>HTML&amp;CSS：網站設計建置優化之道</li>
-</ul>
-</li>
-<li>練功順序<ol>
-<li>切版 HTML+CSS <a href="http://premiumcoding.com/" target="_blank" rel="external">premiumcoding freePSD</a></li>
-<li>jQurey</li>
-<li>RWD <a href="http://sweeteason.pixnet.net/blog/post/42130394#c21" target="_blank" rel="external">響應式網站開發教學與心得</a></li>
-</ol>
-</li>
-<li>履歷準備資料<ul>
-<li>作品介紹 PPT</li>
-</ul>
-</li>
-<li>常見考題<ul>
-<li>自我介紹</li>
-<li>研究所論文/大學專題</li>
-<li>為什麼想走前端？</li>
-<li>有沒有作品？</li>
-<li>熟悉哪些技術？</li>
-<li>願意學習後端技術嗎？</li>
-<li>現場實作（網路考古題）</li>
-</ul>
-</li>
-<li>加分<ul>
-<li>作品</li>
-<li>版本控管 Git, GitHub</li>
-<li>RWD (Responsive Web Design)</li>
-</ul>
-</li>
-<li>面試前<ul>
-<li>複習履歷跟作品</li>
-<li>確認公司地點路線，避免遲到</li>
-</ul>
-</li>
-<li>工作半年心得<ul>
-<li>要學的東西很多 - 學越深越渺小</li>
-<li>複習下技能樹</li>
-<li>接觸到 UI/UX </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="施慶銓_-_台北前端面試經驗">施慶銓 - 台北前端面試經驗</h2>
-<ul>
-<li>心理學系</li>
-<li>澳洲打工度假 2 年</li>
-<li>高中輔導老師</li>
-<li>半導體國內業務</li>
-<li>巨＿補習 java</li>
-<li>面試經驗 - 1<ul>
-<li>上海 - 獵人頭公司</li>
-<li>澎風澎過頭</li>
-<li>在街上買到哈佛大學 - 正向心理學 DVD</li>
-<li>TED - Carol Dweck - 心態致勝(2007)</li>
-</ul>
-</li>
-<li>Growth vs Fixed Mindset<ul>
-<li>聰明 vs 努力</li>
-<li>容易 vs 困難</li>
-<li>放棄 vs 堅持</li>
-<li>Test again (-20% vs 30%)</li>
-</ul>
-</li>
-<li>稱讚一個人 “聰明or努力” 微妙的差別！</li>
-<li>神經通道特點：<ul>
-<li>河流、沖刷</li>
-<li>越沖刷水管越大 ＝ 記憶越深</li>
-<li>用進, 廢退原則</li>
-<li>大腦喜歡熟悉的水道</li>
-<li>犯錯時學得最快</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="廖洧杰_-_前端就職技巧123">廖洧杰 - 前端就職技巧123</h2>
-<p><a href="https://docs.google.com/presentation/d/1B0EZB4hUcFD8gzhda1dPqaBx8TcuxSC6VXrhoig03Uw/edit#slide=id.p" target="_blank" rel="external">講者 PPT</a></p>
-<ul>
-<li>F2E 職缺越來越多</li>
-<li>前端兩大類：<ul>
-<li>前端設計師：圖片, UI/UX<ul>
-<li>網頁設計師 與 前端設計師差別</li>
-<li>須懂 Git 版本控制 與 工程師合作開發</li>
-</ul>
-</li>
-<li>前端工程師：<ul>
-<li>與設計師配合開發前端組件</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>有點雷的缺（包山包海、定義不明確）<ul>
-<li>設計平台、UI/UX</li>
-<li>學過iOS..</li>
-<li>懂JAVA</li>
-</ul>
-</li>
-<li>職缺不好的寫法<ul>
-<li>HTML5CSSJavaScript</li>
-<li>沒有詳細寫到深入程度</li>
-<li>請不要寫與此<code>工作無關</code>的相關經驗</li>
-</ul>
-</li>
-<li>產值效益 <ul>
-<li>具備Responsive Mobile Layout設計經驗</li>
-<li>熟悉PhoneGap與WebAPP開發經驗</li>
-</ul>
-</li>
-<li>工作經歷（條列式）<ul>
-<li>XX科技公司 - 前端工程師 (2013~2015)<ul>
-<li>Mobile 前端效能優化</li>
-<li>IOS Hybrid APP</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>觀察別人的履歷<ul>
-<li>toptal</li>
-<li>Linkedin</li>
-</ul>
-</li>
-<li>投遞履歷<ul>
-<li>不要用 word 可使用 PDF</li>
-<li>可使用個人網站 or GitHub</li>
-<li>了解 HR 審核履歷流程</li>
-</ul>
-</li>
-<li>面試須注意的細節<ul>
-<li>調查公司</li>
-<li>面試過程務必確認工作內容</li>
-<li>薪水心裡要有明確價碼</li>
-<li>不懂不要裝懂</li>
-<li>公司大多喜歡有主動學習的心態</li>
-</ul>
-</li>
-<li>千萬不要說<ul>
-<li>我不會，但我願意學</li>
-</ul>
-</li>
-<li>人力銀行<ul>
-<li><a href="https://jobs.github.com/" target="_blank" rel="external">github jobs</a></li>
-<li><a href="https://www.linkedin.com/uas/login" target="_blank" rel="external">Linkedin</a></li>
-<li>找一個職缺需求來訂定投入目標</li>
-</ul>
-</li>
-</ul>
-<h1 id="工程師應有心態">工程師應有心態</h1>
-<ul>
-<li>企圖心</li>
-<li>學習心</li>
-<li>求知慾</li>
-<li>解決問題的心態</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="https://googledrive.com/host/0B4fEFbbW93y5VkZDOTZpZzRKWlE" alt="高雄前端社群#18 - 前端面試大補帖不求人！"></p>
-<p>這次主題找了四位都是近幾月找到前端、網頁 offer 的朋友，分享他們的前端求職過程、如何自學前端開發、為什麼想要投入前端來進行交流。</p>
-<p>分享者共通點：近三個月獲得前端職缺或設計師職缺。</p>
-]]>
-    
-    </summary>
-    
-      <category term="workshop" scheme="http://hungjie19.github.io/hexoblog/tags/workshop/"/>
-    
-      <category term="front-end" scheme="http://hungjie19.github.io/hexoblog/tags/front-end/"/>
-    
-      <category term="Interview" scheme="http://hungjie19.github.io/hexoblog/tags/Interview/"/>
     
   </entry>
   

@@ -144,17 +144,17 @@ Demo: 計數器">
 <li>定義所有 APP 事件</li>
 <li>可以快速掌握 App 所有的功能</li>
 </ul>
-<p>Action exampl:</p>
+<p>Action example:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">	type: <span class="string">'ADD_USER'</span>,</div><div class="line">	name: <span class="string">'jacky'</span>,</div><div class="line">	age: <span class="string">'18'</span></div><div class="line">}</div></pre></td></tr></table></figure>
 
 <h3 id="Action_creator?">Action creator?</h3>
 <ul>
 <li>將 action 送給 dispatch</li>
 </ul>
-<p>Action creator exampl:</p>
+<p>Action creator example:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> user = {</div><div class="line">	type: <span class="string">'ADD_USER'</span>,</div><div class="line">	name: <span class="string">'jacky'</span>,</div><div class="line">	age: <span class="string">'18'</span></div><div class="line">}</div><div class="line"></div><div class="line">AppDispatcher.dispatch( user );</div></pre></td></tr></table></figure>
 
-<h3 id="Action_creator_exampl_改寫:">Action creator exampl 改寫:</h3>
+<h3 id="Action_creator_example_改寫:">Action creator example 改寫:</h3>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">AppDispatcher.dispatch({</div><div class="line">	type: <span class="string">'ADD_USER'</span>,</div><div class="line">	name: <span class="string">'jacky'</span>,</div><div class="line">	age: <span class="string">'18'</span></div><div class="line">});</div></pre></td></tr></table></figure>
 
 <h2 id="Dispatcher">Dispatcher</h2>

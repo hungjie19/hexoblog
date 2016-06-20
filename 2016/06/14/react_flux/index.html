@@ -249,6 +249,9 @@ Demo: 計數器">
 
 <h3 id="View-1">View</h3>
 <p>在 react 元件內加入監聽：加在<code>已經 Mount</code> 階段，因為此階段，元件已經被產生，所以可以接收資料來改變元件。</p>
+<blockquote>
+<p>react 生命週期 componentDidMount() 可以想像成 $( document ).ready(); 事件，必須要在 HTML 繪製完成後才可以對 element selector 並做修改</p>
+</blockquote>
 <p>接著在 react 元件 <code>將要卸載</code> 階段，取消監聽事件。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> CountApp extends React.Component {</div><div class="line"></div><div class="line">  componentDidMount() {</div><div class="line">    <span class="keyword">this</span>._removeChangeListener = CountStore.addChangeListener(</div><div class="line">      () =&gt; <span class="keyword">this</span>.setState({ clickCount: CountStore.getAll() })</div><div class="line">    );</div><div class="line">  }</div><div class="line"></div><div class="line">  componentWillUnmount() {</div><div class="line">    <span class="keyword">this</span>._removeChangeListener();</div><div class="line">  }</div></pre></td></tr></table></figure>
 
